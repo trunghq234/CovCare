@@ -2,9 +2,6 @@
 @import 'theme.less';
 
 body {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
   overflow-x: hidden;
 }
 
@@ -14,6 +11,20 @@ body {
   padding: 0 15px;
 }
 
+.title {
+  font-size: @font-size-heading;
+  font-weight: @font-weight-heading;
+  color: @text-color;
+}
+
+//reset ul
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+//override antd
 .ant-layout {
   background: #f7f8fc !important;
 }
@@ -39,8 +50,17 @@ body {
   margin-top: 40px;
 }
 
+.ant-card {
+  border-radius: 12px;
+  box-shadow: @box-shadow-base;
+}
+
+.ant-drawer-close {
+  font-size: 1.5rem;
+}
+
 .mobileHidden {
-  display: block;
+  display: flex;
   width: fit-content;
 }
 .mobileVisible {
@@ -52,6 +72,6 @@ body {
     display: none;
   }
   .mobileVisible {
-    display: block;
+    display: flex;
   }
 }

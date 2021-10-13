@@ -1,9 +1,10 @@
+import Prevention from 'components/Home/Prevention';
 import React from 'react';
 
 const AppHome = () => {
   return (
     <div>
-      <h3>AppHome</h3>
+      <Prevention />
     </div>
   );
 };
