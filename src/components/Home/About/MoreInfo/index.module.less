@@ -1,0 +1,28 @@
+@import '../../../../theme.less';
+.container {
+  border: 1px solid @border-color-base;
+  border-radius: 4px;
+  padding: 0 10px;
+  background-color: white;
+  box-shadow: @box-shadow-base;
+}
+.item {
+  border-bottom: 1px solid #e7e8ff;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  &:first-child {
+    color: @text-color;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .link {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    .icon {
+      line-height: 50px;
+      font-size: 12px;
+    }
+  }
+}
