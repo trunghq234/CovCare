@@ -32,30 +32,32 @@ const spreads = [
 const About = () => {
   return (
     <div>
-      <Row gutter={50} className={style['row-about']}>
-        <Col span={15} style={{ paddingRight: '100px' }}>
-          <h4 className={style.name}>ABOUT THE DISEASE</h4>
-          <h1 className={style.title}>CORONAVIRUS (COVID-19)</h1>
-          <h3>
-            <strong>COVID-19 is a new illness that can affect your lungs and airways.</strong> It's
-            caused by a virus called coronavirus. It was discovered in December 2019 in Wuhan,
-            Hubei, China.
-          </h3>
-          <p>
-            Common signs of infection include respiratory symptoms, fever, cough, shortness of
-            breath and breathing difficulties. In more severe cases, infection can cause pneumonia,
-            severe acute respiratory syndrome, kidney failure and even death. <br />
-            <br />
-            Standard recommendations to prevent infection spread include regular hand washing,
-            covering mouth and nose when coughing and sneezing, thoroughly cooking meat and eggs.
-            Avoid close contact with anyone showing symptoms of respiratory illness such as coughing
-            and sneezing.
-          </p>
-        </Col>
-        <Col span={8} offset={1}>
-          <MoreInfo />
-        </Col>
-      </Row>
+      <div className="container">
+        <Row gutter={[50, 30]} className={style['row-about']}>
+          <Col sm={24} md={13} lg={16} xl={16}>
+            <h4 className={style.name}>ABOUT THE DISEASE</h4>
+            <h1 className={style.title}>CORONAVIRUS (COVID-19)</h1>
+            <h3>
+              <strong>COVID-19 is a new illness that can affect your lungs and airways.</strong>{' '}
+              It's caused by a virus called coronavirus. It was discovered in December 2019 in
+              Wuhan, Hubei, China.
+            </h3>
+            <p>
+              Common signs of infection include respiratory symptoms, fever, cough, shortness of
+              breath and breathing difficulties. In more severe cases, infection can cause
+              pneumonia, severe acute respiratory syndrome, kidney failure and even death. <br />
+              <br />
+              Standard recommendations to prevent infection spread include regular hand washing,
+              covering mouth and nose when coughing and sneezing, thoroughly cooking meat and eggs.
+              Avoid close contact with anyone showing symptoms of respiratory illness such as
+              coughing and sneezing.
+            </p>
+          </Col>
+          <Col sm={24} md={11} lg={8} xl={8}>
+            <MoreInfo />
+          </Col>
+        </Row>
+      </div>
       <Row className={style['row-spread']}>
         <Col span={24}>
           <div className={style.info}>
@@ -72,8 +74,7 @@ const About = () => {
                 <Col
                   key={index}
                   xs={{ span: 24, offset: 0 }}
-                  sm={{ span: 20, offset: 2 }}
-                  md={{ span: 12, offset: 0 }}
+                  md={{ span: 8, offset: 0 }}
                   xl={{ span: 8, offset: 0 }}>
                   <SpreadCard title={spread.title} content={spread.content} image={spread.image} />
                 </Col>
