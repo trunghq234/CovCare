@@ -41,9 +41,8 @@ const News = () => {
               return (
                 <Col
                   key={index}
-                  xs={{ span: 24, offset: 0 }}
-                  sm={{ span: 20, offset: 2 }}
-                  md={{ span: 12, offset: 0 }}
+                  sm={{ span: 24, offset: 0 }}
+                  md={{ span: 8, offset: 0 }}
                   xl={{ span: 8, offset: 0 }}>
                   <NewsCard title={news.title} content={news.content} image={news.image} />
                 </Col>
