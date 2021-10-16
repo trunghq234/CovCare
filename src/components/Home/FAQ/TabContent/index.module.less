@@ -1,0 +1,32 @@
+p {
+  color: #3d4b69;
+  line-height: 1.5;
+}
+h5 {
+  font-size: 16px;
+}
+.list-dot {
+  li {
+    position: relative;
+    padding: 0.5rem 0 0.5rem 1.25rem;
+  }
+  ul {
+    margin-top: 0.5rem;
+  }
+  li:before {
+    position: absolute;
+    color: #3d4b69;
+    left: 0;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    content: '•';
+  }
+  ul li::before {
+    content: '◦';
+  }
+}
+.ant-collapse-item:checked {
+  .ant-collapse-header {
+    color: aqua;
+  }
+}
