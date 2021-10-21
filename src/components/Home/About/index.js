@@ -33,8 +33,8 @@ const About = () => {
   return (
     <div>
       <div className="container">
-        <Row gutter={[50, 30]} className={style['row-about']}>
-          <Col sm={24} md={13} lg={16} xl={16}>
+        <Row gutter={[40, 20]} className={style['row-about']}>
+          <Col xs={24} md={14} xl={16}>
             <h4 className={style.name}>ABOUT THE DISEASE</h4>
             <h1 className={style.title}>CORONAVIRUS (COVID-19)</h1>
             <h3>
@@ -53,7 +53,7 @@ const About = () => {
               coughing and sneezing.
             </p>
           </Col>
-          <Col sm={24} md={11} lg={8} xl={8}>
+          <Col xs={24} md={10} xl={8}>
             <MoreInfo />
           </Col>
         </Row>

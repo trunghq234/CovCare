@@ -2,48 +2,51 @@ import React from 'react';
 import { RightOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import style from './index.module.less';
-
+const items = [
+  {
+    title: 'How coronavirus is spread',
+    url: '/',
+  },
+  {
+    title: 'Symptoms of coronavirus',
+    url: '/',
+  },
+  {
+    title: 'Symptoms of coronavirus',
+    url: '/',
+  },
+  {
+    title: 'How to protect yourself',
+    url: '/',
+  },
+  {
+    title: 'Treatment for coronavirus',
+    url: '/',
+  },
+  {
+    title: 'Treatment for coronavirus',
+    url: '/',
+  },
+  {
+    title: 'Questions & Answers',
+    url: '/',
+  },
+];
 const AnotherQuestion = () => {
   return (
     <div className={style.container}>
       <ul>
         <li className={style.item}>What you need to know</li>
-        <li className={style.item}>
-          <Link className={style.link}>
-            How coronavirus is spread
-            <RightOutlined className={style.icon} />
-          </Link>
-        </li>
-        <li className={style.item}>
-          <Link className={style.link}>
-            Symptoms of coronavirus
-            <RightOutlined className={style.icon} />
-          </Link>
-        </li>
-        <li className={style.item}>
-          <Link className={style.link}>
-            How to protect yourself
-            <RightOutlined className={style.icon} />
-          </Link>
-        </li>
-        <li className={style.item}>
-          <Link className={style.link}>
-            Treatment for coronavirus
-            <RightOutlined className={style.icon} />
-          </Link>
-        </li>
-        <li className={style.item}>
-          <Link className={style.link}>
-            Myth-Busters of coronavirus
-            <RightOutlined className={style.icon} />
-          </Link>
-        </li>
-        <li className={style.item}>
-          <Link className={style.link}>
-            Questions&answers
-            <RightOutlined className={style.icon} />
-          </Link>
-        </li>
+        {items.map((item, index) => {
+          return (
+            <li className={style.item} key={index}>
+              <Link to={item.url} className={style.link}>
+                {item.title}
+                <RightOutlined className={style.icon} />
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
