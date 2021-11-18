@@ -5,9 +5,20 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AppHome from 'pages/Home';
 import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
+import Register from 'pages/Register';
 
 const { Header, Footer, Content } = Layout;
 
+const routes = [
+  {
+    path: '/',
+    page: <AppHome />,
+  },
+  {
+    path: '/register',
+    page: <Register />,
+  },
+];
 function App() {
   return (
     <Router>
@@ -17,9 +28,11 @@ function App() {
         </Header>
         <Content>
           <Switch>
-            <Route exact path="/">
-              <AppHome />
-            </Route>
+            {routes.map(route => (
+              <Route exact path={route.path}>
+                {route.page}
+              </Route>
+            ))}
           </Switch>
         </Content>
         <Footer>

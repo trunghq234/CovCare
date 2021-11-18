@@ -15,6 +15,25 @@ const AppHeader = () => {
   const onClose = () => {
     setVisible(false);
   };
+
+  const menuItems = [
+    {
+      link: '/',
+      display: 'Trang chủ',
+    },
+    {
+      link: '/news',
+      display: 'Tin tức',
+    },
+    {
+      link: '/support',
+      display: 'Hỗ trợ',
+    },
+    {
+      link: '/register',
+      display: 'Đăng ký',
+    },
+  ];
   return (
     <div className="container">
       <div className={styles.header}>
@@ -38,15 +57,11 @@ const AppHeader = () => {
               theme="light"
               mode="vertical"
               inlineCollapsed={false}>
-              <Menu.Item key="home">
-                <NavLink to="/">Trang chủ</NavLink>
-              </Menu.Item>
-              <Menu.Item key="news">
-                <NavLink to="/news">Tin tức</NavLink>
-              </Menu.Item>
-              <Menu.Item key="support">
-                <NavLink to="/support">Hỗ trợ</NavLink>
-              </Menu.Item>
+              {menuItems.map(item => (
+                <Menu.Item key={item.link}>
+                  <NavLink to={item.link}>{item.display}</NavLink>
+                </Menu.Item>
+              ))}
             </Menu>
           </Drawer>
         </div>
@@ -57,15 +72,11 @@ const AppHeader = () => {
             theme="light"
             mode="horizontal"
             disabledOverflow="true">
-            <Menu.Item key="home">
-              <NavLink to="/">Trang chủ</NavLink>
-            </Menu.Item>
-            <Menu.Item key="news">
-              <NavLink to="/news">Tin tức</NavLink>
-            </Menu.Item>
-            <Menu.Item key="support">
-              <NavLink to="/support">Hỗ trợ</NavLink>
-            </Menu.Item>
+            {menuItems.map(item => (
+              <Menu.Item key={item.link}>
+                <NavLink to={item.link}>{item.display}</NavLink>
+              </Menu.Item>
+            ))}
           </Menu>
         </div>
       </div>
