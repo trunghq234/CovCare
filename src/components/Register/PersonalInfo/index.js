@@ -9,6 +9,7 @@ import prority from 'constants/Priority.json';
 import vaccine from 'constants/Vaccine.json';
 import vaccineLocation from 'constants/VaccinceLocation.json';
 import styles from './index.module.less';
+import { validateMessages } from 'constants/ValidationMessage';
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -16,6 +17,7 @@ const { TextArea } = Input;
 const PersonalInfo = ({ next }) => {
   const [form] = useForm();
   const [city, setCity] = useState('');
+  const [ordinal, setOrdinal] = useState(1);
   const notice = [
     'Việc đăng ký thông tin hoàn toàn bảo mật và phục vụ cho chiến dịch tiêm chủng Vắc xin COVID - 19',
     'Xin vui lòng kiểm tra kỹ các thông tin bắt buộc (VD: Họ và tên, Ngày tháng năm sinh, Số điện thoại, Số CMND/CCCD/Mã định danh công dân/HC ...)',
@@ -24,16 +26,20 @@ const PersonalInfo = ({ next }) => {
   ];
   return (
     <Card>
-      <Form form={form} layout="vertical">
+      <Form form={form} layout="vertical" validateMessages={validateMessages}>
         <Row gutter={[20, 10]}>
           <Col span={6}>
             <Form.Item
               name="ordinalOfInjection"
               label="Đăng kí mũi tiêm thứ"
               rules={[{ required: true }]}>
-              <Select placeholder="Đăng kí mũi tiêm thứ" allowClear showSearch>
-                <Option value="firstInject">Mũi tiêm thứ nhất</Option>
-                <Option value="nextInject">Mũi tiêm tiếp theo</Option>
+              <Select
+                placeholder="Đăng kí mũi tiêm thứ"
+                allowClear
+                showSearch
+                onChange={value => setOrdinal(value)}>
+                <Option value="1">Mũi tiêm thứ nhất</Option>
+                <Option value="2">Mũi tiêm tiếp theo</Option>
               </Select>
             </Form.Item>
           </Col>
@@ -60,7 +66,7 @@ const PersonalInfo = ({ next }) => {
             </Form.Item>
           </Col>
           <Col span={6}>
-            <Form.Item name="phoneNumber" label="Số điện thoại">
+            <Form.Item name="phoneNumber" label="Số điện thoại" rules={[{ required: true }]}>
               <InputNumber placeholder="Số điện thoại" controls={false} />
             </Form.Item>
           </Col>
@@ -73,7 +79,7 @@ const PersonalInfo = ({ next }) => {
             </Form.Item>
           </Col>
           <Col span={6}>
-            <Form.Item name="email" label="Email">
+            <Form.Item name="email" label="Email" rules={[{ type: 'email' }]}>
               <Input placeholder="Email" type="email" />
             </Form.Item>
           </Col>
@@ -119,33 +125,39 @@ const PersonalInfo = ({ next }) => {
               </Select>
             </Form.Item>
           </Col>
-          <Col span={24}>
-            <h4>3. Lịch sử tiêm mũi thứ 1</h4>
-          </Col>
-          <Col span={6}>
-            <Form.Item name="vaccine" label="Tên vaccine" rules={[{ required: true }]}>
-              <TypingSelect placeholder="Tên vaccine" defaultValue="Viet Nam" list={vaccine} />
-            </Form.Item>
-          </Col>
-          <Col span={6}>
-            <Form.Item name="vaccinatedDate" label="Ngày tiêm" rules={[{ required: true }]}>
-              <DatePicker placeholder="Ngày/Tháng/Năm" format={'DD/MM/YYYY'} />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item name="vaccineLocation" label="Điểm tiêm" rules={[{ required: true }]}>
-              <TypingSelect
-                placeholder="Tên vaccine"
-                defaultValue="Viet Nam"
-                list={vaccineLocation}
-              />
-            </Form.Item>
-          </Col>
-          <Col span={24}>
-            <Form.Item name="lastReaction" label="Phản ứng sau tiêm">
-              <TextArea placeholder="Phản ứng sau tiêm" rows={4} />
-            </Form.Item>
-          </Col>
+          {ordinal === '2' ? (
+            <>
+              <Col span={24}>
+                <h4>3. Lịch sử tiêm mũi thứ 1</h4>
+              </Col>
+              <Col span={6}>
+                <Form.Item name="vaccine" label="Tên vaccine" rules={[{ required: true }]}>
+                  <TypingSelect placeholder="Tên vaccine" defaultValue="Viet Nam" list={vaccine} />
+                </Form.Item>
+              </Col>
+              <Col span={6}>
+                <Form.Item name="vaccinatedDate" label="Ngày tiêm" rules={[{ required: true }]}>
+                  <DatePicker placeholder="Ngày/Tháng/Năm" format={'DD/MM/YYYY'} />
+                </Form.Item>
+              </Col>
+              <Col span={12}>
+                <Form.Item name="vaccineLocation" label="Điểm tiêm" rules={[{ required: true }]}>
+                  <TypingSelect
+                    placeholder="Tên vaccine"
+                    defaultValue="Viet Nam"
+                    list={vaccineLocation}
+                  />
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item name="lastReaction" label="Phản ứng sau tiêm">
+                  <TextArea placeholder="Phản ứng sau tiêm" rows={4} />
+                </Form.Item>
+              </Col>
+            </>
+          ) : (
+            ''
+          )}
           <Col span={24} className={styles.notice}>
             <h4>Lưu ý:</h4>
             <ul>
@@ -163,7 +175,13 @@ const PersonalInfo = ({ next }) => {
               type="primary"
               block
               size="large"
-              onClick={() => next()}>
+              onClick={() => {
+                // form.validateFields().then(values => {
+                //   form.resetFields();
+                //   next();
+                // });
+                next();
+              }}>
               Tiếp tục
             </Button>
           </Col>

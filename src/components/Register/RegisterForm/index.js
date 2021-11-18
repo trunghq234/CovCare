@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Button, message, Card, Steps } from 'antd';
+import { Card, Steps } from 'antd';
 import PersonalInfo from '../PersonalInfo';
 import Agreement from '../Agreement';
+import CompleteInfo from '../CompleteInfo';
+import MedicalHistory from '../MedicalHistory';
 
 const { Step } = Steps;
 
@@ -21,15 +23,15 @@ const RegisterForm = () => {
     },
     {
       title: 'Tiền sử bệnh',
-      content: 'Second-content',
+      content: <MedicalHistory prev={prev} next={next} />,
     },
     {
       title: 'Phiếu đồng ý tiêm',
-      content: <Agreement />,
+      content: <Agreement prev={prev} next={next} />,
     },
     {
       title: 'Hoàn thành',
-      content: 'Last-content',
+      content: <CompleteInfo />,
     },
   ];
   return (
@@ -41,24 +43,7 @@ const RegisterForm = () => {
           ))}
         </Steps>
       </Card>
-      <div className="steps-content">{steps[current].content}</div>
-      <div className="steps-action">
-        {current < steps.length - 1 && (
-          <Button type="primary" onClick={() => next()}>
-            Next
-          </Button>
-        )}
-        {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success('Processing complete!')}>
-            Done
-          </Button>
-        )}
-        {current > 0 && (
-          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-            Previous
-          </Button>
-        )}
-      </div>
+      <div>{steps[current].content}</div>
     </div>
   );
 };
