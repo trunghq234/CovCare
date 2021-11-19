@@ -6,7 +6,7 @@ import logo from 'assets/images/logo.png';
 import styles from './index.module.less';
 
 const AppHeader = () => {
-  const [pathname, setPathname] = useState(window.location.pathname.substring(1));
+  const [pathname, setPathname] = useState(window.location.pathname.substring(1) || 'home');
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -25,7 +25,7 @@ const AppHeader = () => {
           </NavLink>
         </div>
         <div className="mobileVisible">
-          <Button type="primary" onClick={showDrawer}>
+          <Button style={{ padding: '4px 15px' }} type="primary" onClick={showDrawer}>
             <MenuOutlined />
           </Button>
           <Drawer placement="right" onClose={onClose} visible={visible}>
