@@ -1,3 +1,6 @@
+import About from 'components/Home/About';
+import News from 'components/Home/News';
+import Prevention from 'components/Home/Prevention';
 import React from 'react';
 import styles from './home.module.less';
 import homePng from '../../assets/images/header-a.png';
