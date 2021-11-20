@@ -18,7 +18,7 @@ const HealthDeclaration = () => {
             lobortis nullam consectetur. Purus sagittis orci eu faucibus.
           </div>
           <NavLink className={styles.link} to="/">
-            About COVID-19{' '}
+            Tìm hiểu về COVID 19
           </NavLink>
         </div>
       </Row>
