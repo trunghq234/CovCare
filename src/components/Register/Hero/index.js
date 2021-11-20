@@ -7,22 +7,22 @@ const Hero = () => {
     <div className={styles.banner}>
       <div style={{ marginTop: '80px' }} className="container">
         <Row gutter={[20, 0]}>
-          <Col span={8}>
+          <Col xs={24} md={14} lg={12} xl={8}>
             <h3 className="title">Đăng ký tiêm chủng</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh ultrices quam in eu
               lobortis nullam consectetur. Purus sagittis orci eu faucibus.
             </p>
           </Col>
-          <Col span={16} />
-          <Col span={4}>
+          <Col xs={0} md={10} lg={12} xl={16} />
+          <Col xs={10} sm={6} md={4} xl={3}>
             <Button type="primary" block>
               Đăng ký
             </Button>
           </Col>
-          <Col span={4}>
-            <Button type="primary" block ghost>
-              Đăng ký
+          <Col xs={14} sm={6} md={4}>
+            <Button style={{ color: '#2A81EA' }} type="text" block ghost>
+              Tìm hiểu về COVID-19
             </Button>
           </Col>
         </Row>

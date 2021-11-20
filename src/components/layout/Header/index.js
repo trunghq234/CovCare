@@ -44,7 +44,7 @@ const AppHeader = () => {
           </NavLink>
         </div>
         <div className="mobileVisible">
-          <Button style={{ padding: '4px 15px' }} type="primary" onClick={showDrawer}>
+          <Button className={styles.drawer} type="primary" onClick={showDrawer}>
             <MenuOutlined />
           </Button>
           <Drawer placement="right" onClose={onClose} visible={visible}>

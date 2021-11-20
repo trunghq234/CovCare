@@ -23,19 +23,19 @@ const Agreement = ({ prev, next }) => {
       </ol>
       <Divider />
       <Row gutter={[20, 20]} justify="center">
-        <Col span={12}>
+        <Col xs={24} sm={24} md={12}>
           <p>Sau khi đã đọc các thông tin nêu trên, tôi đã hiểu về các nguy cơ và: </p>
         </Col>
-        <Col span={12}>
+        <Col xs={16} sm={16} md={12}>
           <Checkbox onClick={e => setIsAgree(e.target.checked)}>Đồng ý tiêm chủng</Checkbox>
         </Col>
         <Col flex="auto" />
-        <Col span={4}>
+        <Col xs={12} md={8} lg={4}>
           <Button type="default" size="large" block onClick={prev}>
             Quay lại
           </Button>
         </Col>
-        <Col span={4}>
+        <Col xs={12} md={8} lg={4}>
           <Button
             type="primary"
             size="large"

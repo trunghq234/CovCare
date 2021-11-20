@@ -4,6 +4,7 @@ import PersonalInfo from '../PersonalInfo';
 import Agreement from '../Agreement';
 import CompleteInfo from '../CompleteInfo';
 import MedicalHistory from '../MedicalHistory';
+import styles from './index.module.less';
 
 const { Step } = Steps;
 
@@ -36,10 +37,10 @@ const RegisterForm = () => {
   ];
   return (
     <div className="container">
-      <Card style={{ marginTop: '-100px' }}>
-        <Steps current={current}>
-          {steps.map(item => (
-            <Step key={item.title} title={item.title} />
+      <Card className={styles.card}>
+        <Steps className={styles.steps} current={current}>
+          {steps.map((item, index) => (
+            <Step key={item.title} title={`Bước ${index + 1}`} description={item.title} />
           ))}
         </Steps>
       </Card>

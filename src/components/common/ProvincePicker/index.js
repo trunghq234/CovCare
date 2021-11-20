@@ -55,12 +55,12 @@ const ProvincePicker = props => {
   const optionDistrictRendered = renderOptions(districtInSelectedCity);
   return (
     <>
-      <Col span={12}>
+      <Col xs={24} sm={24} lg={8} xl={12}>
         <Form.Item label="Địa chỉ" name="detailsAddress" rules={[{ required: true }]}>
           <Input placeholder="Địa chỉ" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={6}>
+      <Col xs={24} sm={12} lg={8} xl={6}>
         <Form.Item label="Thành phố" name="city" rules={[{ required: true }]}>
           <Select
             showSearch
@@ -74,7 +74,7 @@ const ProvincePicker = props => {
           </Select>
         </Form.Item>
       </Col>
-      <Col span={6}>
+      <Col xs={24} sm={12} lg={8} xl={6}>
         <Form.Item label="Quận" name="district" rules={[{ required: true }]}>
           <Select
             showSearch

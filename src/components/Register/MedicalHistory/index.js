@@ -57,28 +57,30 @@ const MedicalHistory = ({ prev, next }) => {
   return (
     <Card>
       <Row gutter={[20, 20]} justify="center">
-        <Col span={12}>
+        <Col xs={6} span={12}>
           <strong>Tiền sử</strong>
         </Col>
-        <Col span={6}>
+        <Col xs={6} span={6}>
           <strong>Triệu chứng</strong>
         </Col>
-        <Col className={styles.centered} span={2}>
+        <Col xs={4} className={styles.centered} span={2}>
           <strong>Có</strong>
         </Col>
-        <Col className={styles.centered} span={2}>
+        <Col xs={4} className={styles.centered} span={2}>
           <strong>Không</strong>
         </Col>
-        <Col className={styles.centered} span={2}>
+        <Col xs={4} className={styles.centered} span={2}>
           <strong>Không rõ</strong>
         </Col>
         {symptoms.map((symptom, index) => {
           return (
             <Col span={24}>
               <Row gutter={[20, 0]}>
-                <Col span={12}>{symptom.name}</Col>
+                <Col xs={6} span={12}>
+                  {symptom.name}
+                </Col>
                 <Col span={6}>{symptom.extra ? <Input placeholder="Nếu có, ghi rõ" /> : ''}</Col>
-                <Col span={6}>
+                <Col xs={12} span={6}>
                   <Radio.Group className={styles.flex} defaultValue={2}>
                     <Row>
                       <Col style={{ textAlign: 'center' }} span={8}>

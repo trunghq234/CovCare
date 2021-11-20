@@ -28,7 +28,7 @@ const PersonalInfo = ({ next }) => {
     <Card>
       <Form form={form} layout="vertical" validateMessages={validateMessages}>
         <Row gutter={[20, 10]}>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item
               name="ordinalOfInjection"
               label="Đăng kí mũi tiêm thứ"
@@ -43,21 +43,20 @@ const PersonalInfo = ({ next }) => {
               </Select>
             </Form.Item>
           </Col>
-          <Col span={18} />
           <Col span={24}>
             <h4>1. Thông tin người đăng ký tiêm</h4>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="name" label="Họ và tên" rules={[{ required: true }]}>
               <Input placeholder="Họ và tên" />
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="dob" label="Ngày sinh" rules={[{ required: true }]}>
               <DatePicker placeholder="Ngày/Tháng/Năm" format={'DD/MM/YYYY'} />
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="gender" label="Giới tính" rules={[{ required: true }]}>
               <Select placeholder="Giới tính" allowClear showSearch>
                 <Option value="male">Nam</Option>
@@ -65,12 +64,12 @@ const PersonalInfo = ({ next }) => {
               </Select>
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="phoneNumber" label="Số điện thoại" rules={[{ required: true }]}>
               <InputNumber placeholder="Số điện thoại" controls={false} />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col xs={24} sm={12} lg={16} xl={12}>
             <Form.Item
               name="id"
               label="Số CMND/CCCD/Mã định danh công dân/HC"
@@ -78,28 +77,28 @@ const PersonalInfo = ({ next }) => {
               <InputNumber placeholder="Số CMND/CCCD/Mã định danh công dân/HC" controls={false} />
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="email" label="Email" rules={[{ type: 'email' }]}>
               <Input placeholder="Email" type="email" />
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="bhyt" label="Số thẻ BHYT">
               <Input placeholder="Số thẻ BHYT" />
             </Form.Item>
           </Col>
           <ProvincePicker city={city} form={form} onChange={setCity} />
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="ethnicity" label="Dân tộc" rules={[{ required: true }]}>
               <TypingSelect placeholder="Dân tộc" list={ethnicity} />
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="nationality" label="Quốc tịch" rules={[{ required: true }]}>
               <TypingSelect placeholder="Quốc tịch" defaultValue="Viet Nam" list={country} />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col xs={24} sm={24} lg={16} xl={12}>
             <Form.Item name="priority" label="Đối tượng ưu tiên" rules={[{ required: true }]}>
               <TypingSelect
                 placeholder="Đối tượng ưu tiên"
@@ -111,12 +110,12 @@ const PersonalInfo = ({ next }) => {
           <Col span={24}>
             <h4>2. Thông tin đăng ký tiêm chủng</h4>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="preferDate" label="Ngày muốn được tiêm (dự kiến)">
               <DatePicker placeholder="Ngày/Tháng/Năm" format={'DD/MM/YYYY'} />
             </Form.Item>
           </Col>
-          <Col span={6}>
+          <Col xs={24} sm={12} lg={8} xl={6}>
             <Form.Item name="session" label="Buổi tiêm">
               <Select placeholder="Buổi tiêm" showSearch>
                 <Option value="morning">Buổi sáng</Option>
@@ -130,17 +129,17 @@ const PersonalInfo = ({ next }) => {
               <Col span={24}>
                 <h4>3. Lịch sử tiêm mũi thứ 1</h4>
               </Col>
-              <Col span={6}>
+              <Col xs={24} sm={12} lg={8} xl={6}>
                 <Form.Item name="vaccine" label="Tên vaccine" rules={[{ required: true }]}>
                   <TypingSelect placeholder="Tên vaccine" defaultValue="Viet Nam" list={vaccine} />
                 </Form.Item>
               </Col>
-              <Col span={6}>
+              <Col xs={24} sm={12} lg={8} xl={6}>
                 <Form.Item name="vaccinatedDate" label="Ngày tiêm" rules={[{ required: true }]}>
                   <DatePicker placeholder="Ngày/Tháng/Năm" format={'DD/MM/YYYY'} />
                 </Form.Item>
               </Col>
-              <Col span={12}>
+              <Col xs={24} sm={24} lg={8} xl={12}>
                 <Form.Item name="vaccineLocation" label="Điểm tiêm" rules={[{ required: true }]}>
                   <TypingSelect
                     placeholder="Tên vaccine"
@@ -176,11 +175,10 @@ const PersonalInfo = ({ next }) => {
               block
               size="large"
               onClick={() => {
-                // form.validateFields().then(values => {
-                //   form.resetFields();
-                //   next();
-                // });
-                next();
+                form.validateFields().then(values => {
+                  form.resetFields();
+                  next();
+                });
               }}>
               Tiếp tục
             </Button>
