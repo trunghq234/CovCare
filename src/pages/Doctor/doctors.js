@@ -83,7 +83,7 @@ const doctors = [
   },
 ];
 
-const AppDoctor = () => {
+const Doctos = () => {
   return (
     <div className={styles.wrapper}>
       <Row gutter={[20, 20]}>
@@ -101,4 +101,4 @@ const AppDoctor = () => {
   );
 };
 
-export default AppDoctor;
+export default Doctos;
