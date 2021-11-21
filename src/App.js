@@ -2,7 +2,6 @@ import { Layout } from 'antd';
 import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
 import AppHome from 'pages/Home';
-import AppSymptons from 'pages/Symptons';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.less';
@@ -18,7 +17,6 @@ function App() {
         </Header>
         <Content>
           <AppHome />
-          <AppSymptons />
         </Content>
         <Footer>
           <AppFooter />
