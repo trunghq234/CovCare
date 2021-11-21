@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'antd';
-import { Search, Filter, Doctors } from 'components/Doctor';
+import { Search, Filter, DoctorList } from 'components/Doctor';
 import styles from './index.module.less';
 
 const doctors = [
@@ -83,7 +83,7 @@ const doctors = [
   },
 ];
 
-const Doctos = () => {
+const Doctors = () => {
   return (
     <div className={styles.wrapper}>
       <Row gutter={[20, 20]}>
@@ -94,11 +94,11 @@ const Doctos = () => {
           <Filter />
         </Col>
         <Col span={19}>
-          <Doctors doctors={doctors} />
+          <DoctorList doctors={doctors} />
         </Col>
       </Row>
     </div>
   );
 };
 
-export default Doctos;
+export default Doctors;

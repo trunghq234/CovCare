@@ -1,9 +1,9 @@
 import { Col, Pagination, Row } from 'antd';
 import React from 'react';
-import Doctor from './Doctor/doctor';
+import Doctor from './Doctor/Doctor';
 import styles from './index.module.less';
 
-const Doctors = ({ doctors }) => {
+const DoctorList = ({ doctors }) => {
   return (
     <div className={styles.wrapper}>
       <Row gutter={[0, 24]}>
@@ -20,4 +20,4 @@ const Doctors = ({ doctors }) => {
   );
 };
 
-export default Doctors;
+export default DoctorList;
