@@ -4,7 +4,7 @@ import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { AppHome, Doctors, DoctorDetail } from 'pages';
+import { AppHome, Doctors, DoctorDetail } from './pages/index';
 import './App.less';
 
 const { Header, Footer, Content } = Layout;
