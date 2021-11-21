@@ -1,11 +1,11 @@
 import { Col, Row } from 'antd';
 import React from 'react';
 import styles from './symptons.module.less';
-import symptomA from '../../assets/images/symptom-a.png';
-import symptomB from '../../assets/images/symptom-b.png';
-import symptomC from '../../assets/images/symptom-c.png';
+import symptomA from '../../../assets/images/symptom-a.png';
+import symptomB from '../../../assets/images/symptom-b.png';
+import symptomC from '../../../assets/images/symptom-c.png';
 
-const AppSymptons = () => {
+const Symptons = () => {
   return (
     <section className={styles['symptons']} id="symptons">
       <div className={styles['symptons__container']}>
@@ -94,4 +94,4 @@ const AppSymptons = () => {
   );
 };
 
-export default AppSymptons;
+export default Symptons;
