@@ -83,7 +83,7 @@ const doctors = [
   },
 ];
 
-const Doctors = () => {
+const DoctorPage = () => {
   return (
     <div className={styles.wrapper}>
       <Row gutter={[20, 20]}>
@@ -101,4 +101,4 @@ const Doctors = () => {
   );
 };
 
-export default Doctors;
+export default DoctorPage;

@@ -45,7 +45,7 @@ const descriptions = [
   },
 ];
 
-const DoctorDetail = () => {
+const DoctorDetailPage = () => {
   const { name, title, rate, position, experience } = doctor;
 
   return (
@@ -192,4 +192,4 @@ const DoctorDetail = () => {
   );
 };
 
-export default DoctorDetail;
+export default DoctorDetailPage;

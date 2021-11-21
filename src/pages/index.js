@@ -1,3 +1,3 @@
 export { default as AppHome } from './Home/index';
-export { default as Doctors } from './Doctor/Doctors';
-export { default as DoctorDetail } from './DoctorDetail/DoctorDetail';
+export { default as DoctorPage } from './Doctor/Doctor';
+export { default as DoctorDetailPage } from './DoctorDetail/DoctorDetail';

@@ -4,7 +4,7 @@ import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { AppHome, Doctors, DoctorDetail } from './pages/index';
+import { AppHome, DoctorPage, DoctorDetailPage } from './pages/index';
 import './App.less';
 
 const { Header, Footer, Content } = Layout;
@@ -22,10 +22,10 @@ function App() {
               <AppHome />
             </Route>
             <Route exact path="/doctors">
-              <Doctors />
+              <DoctorPage />
             </Route>
             <Route exact path="/doctor-detail">
-              <DoctorDetail />
+              <DoctorDetailPage />
             </Route>
           </Switch>
         </Content>
