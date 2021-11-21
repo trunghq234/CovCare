@@ -1,6 +1,6 @@
 import { Card, Col, Image, Rate, Row } from 'antd';
 import React from 'react';
-import Time from './Time/Time';
+import Time from './Time';
 import styles from './index.module.less';
 
 export default function Doctor({ doctor }) {

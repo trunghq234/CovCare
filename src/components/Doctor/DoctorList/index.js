@@ -1,6 +1,6 @@
 import { Col, Pagination, Row } from 'antd';
 import React from 'react';
-import Doctor from './Doctor/Doctor';
+import Doctor from './Doctor';
 import styles from './index.module.less';
 
 const DoctorList = ({ doctors }) => {
