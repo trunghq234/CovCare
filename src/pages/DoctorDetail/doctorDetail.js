@@ -108,9 +108,9 @@ const DoctorDetail = () => {
         <div>
           <Row>
             <Col span={24}>
-              <div style={{ display: 'flex' }}>
-                <p style={{ marginRight: '50px' }}>2011</p>
-                <p>
+              <div className={styles.experience}>
+                <p className={styles.year}>2011</p>
+                <p className={styles.desExperience}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -119,9 +119,9 @@ const DoctorDetail = () => {
               </div>
             </Col>
             <Col span={24}>
-              <div style={{ display: 'flex' }}>
-                <p style={{ marginRight: '50px' }}>2009</p>
-                <p>
+              <div className={styles.experience}>
+                <p className={styles.year}>2011</p>
+                <p className={styles.desExperience}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -130,9 +130,9 @@ const DoctorDetail = () => {
               </div>
             </Col>
             <Col span={24}>
-              <div style={{ display: 'flex' }}>
-                <p style={{ marginRight: '50px' }}>2007</p>
-                <p>
+              <div className={styles.experience}>
+                <p className={styles.year}>2011</p>
+                <p className={styles.desExperience}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -151,7 +151,7 @@ const DoctorDetail = () => {
           <Row gutter={[48, 8]}>
             <Col xl={12} lg={12} md={12} sm={24}>
               <Card title="Lorem ipsum" extra={<Rate defaultValue={4} />}>
-                <p>
+                <p className={styles.review}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -159,23 +159,17 @@ const DoctorDetail = () => {
                   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
                   officia deserunt mollit anim id est laborum.
                 </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    marginTop: '20px',
-                    marginBottom: '0',
-                  }}>
-                  <p>20/11/2021</p>
-                  <p>
+                <div className={styles.footerCard}>
+                  <p className={styles.desFooter}>20/11/2021</p>
+                  <p className={styles.desFooter}>
                     Lorem: <b>Authoration</b>
                   </p>
                 </div>
               </Card>
-            </Col>{' '}
+            </Col>
             <Col xl={12} lg={12} md={12} sm={24}>
               <Card title="Lorem ipsum" extra={<Rate defaultValue={4} />}>
-                <p>
+                <p className={styles.review}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -183,15 +177,9 @@ const DoctorDetail = () => {
                   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
                   officia deserunt mollit anim id est laborum.
                 </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    marginTop: '20px',
-                    marginBottom: '0',
-                  }}>
-                  <p>20/11/2021</p>
-                  <p>
+                <div className={styles.footerCard}>
+                  <p className={styles.desFooter}>20/11/2021</p>
+                  <p className={styles.desFooter}>
                     Lorem: <b>Authoration</b>
                   </p>
                 </div>
