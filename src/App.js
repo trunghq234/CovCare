@@ -4,7 +4,10 @@ import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { AppHome, DoctorPage, DoctorDetailPage } from './pages/index';
+// import { AppHome, DoctorPage, DoctorDetailPage } from './pages/index';
+import AppHome from 'pages/Home';
+import DoctorPage from 'pages/Doctor';
+import DoctorDetailPage from 'pages/DoctorDetail';
 import './App.less';
 
 const { Header, Footer, Content } = Layout;
