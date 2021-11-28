@@ -9,6 +9,9 @@ import AppHome from 'pages/Home';
 import DoctorPage from 'pages/Doctor';
 import DoctorDetailPage from 'pages/DoctorDetail';
 import './App.less';
+import Certificate from 'pages/Searching/Certificate';
+import RegistrationResult from 'pages/Searching/RegistrationResult';
+import Complaint from 'pages/Searching/Complaint';
 
 const { Header, Footer, Content } = Layout;
 
@@ -29,6 +32,15 @@ function App() {
             </Route>
             <Route exact path="/doctor-detail">
               <DoctorDetailPage />
+            </Route>
+            <Route exact path="/search">
+              <Certificate />
+            </Route>
+            <Route exact path="/lookup-injection-registration">
+              <RegistrationResult />
+            </Route>
+            <Route exact path="/search-complaint">
+              <Complaint />
             </Route>
           </Switch>
         </Content>

@@ -1,14 +1,73 @@
 import { SearchOutlined, SyncOutlined } from '@ant-design/icons';
 import { Breadcrumb, Button, Card, Col, DatePicker, Form, Input, Row, Select } from 'antd';
-import React from 'react';
+import { useForm } from 'antd/lib/form/Form';
+import Result from 'components/Result';
+import React, { useState } from 'react';
 import styles from './index.module.less';
-
 const { Option } = Select;
 
 const Certificate = props => {
+  const [form] = Form.useForm();
   const dateFormat = 'DD/MM/YYYY';
-  const handleSubmit = () => {};
-  const handleReset = () => {};
+  const handleSubmit = () => {
+    setVisible(1);
+  };
+  const handleReset = () => {
+    form.resetFields();
+    setVisible(0);
+  };
+  const [visible, setVisible] = useState(0);
+  const columns = [
+    {
+      title: 'Mũi số',
+      dataIndex: 'no',
+      key: 'no',
+      align: 'center',
+    },
+    {
+      title: 'Thời gian tiêm',
+      dataIndex: 'datetime',
+      key: 'datetime',
+      align: 'center',
+    },
+    {
+      title: 'Tên vắc xin',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+    },
+    {
+      title: 'Số lô',
+      dataIndex: 'lot',
+      key: 'lot',
+      align: 'center',
+    },
+    {
+      title: 'Nơi niêm',
+      dataIndex: 'location',
+      key: 'location',
+      align: 'center',
+    },
+  ];
+  const dataSource = [
+    {
+      key: '1',
+      no: '1',
+      datetime: '20/10/2021 - 08:39',
+      name: 'COVID-19 Vaccine (Vero Cell), Inactived (Sinopharm)',
+      lot: 'B2021092999',
+      location: 'TYT Thị Trấn Ea KNốp',
+    },
+    {
+      key: '1',
+      no: '2',
+      datetime: '25/11/2021 - 08:51',
+      name: 'COVID-19 Vaccine (Vero Cell), Inactived (Sinopharm)',
+      lot: 'B2021103417	',
+      location: 'TYT Thị Trấn Ea KNốp',
+    },
+  ];
+
   return (
     <div>
       <div className={styles.breadcrumb} s>
@@ -25,7 +84,7 @@ const Certificate = props => {
 
       <div className={styles.contain}>
         <Card className={styles.card}>
-          <Form layout="vertical">
+          <Form layout="vertical" form={form}>
             <Row gutter={20}>
               <Col xs={24} sm={24} md={4} lg={4} xl={4}>
                 <Form.Item
@@ -133,6 +192,7 @@ const Certificate = props => {
             </div>
           </Form>
         </Card>
+        <Result visible={visible}></Result>
       </div>
     </div>
   );
