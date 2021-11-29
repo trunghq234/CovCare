@@ -1,11 +1,112 @@
-import { SearchOutlined, SyncOutlined } from '@ant-design/icons';
-import { Breadcrumb, Button, Card, Col, Form, Input, Row } from 'antd';
-import React from 'react';
+import { SearchOutlined, SyncOutlined, EditOutlined, InfoCircleFilled } from '@ant-design/icons';
+import { Breadcrumb, Button, Card, Col, Form, Input, Row, Tag, Table, Tooltip } from 'antd';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './index.module.less';
 
 const RegistrationResult = props => {
-  const handleSubmit = () => {};
-  const handleReset = () => {};
+  const [form] = Form.useForm();
+  const [visible, setVisible] = useState(0);
+  const handleSubmit = () => {
+    const { idNumber, phoneNumber } = form.getFieldsValue();
+    if (idNumber === undefined || phoneNumber === undefined) {
+      return;
+    }
+    setVisible(1);
+  };
+  const handleReset = () => {
+    form.resetFields();
+    setVisible(0);
+  };
+  const columns = [
+    {
+      title: 'STT',
+      dataIndex: 'no',
+      key: 'no',
+      align: 'center',
+    },
+    {
+      title: 'Họ và tên',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+    },
+    {
+      title: 'Ngày sinh',
+      dataIndex: 'dob',
+      key: 'dob',
+      align: 'center',
+    },
+    {
+      title: 'Giới tính',
+      dataIndex: 'gender',
+      key: 'gender',
+      align: 'center',
+    },
+    {
+      title: 'Số điện thoại',
+      dataIndex: 'phoneNumber',
+      key: 'phoneNumber',
+      align: 'center',
+    },
+    {
+      title: 'Số CMND/CCCD/HC',
+      dataIndex: 'idNumber',
+      key: 'idNumber',
+      align: 'center',
+    },
+    {
+      title: 'Trạng thái',
+      dataIndex: 'status',
+      key: 'status',
+      align: 'center',
+      render: status => <Tag color="blue">{status}</Tag>,
+    },
+    {
+      title: 'Thao tác',
+      dataIndex: 'action',
+      align: 'center',
+      width: '10%',
+      render: no => {
+        return (
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+            <Tooltip title="Chỉnh sửa">
+              <Button type="primary" icon={<EditOutlined />}>
+                {' '}
+              </Button>
+            </Tooltip>
+            <Tooltip title="Xem chi tiết">
+              <Button type="primary" ghost icon={<InfoCircleFilled />}>
+                {' '}
+              </Button>
+            </Tooltip>
+          </div>
+        );
+      },
+    },
+  ];
+  const dataSource = [
+    {
+      key: '1',
+      no: '1',
+      gender: 'Nam',
+      name: 'Đỗ Văn Bảo',
+      dob: '10/01/2001',
+      phoneNumber: '0866073147',
+      idNumber: '241819911',
+      status: 'Đăng ký nhanh',
+    },
+    {
+      key: '2',
+      no: '2',
+      gender: 'Nam',
+      name: 'Đỗ Văn Bảo',
+      dob: '10/01/2001',
+      phoneNumber: '0866073147',
+      idNumber: '241819911',
+      status: 'Đăng ký nhanh',
+    },
+  ];
   return (
     <div>
       <div className={styles.breadcrumb} s>
@@ -22,10 +123,15 @@ const RegistrationResult = props => {
 
       <div className={styles.contain}>
         <Card className={styles.card}>
-          <Form layout="vertical">
+          <Form layout="vertical" form={form}>
             <Row gutter={20}>
               <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                 <Form.Item
+                  onKeyPress={event => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
                   label="Số CMND/CCCD/Mã định danh công dân/Hộ chiếu"
                   name="idNumber"
                   rules={[
@@ -39,9 +145,19 @@ const RegistrationResult = props => {
               </Col>
               <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                 <Form.Item
+                  onKeyPress={event => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
                   label="Số điện thoại"
                   name="phoneNumber"
-                  rules={[{ required: true, message: 'Số điện thoại' }]}>
+                  rules={[
+                    {
+                      required: true,
+                      message: 'Số điện thoại không được bỏ trống',
+                    },
+                  ]}>
                   <Input size="middle" placeholder="Số điện thoại không được bỏ trống" />
                 </Form.Item>
               </Col>
@@ -76,6 +192,14 @@ const RegistrationResult = props => {
             </div>
           </Form>
         </Card>
+        <div className={styles.result} style={{ opacity: visible }}>
+          <h3>Kết quả tra cứu (2)</h3>
+          <Table
+            dataSource={dataSource}
+            columns={columns}
+            pagination={false}
+            scroll={{ x: '1300' }}></Table>
+        </div>
       </div>
     </div>
   );

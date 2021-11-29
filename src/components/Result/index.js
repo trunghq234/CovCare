@@ -5,7 +5,6 @@ import card from '../../assets/svg/card.svg';
 import man from '../../assets/svg/man.svg';
 import styles from './index.module.less';
 const Result = props => {
-  const visible = props.visible;
   const columns = [
     {
       title: 'Mũi số',
@@ -48,7 +47,7 @@ const Result = props => {
       location: 'TYT Thị Trấn Ea KNốp',
     },
     {
-      key: '1',
+      key: '2',
       no: '2',
       datetime: '25/11/2021 - 08:51',
       name: 'COVID-19 Vaccine (Vero Cell), Inactived (Sinopharm)',
@@ -98,7 +97,11 @@ const Result = props => {
                 Đã được tiêm phòng vắc xin phòng bệnh Covid-19
               </p>
             </Col>
-            <Table dataSource={dataSource} columns={columns} pagination={false}></Table>
+            <Table
+              dataSource={dataSource}
+              columns={columns}
+              pagination={false}
+              scroll={{ x: 1000 }}></Table>
           </Row>
         </Col>
         <Col className={styles.certificate} xs={24} sm={24} md={6}>
