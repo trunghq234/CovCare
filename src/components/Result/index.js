@@ -56,7 +56,7 @@ const Result = props => {
     },
   ];
   return (
-    <div style={{ opacity: props.visible }}>
+    <div style={{ display: props.visible }}>
       <Row className={styles.result}>
         <Col xs={24} sm={24} md={18}>
           <div className={styles.header}>

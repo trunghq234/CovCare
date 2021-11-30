@@ -6,17 +6,17 @@ import styles from './index.module.less';
 
 const RegistrationResult = props => {
   const [form] = Form.useForm();
-  const [visible, setVisible] = useState(0);
+  const [visible, setVisible] = useState('none');
   const handleSubmit = () => {
     const { idNumber, phoneNumber } = form.getFieldsValue();
     if (idNumber === undefined || phoneNumber === undefined) {
       return;
     }
-    setVisible(1);
+    setVisible('block');
   };
   const handleReset = () => {
     form.resetFields();
-    setVisible(0);
+    setVisible('none');
   };
   const columns = [
     {
@@ -71,14 +71,10 @@ const RegistrationResult = props => {
         return (
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
             <Tooltip title="Chỉnh sửa">
-              <Button type="primary" icon={<EditOutlined />}>
-                {' '}
-              </Button>
+              <Button type="primary" icon={<EditOutlined />}></Button>
             </Tooltip>
             <Tooltip title="Xem chi tiết">
-              <Button type="primary" ghost icon={<InfoCircleFilled />}>
-                {' '}
-              </Button>
+              <Button type="link" icon={<InfoCircleFilled />}></Button>
             </Tooltip>
           </div>
         );
@@ -123,7 +119,7 @@ const RegistrationResult = props => {
 
       <div className={styles.contain}>
         <Card className={styles.card}>
-          <Form layout="vertical" form={form}>
+          <Form layout="vertical" form={form} onFinish={handleSubmit}>
             <Row gutter={20}>
               <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                 <Form.Item
@@ -183,7 +179,6 @@ const RegistrationResult = props => {
               </Button>
               <Button
                 className={styles.btn}
-                onClick={handleSubmit}
                 type="primary"
                 htmlType="submit"
                 icon={<SearchOutlined />}>
@@ -192,7 +187,7 @@ const RegistrationResult = props => {
             </div>
           </Form>
         </Card>
-        <div className={styles.result} style={{ opacity: visible }}>
+        <div className={styles.result} style={{ display: visible }}>
           <h3>Kết quả tra cứu (2)</h3>
           <Table
             dataSource={dataSource}

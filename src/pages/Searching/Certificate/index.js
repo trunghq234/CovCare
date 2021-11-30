@@ -9,13 +9,13 @@ const Certificate = props => {
   const [form] = Form.useForm();
   const dateFormat = 'DD/MM/YYYY';
   const handleSubmit = () => {
-    setVisible(1);
+    setVisible('block');
   };
   const handleReset = () => {
     form.resetFields();
-    setVisible(0);
+    setVisible('none');
   };
-  const [visible, setVisible] = useState(0);
+  const [visible, setVisible] = useState('none');
   const columns = [
     {
       title: 'Mũi số',
@@ -83,7 +83,7 @@ const Certificate = props => {
 
       <div className={styles.contain}>
         <Card className={styles.card}>
-          <Form layout="vertical" form={form}>
+          <Form layout="vertical" form={form} onFinish={handleSubmit}>
             <Row gutter={20}>
               <Col xs={24} sm={24} md={4} lg={4} xl={4}>
                 <Form.Item
@@ -182,7 +182,6 @@ const Certificate = props => {
               </Button>
               <Button
                 className={styles.btn}
-                onClick={handleSubmit}
                 type="primary"
                 htmlType="submit"
                 icon={<SearchOutlined />}>
