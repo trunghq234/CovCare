@@ -9,6 +9,7 @@ import AppHome from 'pages/Home';
 import DoctorPage from 'pages/Doctor';
 import DoctorDetailPage from 'pages/DoctorDetail';
 import './App.less';
+import Volunteer from 'pages/Volunteer';
 
 const { Header, Footer, Content } = Layout;
 
@@ -22,7 +23,8 @@ function App() {
         <Content className="app__content">
           <Switch>
             <Route exact path="/">
-              <AppHome />
+              <Volunteer />
+              {/* <AppHome /> */}
             </Route>
             <Route exact path="/doctors">
               <DoctorPage />
