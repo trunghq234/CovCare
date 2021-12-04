@@ -1,10 +1,14 @@
-import React from 'react';
-import './App.less';
 import { Layout } from 'antd';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AppHome from 'pages/Home';
+// import AppHome from 'pages/Home';
 import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import { AppHome, DoctorPage, DoctorDetailPage } from './pages/index';
+import AppHome from 'pages/Home';
+import DoctorPage from 'pages/Doctor';
+import DoctorDetailPage from 'pages/DoctorDetail';
+import './App.less';
 
 const { Header, Footer, Content } = Layout;
 
@@ -15,10 +19,16 @@ function App() {
         <Header>
           <AppHeader />
         </Header>
-        <Content>
+        <Content className="app__content">
           <Switch>
             <Route exact path="/">
               <AppHome />
+            </Route>
+            <Route exact path="/doctors">
+              <DoctorPage />
+            </Route>
+            <Route exact path="/doctor-detail">
+              <DoctorDetailPage />
             </Route>
           </Switch>
         </Content>

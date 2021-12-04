@@ -41,6 +41,9 @@ const AppHeader = () => {
               <Menu.Item key="home">
                 <NavLink to="/">Trang chủ</NavLink>
               </Menu.Item>
+              <Menu.Item key="symptons">
+                <NavLink to="/symptons">Symptons</NavLink>
+              </Menu.Item>
               <Menu.Item key="news">
                 <NavLink to="/news">Tin tức</NavLink>
               </Menu.Item>
