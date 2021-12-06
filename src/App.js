@@ -9,6 +9,8 @@ import AppHome from 'pages/Home';
 import DoctorPage from 'pages/Doctor';
 import DoctorDetailPage from 'pages/DoctorDetail';
 import './App.less';
+import HealthDeclaration from 'components/HealthDeclaration';
+import SupportRequest from 'pages/SupportRequest';
 
 const { Header, Footer, Content } = Layout;
 
@@ -29,6 +31,12 @@ function App() {
             </Route>
             <Route exact path="/doctor-detail">
               <DoctorDetailPage />
+            </Route>
+            <Route exact path="/health-declaration">
+              <HealthDeclaration />
+            </Route>
+            <Route exact path="/help">
+              <SupportRequest />
             </Route>
           </Switch>
         </Content>
