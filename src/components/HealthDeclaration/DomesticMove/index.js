@@ -1,25 +1,13 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import {
-  Button,
-  Col,
-  DatePicker,
-  Form,
-  Input,
-  Row,
-  Select,
-  Checkbox,
-  Image,
-  notification,
-  message,
-} from 'antd';
+import { Button, Checkbox, Col, DatePicker, Form, Image, Input, message, Row, Select } from 'antd';
+import captcha from 'assets/images/captcha.png';
+import LocationVN from 'components/HealthDeclaration/ProvincePickerWithWard/LocationVN.json';
+import moment from 'moment';
+import React, { useEffect, useMemo, useState } from 'react';
+import { numberValidator } from 'utils/validator';
 import BasicInfo from '../BasicInfo';
 import ContactInVietnam from '../ContactInVietnam';
-import StatusWithin14Days from '../StatusWithin14Days';
 import styles from '../index.module.less';
-import LocationVN from 'components/common/ProvincePicker/LocationVN.json';
-import captcha from 'assets/images/captcha.png';
-import moment from 'moment';
-import { numberValidator } from 'utils/validator';
+import StatusWithin14Days from '../StatusWithin14Days';
 
 const { Option } = Select;
 

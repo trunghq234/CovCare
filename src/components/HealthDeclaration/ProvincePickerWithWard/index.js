@@ -4,7 +4,7 @@ import LocationVN from './LocationVN.json';
 
 const { Option } = Select;
 
-const ProvincePicker = ({ city, form }) => {
+const ProvincePickerWithWard = ({ city, form }) => {
   let cityOptions = [];
   const [districtOptions, setDistrictOptions] = useState([]);
   const [wardOptions, setWardOptions] = useState([]);
@@ -15,29 +15,6 @@ const ProvincePicker = ({ city, form }) => {
   for (let item of Object.values(LocationVN)) {
     cityOptions.push(item);
   }
-
-  // useEffect(() => {
-  //   const tmp = LocationVN.map(e => {
-  //     return {
-  //       name: e.name,
-  //       districts: e.districts.map(e1 => {
-  //         return {
-  //           name: e1.name,
-  //           wards: e1.wards.map(e2 => {
-  //             return {
-  //               name: e2.name,
-  //             };
-  //           }),
-  //         };
-  //       }),
-  //     };
-  //   });
-  //   console.log(JSON.stringify(tmp));
-  // }, []);
-  // //Set city when open form edit
-  // useEffect(() => {
-  //   setSelectedCity(city);
-  // }, [city]);
 
   //set district when Select city
   useEffect(() => {
@@ -135,4 +112,4 @@ const ProvincePicker = ({ city, form }) => {
   );
 };
 
-export default ProvincePicker;
+export default ProvincePickerWithWard;
