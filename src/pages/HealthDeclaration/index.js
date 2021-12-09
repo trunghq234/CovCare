@@ -22,8 +22,8 @@ const HealthDeclaration = () => {
           </NavLink>
         </div>
       </Row>
-      <Row>
-        <Col span={6}>
+      <Row gutter={40}>
+        <Col span={12}>
           <Card
             className={styles.card}
             hoverable="true"
@@ -32,7 +32,7 @@ const HealthDeclaration = () => {
             <div className={styles['card-content']}>Di chuyển nội địa</div>
           </Card>
         </Col>
-        <Col span={6} offset={3}>
+        <Col span={12}>
           <Card
             className={styles.card}
             hoverable="true"
