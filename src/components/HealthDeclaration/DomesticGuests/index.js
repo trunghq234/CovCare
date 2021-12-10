@@ -3,7 +3,7 @@ import { Button, Form, Checkbox, Input, Image, Row, Col, notification } from 'an
 import BasicInfo from '../BasicInfo';
 import ContactInVietnam from '../ContactInVietnam';
 import StatusWithin14Days from '../StatusWithin14Days';
-import styles from '../index.module.less';
+import styles from './index.module.less';
 import captcha from 'assets/images/captcha.png';
 
 const DomesticGuests = () => {

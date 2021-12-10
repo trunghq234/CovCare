@@ -6,7 +6,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { numberValidator } from 'utils/validator';
 import BasicInfo from '../BasicInfo';
 import ContactInVietnam from '../ContactInVietnam';
-import styles from '../index.module.less';
+import styles from './index.module.less';
 import StatusWithin14Days from '../StatusWithin14Days';
 
 const { Option } = Select;

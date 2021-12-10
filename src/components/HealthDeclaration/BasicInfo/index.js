@@ -1,5 +1,7 @@
-import { Row, Form, Input, Col, Select } from 'antd';
+import { Row, Form, Input, Col, Select, DatePicker } from 'antd';
+import TypingSelect from 'components/common/TypingSelect';
 import React from 'react';
+import country from 'constants/Country.json';
 import { numberValidator } from 'utils/validator';
 const { Option } = Select;
 
@@ -30,7 +32,7 @@ const BasicInfo = () => {
             { required: true, message: 'Bạn chưa nhập họ tên.' },
             { validator: numberValidator },
           ]}>
-          <Input style={{ width: '100%' }} />
+          <DatePicker picker="year" placeholder="Chọn/nhập năm sinh" />
         </Form.Item>
       </Col>
       <Col span={6}>
@@ -47,7 +49,7 @@ const BasicInfo = () => {
       </Col>
       <Col span={9}>
         <Form.Item label="Quốc tịch" name="nationality" rules={[{ required: true }]}>
-          <Input style={{ width: '100%' }} />
+          <TypingSelect placeholder="Chọn" defaultValue="Viet Nam" list={country} />
         </Form.Item>
       </Col>
     </Row>

@@ -1,7 +1,7 @@
 import { Row, Form, Col, Input } from 'antd';
 import React from 'react';
 import { numberValidator } from 'utils/validator';
-import styles from '../index.module.less';
+import styles from './index.module.less';
 import ProvincePickerWithWard from '../ProvincePickerWithWard';
 
 const ContactInVietnam = ({ form }) => {
