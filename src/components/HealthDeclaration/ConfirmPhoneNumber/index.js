@@ -16,6 +16,11 @@ const ConfirmPhoneNumber = props => {
       message.error('Mã xác thực không chính xác.');
     }
   };
+
+  const resendOTP = () => {
+    message.info('Mã xác thực đã được gửi lại');
+  };
+
   return (
     <div className={styles['container-confirm']}>
       <Form onFinish={handleSubmit} form={form}>
@@ -44,12 +49,14 @@ const ConfirmPhoneNumber = props => {
         )}
         <Form.Item style={{ textAlign: 'center' }}>
           <Button type="primary" htmlType="submit" className={styles['btn-confirm']}>
-            Nhận mã OTP
+            {!sendOTP ? 'Nhận mã OTP' : 'Tiếp tục'}
           </Button>
         </Form.Item>
-        <Button type="text" className={styles.resend}>
-          Gửi lại mã
-        </Button>
+        {sendOTP && (
+          <Button type="text" className={styles.resend} onClick={resendOTP}>
+            Gửi lại mã
+          </Button>
+        )}
       </Form>
     </div>
   );

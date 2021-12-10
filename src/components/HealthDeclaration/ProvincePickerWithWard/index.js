@@ -50,7 +50,7 @@ const ProvincePickerWithWard = ({ city, form }) => {
   const optionWardRendered = renderOptions(wardOptions);
   return (
     <Row gutter={20}>
-      <Col span={8}>
+      <Col xs={24} md={8}>
         <Form.Item
           label="Tỉnh/Thành phố"
           name="city"
@@ -67,7 +67,7 @@ const ProvincePickerWithWard = ({ city, form }) => {
           </Select>
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} md={8}>
         <Form.Item
           label="Huyện/Quận"
           name="district"
@@ -84,7 +84,7 @@ const ProvincePickerWithWard = ({ city, form }) => {
           </Select>
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} md={8}>
         <Form.Item
           label="Phường/xã"
           name="ward"

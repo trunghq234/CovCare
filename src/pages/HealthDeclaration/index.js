@@ -11,17 +11,24 @@ const HealthDeclaration = () => {
   const [isConfirm, setIsConfirm] = useState(false);
   return (
     <div className="container">
-      <Row>
-        <div className={styles['title-container']}>
-          <div className={styles.title}>Khai báo y tế</div>
-          <div className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh ultrices quam in eu
-            lobortis nullam consectetur. Purus sagittis orci eu faucibus.
-          </div>
+      <Row className={styles['title-container']}>
+        <Col span={24} className={styles.title}>
+          Khai báo y tế
+        </Col>
+        <Col
+          xs={24}
+          sm={{ span: 18, offset: 3 }}
+          lg={{ span: 12, offset: 6 }}
+          xl={{ span: 10, offset: 7 }}
+          className={styles.description}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh ultrices quam in eu lobortis
+          nullam consectetur. Purus sagittis orci eu faucibus.
+        </Col>
+        <Col span={24}>
           <NavLink className={styles.link} to="/">
             Tìm hiểu về COVID 19
           </NavLink>
-        </div>
+        </Col>
       </Row>
       <Row gutter={40}>
         <Col span={12}>

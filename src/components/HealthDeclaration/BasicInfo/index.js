@@ -24,7 +24,7 @@ const BasicInfo = () => {
           <Input style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={9}>
+      <Col span={8}>
         <Form.Item
           label="Năm sinh"
           name="dob"
@@ -32,10 +32,10 @@ const BasicInfo = () => {
             { required: true, message: 'Bạn chưa nhập họ tên.' },
             { validator: numberValidator },
           ]}>
-          <DatePicker picker="year" placeholder="Chọn/nhập năm sinh" />
+          <DatePicker picker="year" placeholder="Chọn/nhập" />
         </Form.Item>
       </Col>
-      <Col span={6}>
+      <Col span={8}>
         <Form.Item
           label="Gender"
           name="gender"
@@ -47,7 +47,7 @@ const BasicInfo = () => {
           </Select>
         </Form.Item>
       </Col>
-      <Col span={9}>
+      <Col span={8}>
         <Form.Item label="Quốc tịch" name="nationality" rules={[{ required: true }]}>
           <TypingSelect placeholder="Chọn" defaultValue="Viet Nam" list={country} />
         </Form.Item>

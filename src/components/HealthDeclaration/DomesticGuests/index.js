@@ -13,6 +13,7 @@ const DomesticGuests = () => {
       notification.success({
         message: 'Bạn đã gửi thành công!',
       });
+      form.resetFields();
     } else {
       notification.warning({
         message: 'Mã bảo mật không đúng',
@@ -29,7 +30,7 @@ const DomesticGuests = () => {
       <ContactInVietnam form={form} />
       <StatusWithin14Days />
       <Row gutter={20}>
-        <Col span={5}>
+        <Col xs={12} md={10} lg={5}>
           <Form.Item
             label="Mã bảo mật"
             name="captcha"
@@ -37,7 +38,7 @@ const DomesticGuests = () => {
             <Input placeholder="Nhập mã bảo mật tại đây" />
           </Form.Item>
         </Col>
-        <Col span={5}>
+        <Col xs={8} md={6}>
           <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
             <Image src={captcha} width={100} height={34} />
           </div>

@@ -10,7 +10,7 @@ const ContactInVietnam = ({ form }) => {
       <Row className={styles['title-contact']}>Địa chỉ liên lạc tại Việt Nam</Row>
       <ProvincePickerWithWard form={form} />
       <Row gutter={40}>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Điện thoại"
             name="phoneNumber"
@@ -21,7 +21,7 @@ const ContactInVietnam = ({ form }) => {
             <Input placeholder="Nhập số điện thoại" />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Email"
             name="email"

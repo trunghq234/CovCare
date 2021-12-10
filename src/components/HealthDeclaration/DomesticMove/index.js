@@ -31,6 +31,7 @@ const DomesticMove = () => {
     console.log(captcha);
     if (captcha === 'W68HP') {
       message.success('Bạn đã gửi thành công!');
+      form.resetFields();
     } else {
       message.error('Mã bảo mật không đúng');
     }
@@ -137,15 +138,15 @@ const DomesticMove = () => {
       <ContactInVietnam form={form} />
       <StatusWithin14Days />
       <Row gutter={20}>
-        <Col span={5}>
+        <Col xs={12} md={10} lg={5}>
           <Form.Item
             label="Mã bảo mật"
             name="captcha"
             rules={[{ required: true, message: 'Bạn chưa nhập mã bảo mật' }]}>
-            <Input placeholder="Nhập mã bảo mật tại đây" />
+            <Input placeholder="Nhập mã bảo mật" />
           </Form.Item>
         </Col>
-        <Col span={5}>
+        <Col xs={8} md={6}>
           <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
             <Image src={captcha} width={100} height={34} />
           </div>
