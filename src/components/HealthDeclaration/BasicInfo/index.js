@@ -7,7 +7,7 @@ const { Option } = Select;
 
 const BasicInfo = () => {
   return (
-    <Row gutter={20}>
+    <Row gutter={40}>
       <Col xs={24} md={12}>
         <Form.Item
           label="Họ tên"
@@ -37,7 +37,7 @@ const BasicInfo = () => {
       </Col>
       <Col xs={24} md={8}>
         <Form.Item
-          label="Gender"
+          label="Giới tính"
           name="gender"
           rules={[{ required: true, message: 'Bạn chưa chọn giới tính.' }]}>
           <Select placeholder="Chọn">
@@ -48,7 +48,12 @@ const BasicInfo = () => {
         </Form.Item>
       </Col>
       <Col xs={24} md={8}>
-        <Form.Item label="Quốc tịch" name="nationality" rules={[{ required: true }]}>
+        <Form.Item
+          label="Quốc tịch"
+          valuePropName="option"
+          name="nationality"
+          initialValue="Viet Nam"
+          rules={[{ required: true, message: 'Bạn chưa chọn quốc tịch' }]}>
           <TypingSelect placeholder="Chọn" defaultValue="Viet Nam" list={country} />
         </Form.Item>
       </Col>

@@ -49,13 +49,18 @@ const DomesticGuests = () => {
         lý của Ban chỉ đạo quốc gia về Phòng chống dịch Covid-19. Khi bạn nhấn nút "Gửi" là bạn đã
         hiểu và đồng ý.
       </div>
-      <Form.Item>
-        <div style={{ display: 'flex' }}>
-          <Button type="primary" htmlType="submit" className={styles['btn-submit']}>
+      <Col
+        xs={{ span: 14, offset: 5 }}
+        sm={{ span: 8, offset: 8 }}
+        md={{ span: 8, offset: 8 }}
+        lg={{ span: 6, offset: 9 }}
+        xl={{ span: 4, offset: 10 }}>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" block className={styles['btn-submit']}>
             Gửi tờ khai
           </Button>
-        </div>
-      </Form.Item>
+        </Form.Item>
+      </Col>
     </Form>
   );
 };
