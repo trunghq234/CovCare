@@ -1,12 +1,12 @@
-import VolunteerForm from 'components/Volunteer/VolunteerForm';
+import Banner from 'components/Volunteer/Banner';
+import VolunteerForm from 'components/Volunteer/VolunteerForm/VolunteerForm';
 import React from 'react';
 import styles from './index.module.less';
 
 export default function VolunteerPage() {
   return (
     <div className={styles.wrapper}>
-      <h3>Form đăng ký tình nguyện viên mùa Covid</h3>
-
+      <Banner />
       <VolunteerForm />
     </div>
   );
