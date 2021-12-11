@@ -50,6 +50,12 @@ const AppHeader = () => {
               <Menu.Item key="support">
                 <NavLink to="/support">Hỗ trợ</NavLink>
               </Menu.Item>
+              <Menu.Item key="volunteer">
+                <NavLink to="/volunteer">Tình nguyện viên</NavLink>
+              </Menu.Item>
+              <Menu.Item key="store">
+                <NavLink to="/store">Đăng ký cửa hàng</NavLink>
+              </Menu.Item>
             </Menu>
           </Drawer>
         </div>
@@ -68,6 +74,12 @@ const AppHeader = () => {
             </Menu.Item>
             <Menu.Item key="support">
               <NavLink to="/support">Hỗ trợ</NavLink>
+            </Menu.Item>
+            <Menu.Item key="volunteer">
+              <NavLink to="/volunteer">Tình nguyện viên</NavLink>
+            </Menu.Item>
+            <Menu.Item key="store">
+              <NavLink to="/store">Đăng ký cửa hàng</NavLink>
             </Menu.Item>
           </Menu>
         </div>

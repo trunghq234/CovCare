@@ -1,0 +1,30 @@
+{
+  "HOCHIMINH": {
+    "name": "Thành phố Hồ Chí Minh",
+    "districts": {
+      "QUAN1": "Quận 1",
+      "QUAN3": "Quận 3",
+      "QUAN4": "Quận 4",
+      "QUAN5": "Quận 5",
+      "QUAN6": "Quận 6",
+      "QUAN7": "Quận 7",
+      "QUAN8": "Quận 8",
+      "QUAN10": "Quận 10",
+      "QUAN11": "Quận 11",
+      "QUAN12": "Quận 12",
+      "QUANGOVAP": "Quận Gò Vấp",
+      "QUANTANBINH": "Quận Tân Bình",
+      "QUANTANPHU": "Quận Tân Phú",
+      "QUANBINHTHANH": "Quận Bình Thạnh",
+      "QUANPHUNHUAN": "Quận Phú Nhuận",
+      "TPTHUDUC": "Thành phố Thủ Đức",
+      "QUANBINHTAN": "Quận Bình Tân",
+      "HUYENBINHCHANH": "Huyện Bình Chánh",
+      "HUYENCUCHI": "Huyện Củ Chi",
+      "HUYENHOCMON": "Huyện Hóc Môn",
+      "HUYENNHABE": "Huyện Nhà Bè",
+      "HUYENCANGIO": "Huyện Cần Giờ",
+      "HOCHIMINHKHAC": "Quận/Huyện khác"
+    }
+  }
+}

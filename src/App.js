@@ -1,15 +1,14 @@
 import { Layout } from 'antd';
-// import AppHome from 'pages/Home';
 import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import { AppHome, DoctorPage, DoctorDetailPage } from './pages/index';
 import AppHome from 'pages/Home';
 import DoctorPage from 'pages/Doctor';
 import DoctorDetailPage from 'pages/DoctorDetail';
 import './App.less';
-import Volunteer from 'pages/Volunteer';
+import VolunteerPage from 'pages/Volunteer';
+import StorePage from 'pages/Store';
 
 const { Header, Footer, Content } = Layout;
 
@@ -23,14 +22,19 @@ function App() {
         <Content className="app__content">
           <Switch>
             <Route exact path="/">
-              <Volunteer />
-              {/* <AppHome /> */}
+              <AppHome />
             </Route>
             <Route exact path="/doctors">
               <DoctorPage />
             </Route>
             <Route exact path="/doctor-detail">
               <DoctorDetailPage />
+            </Route>
+            <Route exact path="/volunteer">
+              <VolunteerPage />
+            </Route>
+            <Route exact path="/store">
+              <StorePage />
             </Route>
           </Switch>
         </Content>

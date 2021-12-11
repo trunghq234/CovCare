@@ -8,7 +8,7 @@ export default function VolunteerForm() {
   return (
     <div>
       <Card>
-        <Form layout="vertical">
+        <Form layout="vertical" requiredMark={true}>
           <Row gutter={[48, 0]}>
             <Col xl={10} lg={12} md={12} sm={24} xs={24}>
               <Form.Item name="fullName" label="Họ tên" rules={[{ required: true }]}>
@@ -56,7 +56,8 @@ export default function VolunteerForm() {
                   <Option value="1">0 - 1 năm</Option>
                   <Option value="2">1 - 2 năm</Option>
                   <Option value="3">2 - 3 năm</Option>
-                  <Option value="3">3 - 4 năm</Option>
+                  <Option value="4">3 - 4 năm</Option>
+                  <Option value="5">4+ năm</Option>
                 </Select>
               </Form.Item>
             </Col>
@@ -72,6 +73,7 @@ export default function VolunteerForm() {
             </Col>
             <Col span={24}>
               <Form.Item
+                name=""
                 label="Tôi ý thức được tính chất và tầm quan trọng của những thông tin này và cam kết: "
                 rules={[{ required: true }]}>
                 <Row gutter={[0, 16]}>
