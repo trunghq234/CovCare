@@ -11,6 +11,9 @@ import AppHome from 'pages/Home';
 import DoctorPage from 'pages/Doctor';
 import DoctorDetailPage from 'pages/DoctorDetail';
 import './App.less';
+import Certificate from 'pages/Searching/Certificate';
+import RegistrationResult from 'pages/Searching/RegistrationResult';
+import Complaint from 'pages/Searching/Complaint';
 
 const { Header, Footer, Content } = Layout;
 
@@ -34,6 +37,18 @@ const routes = [
   {
     path: '/health-declaration',
     page: <HealthDeclaration />,
+  },
+  {
+    path: '/search',
+    page: <Certificate />,
+  },
+  {
+    path: '/lookup-injection-registration',
+    page: <RegistrationResult />,
+  },
+  {
+    path: '/search-complaint',
+    page: <Complaint />,
   },
 ];
 function App() {
