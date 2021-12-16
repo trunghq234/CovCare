@@ -2,6 +2,7 @@ import { Layout } from 'antd';
 // import AppHome from 'pages/Home';
 import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
+import HealthDeclaration from 'pages/HealthDeclaration';
 import Register from 'pages/Register';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -29,6 +30,10 @@ const routes = [
   {
     path: '/doctor-detail',
     page: <DoctorDetailPage />,
+  },
+  {
+    path: '/health-declaration',
+    page: <HealthDeclaration />,
   },
 ];
 function App() {

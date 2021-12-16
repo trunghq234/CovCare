@@ -33,6 +33,10 @@ const AppHeader = () => {
       link: '/register',
       display: 'Đăng ký',
     },
+    {
+      link: '/health-declaration',
+      display: 'Khai báo y tế',
+    },
   ];
   return (
     <div className="container">
