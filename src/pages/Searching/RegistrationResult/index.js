@@ -1,7 +1,6 @@
-import { SearchOutlined, SyncOutlined, EditOutlined, InfoCircleFilled } from '@ant-design/icons';
-import { Breadcrumb, Button, Card, Col, Form, Input, Row, Tag, Table, Tooltip } from 'antd';
+import { EditOutlined, InfoCircleFilled, SearchOutlined, SyncOutlined } from '@ant-design/icons';
+import { Breadcrumb, Button, Card, Col, Form, Input, Row, Table, Tag, Tooltip } from 'antd';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './index.module.less';
 
 const RegistrationResult = props => {

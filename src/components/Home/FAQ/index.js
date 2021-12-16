@@ -1,5 +1,6 @@
-import { Col, Row, Tabs } from 'antd';
-import React, { useState } from 'react';
+import { Row, Tabs } from 'antd';
+import React, { useEffect, useState } from 'react';
+
 import styles from './index.module.less';
 import TabContent from './TabContent';
 const { TabPane } = Tabs;
@@ -30,7 +31,12 @@ const FAQ = () => {
       content: 'Myth-Busters of coronavirus',
     },
   ];
-  const [position, setPosition] = useState(window.innerWidth >= 768 ? 'left' : 'top');
+  const [position, setPosition] = useState('left');
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setPosition('top');
+    }
+  }, []);
   return (
     <section className={styles['section-faq']} id="faq">
       <div className={styles.container}>
