@@ -1,12 +1,14 @@
-import { Row, Form, Input, Col, Select } from 'antd';
+import { Row, Form, Input, Col, Select, DatePicker } from 'antd';
+import TypingSelect from 'components/common/TypingSelect';
 import React from 'react';
+import country from 'constants/Country.json';
 import { numberValidator } from 'utils/validator';
 const { Option } = Select;
 
 const BasicInfo = () => {
   return (
     <Row gutter={20}>
-      <Col span={12}>
+      <Col xs={24} md={12}>
         <Form.Item
           label="Họ tên"
           name="name"
@@ -14,7 +16,7 @@ const BasicInfo = () => {
           <Input style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} md={12}>
         <Form.Item
           label="Số hộ chiếu / CMND / CCCD"
           name="idNumber"
@@ -22,7 +24,7 @@ const BasicInfo = () => {
           <Input style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={9}>
+      <Col xs={24} md={8}>
         <Form.Item
           label="Năm sinh"
           name="dob"
@@ -30,12 +32,12 @@ const BasicInfo = () => {
             { required: true, message: 'Bạn chưa nhập họ tên.' },
             { validator: numberValidator },
           ]}>
-          <Input style={{ width: '100%' }} />
+          <DatePicker picker="year" placeholder="Chọn/nhập" />
         </Form.Item>
       </Col>
-      <Col span={6}>
+      <Col xs={24} md={8}>
         <Form.Item
-          label="Gender"
+          label="Giới tính"
           name="gender"
           rules={[{ required: true, message: 'Bạn chưa chọn giới tính.' }]}>
           <Select placeholder="Chọn">
@@ -45,9 +47,14 @@ const BasicInfo = () => {
           </Select>
         </Form.Item>
       </Col>
-      <Col span={9}>
-        <Form.Item label="Quốc tịch" name="nationality" rules={[{ required: true }]}>
-          <Input style={{ width: '100%' }} />
+      <Col xs={24} md={8}>
+        <Form.Item
+          label="Quốc tịch"
+          valuePropName="option"
+          name="nationality"
+          initialValue="Viet Nam"
+          rules={[{ required: true, message: 'Bạn chưa chọn quốc tịch' }]}>
+          <TypingSelect placeholder="Chọn" defaultValue="Viet Nam" list={country} />
         </Form.Item>
       </Col>
     </Row>

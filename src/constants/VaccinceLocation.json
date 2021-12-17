@@ -1,0 +1,222 @@
+[
+  {
+    "id": 17251,
+    "name": "Công ty kinh doanh nước sạch Hà Nội (YTCQ)",
+    "code": "01124",
+    "address": "44 Yên Phụ, Ba Đình",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "",
+    "fullAddress": "Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17253,
+    "name": "Công ty TNHHNN 1TV Môi trường đô thị (YTCQ)",
+    "code": "01127",
+    "address": "31 B Sơn Tây, Hà Nội",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "",
+    "fullAddress": "Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17301,
+    "name": "TYT Cống Vị",
+    "code": "01A03",
+    "address": "518 Đội Cấn",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00007",
+    "fullAddress": "Cống Vị, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17237,
+    "name": "Trung tâm y tế MT lao động công thương",
+    "code": "01044",
+    "address": "99 Văn Cao, quận Ba Đình",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "",
+    "fullAddress": "Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17305,
+    "name": "TYT Phường Trrung Trực",
+    "code": "01A04",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00010",
+    "fullAddress": "Nguyễn Trung Trực, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17241,
+    "name": "Bệnh viên đa khoa Hoè Nhai - Cơ sở 2",
+    "code": "01056",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "",
+    "fullAddress": "Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17309,
+    "name": "TYT Phường Quán Thánh",
+    "code": "01A05",
+    "address": "50 Phố Hàng Bún, Phường Quán Thánh, quận Ba Đình, thành phố Hà Nội",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00013",
+    "fullAddress": "Quán Thánh, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17311,
+    "name": "TYT Phường Quán Thánh",
+    "code": "01A05",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00013",
+    "fullAddress": "Quán Thánh, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17247,
+    "name": "Bệnh viện YHCT Nam á",
+    "code": "01068",
+    "address": "42 Hoè Nhai, Ba Đình",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "",
+    "fullAddress": "Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17273,
+    "name": "Phòng tiêm dịch vụ TTYT Q.Ba Đình",
+    "code": "01801",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "",
+    "fullAddress": "Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17317,
+    "name": "Phường Ngọc Hà",
+    "code": "01A06",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00016",
+    "fullAddress": "Ngọc Hà, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17365,
+    "name": "PK ĐK Hoa Sen - Chi nhánh Hà Nội",
+    "code": "01_D002",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "",
+    "fullAddress": "Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17285,
+    "name": "BV Hồng Ngọc",
+    "code": "01933",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "",
+    "fullAddress": "Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17287,
+    "name": "TYT Phường Phúc Xá",
+    "code": "01A01",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00001",
+    "fullAddress": "Phúc Xá, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17325,
+    "name": "TYT Đội Cấn",
+    "code": "01A08",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00022",
+    "fullAddress": "Đội Cấn, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17291,
+    "name": "Phường Phúc Xá",
+    "code": "01A01",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00001",
+    "fullAddress": "Phúc Xá, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17293,
+    "name": "TYT Phúc Xá",
+    "code": "01A01",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00001",
+    "fullAddress": "Phúc Xá, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17407,
+    "name": "Phòng tiêm chủng TTYT quận Tây Hồ",
+    "code": "01803",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "003",
+    "wardCode": "",
+    "fullAddress": "Tây Hồ, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17381,
+    "name": "Điểm tiêm Cục   y tế dự phòng - BYT",
+    "code": "",
+    "address": "135 Núi Trúc, Ba Đình, Hà Nội",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00028",
+    "fullAddress": "Kim Mã, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  },
+  {
+    "id": 17299,
+    "name": "Phường Cống Vị",
+    "code": "01A03",
+    "address": "",
+    "provinceCode": "01",
+    "districtCode": "001",
+    "wardCode": "00007",
+    "fullAddress": "Cống Vị, Ba Đình, Hà Nội",
+    "isFromTc": "1"
+  }
+]

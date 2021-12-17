@@ -1,25 +1,13 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import {
-  Button,
-  Col,
-  DatePicker,
-  Form,
-  Input,
-  Row,
-  Select,
-  Checkbox,
-  Image,
-  notification,
-  message,
-} from 'antd';
+import { Button, Checkbox, Col, DatePicker, Form, Image, Input, message, Row, Select } from 'antd';
+import captcha from 'assets/images/captcha.png';
+import LocationVN from 'components/HealthDeclaration/ProvincePickerWithWard/LocationVN.json';
+import moment from 'moment';
+import React, { useEffect, useMemo, useState } from 'react';
+import { numberValidator } from 'utils/validator';
 import BasicInfo from '../BasicInfo';
 import ContactInVietnam from '../ContactInVietnam';
+import styles from './index.module.less';
 import StatusWithin14Days from '../StatusWithin14Days';
-import styles from '../index.module.less';
-import LocationVN from 'components/common/ProvincePicker/LocationVN.json';
-import captcha from 'assets/images/captcha.png';
-import moment from 'moment';
-import { numberValidator } from 'utils/validator';
 
 const { Option } = Select;
 
@@ -43,6 +31,7 @@ const DomesticMove = () => {
     console.log(captcha);
     if (captcha === 'W68HP') {
       message.success('Bạn đã gửi thành công!');
+      form.resetFields();
     } else {
       message.error('Mã bảo mật không đúng');
     }
@@ -64,7 +53,7 @@ const DomesticMove = () => {
         <strong>Di chuyển trong nước</strong>
       </div>
       <Row gutter={20}>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Phương tiện đi lại"
             name="vehicle"
@@ -82,7 +71,7 @@ const DomesticMove = () => {
             </Select>
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             hidden={isHidden}
             label="Mã hiệu chuyến bay"
@@ -91,7 +80,7 @@ const DomesticMove = () => {
             <Input />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Nơi đi"
             name="departure"
@@ -99,7 +88,7 @@ const DomesticMove = () => {
             <Select placeholder="Chọn">{cityOptions}</Select>
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Điểm đi"
             name="pointOfDeparture"
@@ -107,7 +96,7 @@ const DomesticMove = () => {
             <Input placeholder="Nhập địa điểm cụ thể" />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Nơi đến"
             name="destination"
@@ -115,7 +104,7 @@ const DomesticMove = () => {
             <Select placeholder="Chọn">{cityOptions}</Select>
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Điểm đến"
             name="pointOfDestination"
@@ -123,7 +112,7 @@ const DomesticMove = () => {
             <Input placeholder="Nhập địa điểm cụ thể" />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Số phương tiện"
             name="idVehicle"
@@ -134,12 +123,12 @@ const DomesticMove = () => {
             <Input />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item label="Số ghế" name="idSeat" rules={[{ validator: numberValidator }]}>
             <Input />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item label="Ngày khởi hành" name="departureDate" rules={[{ required: true }]}>
             <DatePicker style={{ padding: '4px 11px', width: '100%' }} format="DD/MM/YYYY" />
           </Form.Item>
@@ -149,15 +138,15 @@ const DomesticMove = () => {
       <ContactInVietnam form={form} />
       <StatusWithin14Days />
       <Row gutter={20}>
-        <Col span={5}>
+        <Col xs={12} md={10} lg={5}>
           <Form.Item
             label="Mã bảo mật"
             name="captcha"
             rules={[{ required: true, message: 'Bạn chưa nhập mã bảo mật' }]}>
-            <Input placeholder="Nhập mã bảo mật tại đây" />
+            <Input placeholder="Nhập mã bảo mật" />
           </Form.Item>
         </Col>
-        <Col span={5}>
+        <Col xs={8} md={6}>
           <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
             <Image src={captcha} width={100} height={34} />
           </div>
@@ -168,13 +157,18 @@ const DomesticMove = () => {
         lý của Ban chỉ đạo quốc gia về Phòng chống dịch Covid-19. Khi bạn nhấn nút "Gửi" là bạn đã
         hiểu và đồng ý.
       </div>
-      <Form.Item>
-        <div style={{ display: 'flex' }}>
-          <Button type="primary" htmlType="submit" className={styles['btn-submit']}>
+      <Col
+        xs={{ span: 14, offset: 5 }}
+        sm={{ span: 8, offset: 8 }}
+        md={{ span: 8, offset: 8 }}
+        lg={{ span: 6, offset: 9 }}
+        xl={{ span: 4, offset: 10 }}>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" block className={styles['btn-submit']}>
             Gửi tờ khai
           </Button>
-        </div>
-      </Form.Item>
+        </Form.Item>
+      </Col>
     </Form>
   );
 };

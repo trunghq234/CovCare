@@ -1,0 +1,37 @@
+@import '../../../theme.less';
+
+.breadcrumb {
+  padding: 15px 0;
+  min-height: 40px;
+  margin-top: 20px;
+  margin: 0px 50px;
+}
+
+.contain {
+  padding: 20px 0;
+  .card {
+    margin: 0px 50px;
+    .notice {
+      font-style: italic;
+      text-align: center;
+      color: #f46a6a;
+      a {
+        color: red;
+      }
+    }
+    .btn {
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .breadcrumb {
+    display: none;
+  }
+  .contain {
+    .card {
+      margin: 0px 20px;
+    }
+  }
+}

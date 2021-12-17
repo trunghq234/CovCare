@@ -1,6 +1,6 @@
 import { Card, Row, Form, Col, Input, message, Button } from 'antd';
-import ProvincePicker from 'components/common/ProvincePicker';
 import Category from 'components/SupportRequest/Category';
+import ProvincePickerWithWard from 'components/HealthDeclaration/ProvincePickerWithWard';
 import React from 'react';
 import styles from './index.module.less';
 const { TextArea } = Input;
@@ -36,7 +36,7 @@ const SupportRequest = () => {
               </Form.Item>
             </Col>
           </Row>
-          <ProvincePicker form={form} />
+          <ProvincePickerWithWard form={form} />
           <h4 className={styles.title}>Yêu cầu hỗ trợ</h4>
           <Row>
             <Col span={24}>
@@ -51,13 +51,13 @@ const SupportRequest = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Form.Item>
-            <div style={{ display: 'flex' }}>
-              <Button type="primary" htmlType="submit" className={styles['btn-submit']}>
+          <Col xs={24} sm={{ span: 8, offset: 8 }} md={{ span: 6, offset: 9 }}>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" block className={styles['btn-submit']}>
                 Gửi yêu cầu
               </Button>
-            </div>
-          </Form.Item>
+            </Form.Item>
+          </Col>
         </Form>
       </Card>
     </div>

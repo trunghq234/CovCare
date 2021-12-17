@@ -3,7 +3,7 @@ import { Button, Form, Checkbox, Input, Image, Row, Col, notification } from 'an
 import BasicInfo from '../BasicInfo';
 import ContactInVietnam from '../ContactInVietnam';
 import StatusWithin14Days from '../StatusWithin14Days';
-import styles from '../index.module.less';
+import styles from './index.module.less';
 import captcha from 'assets/images/captcha.png';
 
 const DomesticGuests = () => {
@@ -13,6 +13,7 @@ const DomesticGuests = () => {
       notification.success({
         message: 'Bạn đã gửi thành công!',
       });
+      form.resetFields();
     } else {
       notification.warning({
         message: 'Mã bảo mật không đúng',
@@ -29,7 +30,7 @@ const DomesticGuests = () => {
       <ContactInVietnam form={form} />
       <StatusWithin14Days />
       <Row gutter={20}>
-        <Col span={5}>
+        <Col xs={12} md={10} lg={5}>
           <Form.Item
             label="Mã bảo mật"
             name="captcha"
@@ -37,7 +38,7 @@ const DomesticGuests = () => {
             <Input placeholder="Nhập mã bảo mật tại đây" />
           </Form.Item>
         </Col>
-        <Col span={5}>
+        <Col xs={8} md={6}>
           <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
             <Image src={captcha} width={100} height={34} />
           </div>
@@ -48,13 +49,18 @@ const DomesticGuests = () => {
         lý của Ban chỉ đạo quốc gia về Phòng chống dịch Covid-19. Khi bạn nhấn nút "Gửi" là bạn đã
         hiểu và đồng ý.
       </div>
-      <Form.Item>
-        <div style={{ display: 'flex' }}>
-          <Button type="primary" htmlType="submit" className={styles['btn-submit']}>
+      <Col
+        xs={{ span: 14, offset: 5 }}
+        sm={{ span: 8, offset: 8 }}
+        md={{ span: 8, offset: 8 }}
+        lg={{ span: 6, offset: 9 }}
+        xl={{ span: 4, offset: 10 }}>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" block className={styles['btn-submit']}>
             Gửi tờ khai
           </Button>
-        </div>
-      </Form.Item>
+        </Form.Item>
+      </Col>
     </Form>
   );
 };

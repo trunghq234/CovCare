@@ -1,37 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Form, Input, Row, Select } from 'antd';
-import LocationVN from './LocationVN.json';
+import { Col, Form, Input, Select } from 'antd';
+import LocationVN from 'constants/LocationVN.json';
 
 const { Option } = Select;
 
-const ProvincePicker = ({ form }) => {
+const ProvincePicker = props => {
   let cityOptions = [];
-  const [districtOptions, setDistrictOptions] = useState([]);
-  const [wardOptions, setWardOptions] = useState([]);
+  const [districtInSelectedCity, setDistrictInSelectedCity] = useState([]);
   const [selectedCity, setSelectedCity] = useState();
   const [selectedDistrict, setSelectedDistrict] = useState();
-  const [selectedWard, setSelectedWard] = useState();
 
-  for (let item of Object.values(LocationVN)) {
-    cityOptions.push(item);
+  for (let city of Object.values(LocationVN)) {
+    cityOptions.push(city);
   }
+
+  //Set city when open form edit
+  useEffect(() => {
+    setSelectedCity(props.city);
+  }, [props.city]);
+
+  //set district
+  const mapDistrictToArray = districts => {
+    let result = [];
+    for (let district of Object.values(districts)) {
+      result.push({ name: district });
+    }
+    return result;
+  };
 
   //set district when Select city
   useEffect(() => {
-    if (selectedCity) {
-      const city = cityOptions.find(element => element.name === selectedCity);
-      setDistrictOptions(city.districts);
+    for (let city of Object.values(LocationVN)) {
+      if (city.name === selectedCity) {
+        setDistrictInSelectedCity(mapDistrictToArray(city.districts));
+        return true;
+      }
     }
   }, [selectedCity]);
 
-  useEffect(() => {
-    if (selectedDistrict && districtOptions.length > 0) {
-      const district = districtOptions.find(element => element.name === selectedDistrict);
-      if (district) {
-        setWardOptions(district.wards);
-      }
-    }
-  }, [selectedDistrict]);
   //custom options
   const renderOptions = dataList => {
     if (dataList.length) {
@@ -46,69 +52,42 @@ const ProvincePicker = ({ form }) => {
     return null;
   };
   const optionCityRendered = renderOptions(cityOptions);
-  const optionDistrictRendered = renderOptions(districtOptions);
-  const optionWardRendered = renderOptions(wardOptions);
+  const optionDistrictRendered = renderOptions(districtInSelectedCity);
   return (
-    <Row gutter={20}>
-      <Col span={8}>
-        <Form.Item
-          label="Tỉnh/Thành phố"
-          name="city"
-          rules={[{ required: true, message: 'Bạn chưa chọn tỉnh, thành phố' }]}>
+    <>
+      <Col xs={24} sm={24} lg={8} xl={12}>
+        <Form.Item label="Địa chỉ" name="detailsAddress" rules={[{ required: true }]}>
+          <Input placeholder="Địa chỉ" style={{ width: '100%' }} />
+        </Form.Item>
+      </Col>
+      <Col xs={24} sm={12} lg={8} xl={6}>
+        <Form.Item label="Thành phố" name="city" rules={[{ required: true }]}>
           <Select
             showSearch
             value={selectedCity}
-            placeholder="Chọn"
-            onSelect={val => {
+            placeholder="Tỉnh/Thành phố"
+            onChange={val => {
+              props.form.setFieldsValue({ ...props.form.getFieldsValue(), district: '' });
               setSelectedCity(val);
-              form.setFieldsValue({ ...form.getFieldsValue(), district: '', ward: '' });
             }}>
             {optionCityRendered}
           </Select>
         </Form.Item>
       </Col>
-      <Col span={8}>
-        <Form.Item
-          label="Huyện/Quận"
-          name="district"
-          rules={[{ required: true, message: 'Bạn chưa chọn quận, huyện' }]}>
+      <Col xs={24} sm={12} lg={8} xl={6}>
+        <Form.Item label="Quận" name="district" rules={[{ required: true }]}>
           <Select
             showSearch
             value={selectedDistrict}
-            placeholder="Chọn"
-            onSelect={val => {
+            placeholder="Huyện/Quận"
+            onChange={val => {
               setSelectedDistrict(val);
-              form.setFieldsValue({ ...form.getFieldsValue(), ward: '' });
             }}>
             {optionDistrictRendered}
           </Select>
         </Form.Item>
       </Col>
-      <Col span={8}>
-        <Form.Item
-          label="Phường/xã"
-          name="ward"
-          rules={[{ required: true, message: 'Bạn chưa chọn phường, xã' }]}>
-          <Select
-            showSearch
-            value={selectedWard}
-            placeholder="Chọn"
-            onSelect={val => {
-              setSelectedWard(val);
-            }}>
-            {optionWardRendered}
-          </Select>
-        </Form.Item>
-      </Col>
-      <Col span={24}>
-        <Form.Item
-          label="Số nhà, phố, tổ dân phố/thôn/đội"
-          name="detailsAddress"
-          rules={[{ required: true, message: 'Bạn chưa nhập địa chỉ' }]}>
-          <Input placeholder="Ví dụ: 66/17/15 HT45" style={{ width: '100%' }} />
-        </Form.Item>
-      </Col>
-    </Row>
+    </>
   );
 };
 

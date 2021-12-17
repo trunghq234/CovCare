@@ -1,16 +1,16 @@
 import { Row, Form, Col, Input } from 'antd';
-import ProvincePicker from 'components/common/ProvincePicker';
 import React from 'react';
 import { numberValidator } from 'utils/validator';
-import styles from '../index.module.less';
+import styles from './index.module.less';
+import ProvincePickerWithWard from '../ProvincePickerWithWard';
 
 const ContactInVietnam = ({ form }) => {
   return (
     <Col span={24}>
       <Row className={styles['title-contact']}>Địa chỉ liên lạc tại Việt Nam</Row>
-      <ProvincePicker form={form} />
-      <Row gutter={40}>
-        <Col span={12}>
+      <ProvincePickerWithWard form={form} />
+      <Row gutter={20}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Điện thoại"
             name="phoneNumber"
@@ -21,7 +21,7 @@ const ContactInVietnam = ({ form }) => {
             <Input placeholder="Nhập số điện thoại" />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Email"
             name="email"
