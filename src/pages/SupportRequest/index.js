@@ -38,7 +38,7 @@ const SupportRequest = () => {
           </Row>
           <ProvincePickerWithWard form={form} />
           <h4 className={styles.title}>Yêu cầu hỗ trợ</h4>
-          <Row>
+          <Row gutter={[20, 40]}>
             <Col span={24}>
               <Category />
             </Col>

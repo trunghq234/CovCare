@@ -4,7 +4,10 @@ import styles from './index.module.less';
 
 const Category = () => {
   return (
-    <Form.Item label="Chọn mục cần hỗ trợ" name="category" required={true}>
+    <Form.Item
+      label="Chọn mục cần hỗ trợ"
+      name="category"
+      rules={[{ required: true, message: 'Bạn cần phải chọn một mục ' }]}>
       <Checkbox.Group>
         <Space direction="vertical">
           <Checkbox value={1} className={styles.item}>
