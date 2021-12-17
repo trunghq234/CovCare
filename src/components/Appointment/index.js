@@ -121,14 +121,20 @@ const Appointment = props => {
               </Col>
               <Col sm={24} xs={24} md={12}>
                 <Form.Item
-                  label="Số điện thoại"
-                  name="phoneNumber"
                   onKeyPress={event => {
                     if (!/[0-9]/.test(event.key)) {
                       event.preventDefault();
                     }
                   }}
-                  rules={[{ required: true, message: 'Vui lòng nhập số điện thoại!' }]}>
+                  label="Số điện thoại"
+                  name="phoneNumber"
+                  rules={[
+                    {
+                      required: true,
+                      message: 'Số điện thoại không được bỏ trống',
+                    },
+                    { min: 10, message: 'Vui lòng nhập số điện thoại đúng định dạng' },
+                  ]}>
                   <Input placeholder="Số điện thoại" />
                 </Form.Item>
               </Col>
@@ -151,7 +157,7 @@ const Appointment = props => {
               </Button>
             </div>
             <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-              <Link to={'./register'}>
+              <Link to={'/appointment/register'}>
                 <Button className={styles.btn} type="link" ghost icon={<WhatsAppOutlined />}>
                   Đặt lịch khám
                 </Button>

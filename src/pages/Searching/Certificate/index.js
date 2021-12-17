@@ -77,7 +77,10 @@ const Certificate = props => {
                       event.preventDefault();
                     }
                   }}
-                  rules={[{ required: true, message: 'Vui lòng nhập số điện thoại' }, { min: 10 }]}>
+                  rules={[
+                    { required: true, message: 'Vui lòng nhập số điện thoại' },
+                    { min: 10, message: 'Vui lòng nhập số điện thoại đúng định dạng' },
+                  ]}>
                   <Input type="text" placeholder="Số điện thoại" maxLength="10" />
                 </Form.Item>
               </Col>
