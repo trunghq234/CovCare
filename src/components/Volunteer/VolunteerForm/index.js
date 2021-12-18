@@ -5,10 +5,20 @@ import styles from './index.module.less';
 const { Option } = Select;
 
 export default function VolunteerForm() {
+  const [form] = Form.useForm();
+  const validateMessages = {
+    required: 'Vui lòng nhập ${label}!',
+    // ...
+  };
+
+  const onFinish = data => {
+    console.log(data);
+  };
+
   return (
     <div>
       <Card>
-        <Form layout="vertical" requiredMark={true}>
+        <Form form={form} validateMessages={validateMessages} layout="vertical" onFinish={onFinish}>
           <Row gutter={[48, 0]}>
             <Col xl={10} lg={12} md={12} sm={24} xs={24}>
               <Form.Item name="fullName" label="Họ tên" rules={[{ required: true }]}>
@@ -51,7 +61,7 @@ export default function VolunteerForm() {
               </Form.Item>
             </Col>
             <Col xl={4} lg={6} md={12} sm={12} xs={24}>
-              <Form.Item label="Số năm kinh nghiệm">
+              <Form.Item label="Kinh nghiệm">
                 <Select>
                   <Option value="1">0 - 1 năm</Option>
                   <Option value="2">1 - 2 năm</Option>
@@ -108,7 +118,7 @@ export default function VolunteerForm() {
 
             <Col xl={24}>
               <Form.Item>
-                <Button className={styles.button} type="primary">
+                <Button className={styles.button} type="primary" htmlType="submit">
                   Gửi
                 </Button>
               </Form.Item>

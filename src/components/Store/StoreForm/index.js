@@ -4,10 +4,20 @@ import ProvincePicker from '../ProvincePicker';
 import styles from './index.module.less';
 
 export default function StoreForm() {
+  const [form] = Form.useForm();
+  const validateMessages = {
+    required: 'Vui lòng nhập ${label}!',
+    // ...
+  };
+
+  const onFinish = data => {
+    console.log(data);
+  };
+
   return (
     <div>
       <Card>
-        <Form layout="vertical">
+        <Form form={form} validateMessages={validateMessages} layout="vertical" onFinish={onFinish}>
           <Row gutter={[48, 0]}>
             <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item name="fullName" label="Họ tên" rules={[{ required: true }]}>
@@ -35,7 +45,7 @@ export default function StoreForm() {
             <Col span={24}>
               <Form.Item
                 name="confirm"
-                label="Tôi ý thức được tính chất và tầm quan trọng của những thông tin này và cam kết: "
+                label="Tôi ý thức được tính chất và tầm quan trọng của những thông tin này và cam kết"
                 rules={[{ required: true }]}>
                 <div className={styles.content}>
                   <Typography.Paragraph className={styles.para}>
@@ -66,7 +76,7 @@ export default function StoreForm() {
 
             <Col span={24}>
               <Form.Item>
-                <Button className={styles.button} type="primary">
+                <Button className={styles.button} type="primary" htmlType="submit">
                   Gửi
                 </Button>
               </Form.Item>

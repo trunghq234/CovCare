@@ -1,5 +1,5 @@
 import Banner from 'components/Volunteer/Banner';
-import VolunteerForm from 'components/Volunteer/VolunteerForm/VolunteerForm';
+import VolunteerForm from 'components/Volunteer/VolunteerForm';
 import React from 'react';
 import styles from './index.module.less';
 

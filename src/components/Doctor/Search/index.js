@@ -35,7 +35,7 @@ const listButton = [
 const Search = () => {
   return (
     <div className={styles.wrapper}>
-      <p className={styles.searchTitle}>Lorem ipsum dolor</p>
+      {/* <p className={styles.searchTitle}>Lorem ipsum dolor</p> */}
       <Row gutter={[20, 0]}>
         <Col span={22}>
           <Input className={styles.searchInput} />

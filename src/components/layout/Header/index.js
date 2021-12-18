@@ -34,6 +34,10 @@ const AppHeader = () => {
       display: 'Đăng ký',
     },
     {
+      link: '/doctors',
+      display: 'Bác sỹ',
+    },
+    {
       link: '/store',
       display: 'Đăng ký cửa hàng',
     },

@@ -10,12 +10,12 @@ const ProvincePicker = props => {
   return (
     <Row gutter={[48, 0]}>
       <Col xl={16} lg={16} md={12} sm={14} xs={14}>
-        <Form.Item label="Address" name="detailsAddress" rules={[{ required: true }]}>
+        <Form.Item label="Địa chỉ" name="detailsAddress" rules={[{ required: true }]}>
           <Input placeholder="Details address" />
         </Form.Item>
       </Col>
       <Col xl={8} lg={8} md={8} sm={10} xs={10}>
-        <Form.Item label="District" name="district" rules={[{ required: true }]}>
+        <Form.Item label="Quận" name="district" rules={[{ required: true }]}>
           <Select
             showSearch
             value={selectedDistrict}
