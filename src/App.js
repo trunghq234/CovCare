@@ -16,6 +16,7 @@ import RegistrationResult from 'pages/Searching/RegistrationResult';
 import Complaint from 'pages/Searching/Complaint';
 import Appointment from 'components/Appointment';
 import RegisterAppointment from 'components/Appointment/Register';
+import MapBox from 'components/common/Mapbox';
 
 const { Header, Footer, Content } = Layout;
 
@@ -59,6 +60,10 @@ const routes = [
   {
     path: '/appointment/register',
     page: <RegisterAppointment />,
+  },
+  {
+    path: '/map',
+    page: <MapBox />,
   },
 ];
 function App() {

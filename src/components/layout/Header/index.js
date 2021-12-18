@@ -40,6 +40,10 @@ const AppHeader = () => {
       link: '/health-declaration',
       display: 'Khai báo y tế',
     },
+    {
+      link: '/map',
+      display: 'Bản đồ',
+    },
   ];
   const onClick = ({ key }) => {
     switch (key) {
