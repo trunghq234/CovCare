@@ -19,7 +19,7 @@ const Certificate = props => {
 
   return (
     <div>
-      <div className={styles.breadcrumb} s>
+      <div className={styles.breadcrumb}>
         <Breadcrumb>
           <Breadcrumb.Item>
             <a href="./">Trang chủ</a>

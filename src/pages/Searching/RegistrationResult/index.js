@@ -135,15 +135,15 @@ const RegistrationResult = props => {
                       event.preventDefault();
                     }
                   }}
-                  label="Số CMND/CCCD/Mã định danh công dân/Hộ chiếu"
+                  label="Số CMND/CCCD/Hộ chiếu"
                   name="idNumber"
                   rules={[
                     {
                       required: true,
-                      message: 'Số CMND/CCCD/Mã định danh công dân/Hộ Chiếu không được bỏ trống',
+                      message: 'Số CMND/CCCD/Hộ Chiếu không được bỏ trống',
                     },
                   ]}>
-                  <Input size="middle" placeholder="Số CMND/CCCD/Mã định danh công dân/Hộ chiếu" />
+                  <Input size="middle" placeholder="Số CMND/CCCD/Hộ chiếu" />
                 </Form.Item>
               </Col>
               <Col xs={24} sm={24} md={12} lg={12} xl={12}>

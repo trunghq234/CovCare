@@ -10,18 +10,27 @@ import {
   Select,
   TimePicker,
   Breadcrumb,
+  Modal,
+  Result,
 } from 'antd';
 import doctor from 'assets/images/doctor.png';
 import LocationVN from 'assets/others/LocationVN.json';
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
 import styles from './index.module.less';
 
 const { Option } = Select;
 const { TextArea } = Input;
 
 const RegisterAppointment = props => {
-  const history = useHistory();
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
   let cityOptions = [];
   const [form] = Form.useForm();
   const [districtInSelectedCity, setDistrictInSelectedCity] = useState([]);
@@ -63,11 +72,12 @@ const RegisterAppointment = props => {
   const optionCityRendered = renderOptions(cityOptions);
   const optionDistrictRendered = renderOptions(districtInSelectedCity);
   const handleSubmit = () => {
-    notification.success({
-      message: 'Thành công',
-      description: `Đặt lịch khám thành công`,
-    });
-    history.push('/appointment');
+    // notification.success({
+    //   message: 'Thành công',
+    //   description: `Đặt lịch khám thành công`,
+    // });
+    showModal();
+    // history.push('/appointment');
   };
   return (
     <div>
@@ -237,6 +247,26 @@ const RegisterAppointment = props => {
           </Row>
         </Card>
       </div>
+      <Modal
+        title="Thông báo"
+        visible={isModalVisible}
+        onOk={handleOk}
+        footer={[
+          <Button key="submit" type="primary" onClick={handleOk}>
+            Ok
+          </Button>,
+        ]}>
+        <Result
+          status="success"
+          title="Đặt lịch khám thành công"
+          subTitle="Bạn đã đặt lịch khám thành công. Vui lòng kiểm tra ngày hẹn và đến đúng giờ!"
+          extra={[
+            <Button type="primary" key="console" href="./">
+              Xem lịch đặt
+            </Button>,
+          ]}
+        />
+      </Modal>
     </div>
   );
 };
