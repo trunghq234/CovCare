@@ -1,0 +1,98 @@
+.section-faq {
+  padding: 50px 0;
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    .section-head {
+      padding-bottom: 40px;
+      text-align: center;
+      .subtitle {
+        text-transform: uppercase;
+        color: #2a81ea;
+        font-size: 12px;
+        margin-bottom: 0.125rem;
+        letter-spacing: 0.04em;
+      }
+      .title {
+        text-transform: uppercase;
+      }
+    }
+    .section-content {
+      .row {
+        flex-wrap: wrap;
+        .tab-content {
+          width: 100%;
+          .tabs {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  p {
+    color: #3d4b69;
+    line-height: 1.5;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .ant-tabs {
+    display: block;
+  }
+}
+@media (min-width: 420px) {
+  .container {
+    max-width: 414px;
+  }
+}
+@media (min-width: 576px) {
+  .section-faq {
+    padding: 90px 0;
+    .container {
+      max-width: 540px;
+      .section-head {
+        padding-bottom: 50px;
+        .subtitle {
+          font-size: 1.125rem;
+          margin-bottom: 0.125rem;
+          letter-spacing: 0.1em;
+        }
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .section-faq {
+    padding: 90px 0;
+    .container {
+      max-width: 720px;
+      .section-head {
+        padding-bottom: 60px;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .section-faq {
+    padding: 120px 0;
+    .container {
+      max-width: 960px;
+      .section-head {
+        padding-bottom: 70px;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .section-faq {
+    .container {
+      max-width: 1140px;
+    }
+  }
+}

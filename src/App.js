@@ -1,6 +1,7 @@
 import { Layout } from 'antd';
 import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
+import HealthDeclaration from 'pages/HealthDeclaration';
 import Register from 'pages/Register';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -10,6 +11,11 @@ import DoctorDetailPage from 'pages/DoctorDetail';
 import './App.less';
 import VolunteerPage from 'pages/Volunteer';
 import StorePage from 'pages/Store';
+import Certificate from 'pages/Searching/Certificate';
+import RegistrationResult from 'pages/Searching/RegistrationResult';
+import Complaint from 'pages/Searching/Complaint';
+import Appointment from 'components/Appointment';
+import RegisterAppointment from 'components/Appointment/Register';
 
 const { Header, Footer, Content } = Layout;
 
@@ -37,6 +43,30 @@ const routes = [
   {
     path: '/store',
     page: <StorePage />,
+  },
+  {
+    path: '/health-declaration',
+    page: <HealthDeclaration />,
+  },
+  {
+    path: '/search',
+    page: <Certificate />,
+  },
+  {
+    path: '/lookup-injection-registration',
+    page: <RegistrationResult />,
+  },
+  {
+    path: '/search-complaint',
+    page: <Complaint />,
+  },
+  {
+    path: '/appointment',
+    page: <Appointment />,
+  },
+  {
+    path: '/appointment/register',
+    page: <RegisterAppointment />,
   },
 ];
 function App() {

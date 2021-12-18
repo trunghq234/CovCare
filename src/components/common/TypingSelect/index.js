@@ -30,7 +30,6 @@ const TypingSelect = ({ value = '', onChange, ...props }) => {
       showSearch
       placeholder={props.placeholder}
       defaultValue={props.defaultValue}
-      value={value}
       style={{ width: props.width || '100%' }}
       onChange={handleChange}>
       {optionRendered}
