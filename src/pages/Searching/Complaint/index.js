@@ -115,7 +115,7 @@ const Complaint = props => {
       </div>
       <div className={styles.contain}>
         <Card className={styles.card}>
-          <Form layout="vertical" form={form}>
+          <Form layout="vertical" form={form} onFinish={handleSubmit}>
             <Row gutter={20} justify="center">
               <Col xs={24} md={16}>
                 <Form.Item
@@ -148,7 +148,6 @@ const Complaint = props => {
               </Button>
               <Button
                 className={styles.btn}
-                onClick={handleSubmit}
                 type="primary"
                 htmlType="submit"
                 icon={<SearchOutlined />}>
