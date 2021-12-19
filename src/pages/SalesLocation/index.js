@@ -2,7 +2,7 @@ import { Tooltip } from 'antd';
 import markerIcon from 'assets/images/marker.png';
 import SalesLocationDetails from 'components/SalesLocatiionDetails';
 import React, { useState } from 'react';
-import ReactMapGL, {
+import MapboxGL, {
   FullscreenControl,
   GeolocateControl,
   Marker,
@@ -185,7 +185,7 @@ const SalesLocation = () => {
   ];
 
   return (
-    <ReactMapGL
+    <MapboxGL
       {...viewport}
       mapStyle="mapbox://styles/mapbox/streets-v11"
       mapboxApiAccessToken="pk.eyJ1IjoicXVhbmdwbiIsImEiOiJja3hhaGRhdHIwcjhrMm5udThzMW16ZWcyIn0.j5XMWM5DbBc8pG1olHsYMA"
@@ -214,7 +214,7 @@ const SalesLocation = () => {
       <FullscreenControl style={fullscreenControlStyle} />
       <NavigationControl style={navStyle} />
       <ScaleControl style={scaleControlStyle} />
-    </ReactMapGL>
+    </MapboxGL>
   );
 };
 
