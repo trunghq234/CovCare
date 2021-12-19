@@ -69,10 +69,10 @@ const About = () => {
             </p>
           </div>
           <Row gutter={[20, 40]}>
-            {spreads.map((spread, index) => {
+            {spreads.map(spread => {
               return (
                 <Col
-                  key={index}
+                  key={spread.title}
                   xs={{ span: 24, offset: 0 }}
                   md={{ span: 8, offset: 0 }}
                   xl={{ span: 8, offset: 0 }}>

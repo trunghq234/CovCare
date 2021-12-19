@@ -74,7 +74,7 @@ function App() {
         <Content className="app__content">
           <Switch>
             {routes.map(route => (
-              <Route exact path={route.path}>
+              <Route key={route.path} exact path={route.path}>
                 {route.page}
               </Route>
             ))}
