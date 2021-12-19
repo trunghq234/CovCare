@@ -34,10 +34,15 @@ const SupportRequest = () => {
                 </Col>
                 <Col span={24}>
                   <Form.Item
-                    label="Số điện thoại"
+                    onKeyPress={event => {
+                      if (!/[0-9]/.test(event.key)) {
+                        event.preventDefault();
+                      }
+                    }}
+                    label="Phone number"
                     name="phoneNumber"
                     rules={[{ required: true, message: 'Bạn chưa nhập số điện thoại' }]}>
-                    <Input placeholder="Nhập số điện thoại" />
+                    <Input type="text" placeholder="Phone number" minLength={10} maxLength={10} />
                   </Form.Item>
                 </Col>
               </Row>

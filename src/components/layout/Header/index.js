@@ -41,6 +41,10 @@ const AppHeader = () => {
       display: 'Khai báo y tế',
     },
     {
+      link: '/map',
+      display: 'Bản đồ',
+    },
+    {
       link: '/support-request',
       display: 'Yêu cầu hỗ trợ',
     },

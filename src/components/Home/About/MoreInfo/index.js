@@ -39,7 +39,7 @@ const AnotherQuestion = () => {
         <li className={style.item}>What you need to know</li>
         {items.map((item, index) => {
           return (
-            <li className={style.item} key={index}>
+            <li className={style.item} key={item.title}>
               <Link to={item.url} className={style.link}>
                 {item.title}
                 <RightOutlined className={style.icon} />

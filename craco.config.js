@@ -1,6 +1,12 @@
 const CracoLessPlugin = require('craco-less');
+// import 'mapbox-gl/dist/mapbox-gl.css';
 
 module.exports = {
+  babel: {
+    loaderOptions: {
+      ignore: ['./node_modules/mapbox-gl/dist/mapbox-gl.js'],
+    },
+  },
   plugins: [
     {
       plugin: CracoLessPlugin,
