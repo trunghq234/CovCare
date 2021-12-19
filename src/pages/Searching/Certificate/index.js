@@ -19,7 +19,7 @@ const Certificate = props => {
 
   return (
     <div>
-      <div className={styles.breadcrumb} s>
+      <div className={styles.breadcrumb}>
         <Breadcrumb>
           <Breadcrumb.Item>
             <a href="./">Trang chủ</a>
@@ -77,7 +77,10 @@ const Certificate = props => {
                       event.preventDefault();
                     }
                   }}
-                  rules={[{ required: true, message: 'Vui lòng nhập số điện thoại' }, { min: 10 }]}>
+                  rules={[
+                    { required: true, message: 'Vui lòng nhập số điện thoại' },
+                    { min: 10, message: 'Vui lòng nhập số điện thoại đúng định dạng' },
+                  ]}>
                   <Input type="text" placeholder="Số điện thoại" maxLength="10" />
                 </Form.Item>
               </Col>

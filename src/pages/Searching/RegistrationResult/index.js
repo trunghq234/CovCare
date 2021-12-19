@@ -70,10 +70,18 @@ const RegistrationResult = props => {
         return (
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
             <Tooltip title="Chỉnh sửa">
-              <Button type="primary" icon={<EditOutlined />}></Button>
+              <Button
+                style={{ padding: '0' }}
+                href="/register"
+                type="primary"
+                icon={<EditOutlined />}></Button>
             </Tooltip>
             <Tooltip title="Xem chi tiết">
-              <Button type="link" icon={<InfoCircleFilled />}></Button>
+              <Button
+                style={{ padding: '0' }}
+                href="/register"
+                type="link"
+                icon={<InfoCircleFilled />}></Button>
             </Tooltip>
           </div>
         );
@@ -127,15 +135,15 @@ const RegistrationResult = props => {
                       event.preventDefault();
                     }
                   }}
-                  label="Số CMND/CCCD/Mã định danh công dân/Hộ chiếu"
+                  label="Số CMND/CCCD/Hộ chiếu"
                   name="idNumber"
                   rules={[
                     {
                       required: true,
-                      message: 'Số CMND/CCCD/Mã định danh công dân/Hộ Chiếu không được bỏ trống',
+                      message: 'Số CMND/CCCD/Hộ Chiếu không được bỏ trống',
                     },
                   ]}>
-                  <Input size="middle" placeholder="Số CMND/CCCD/Mã định danh công dân/Hộ chiếu" />
+                  <Input size="middle" placeholder="Số CMND/CCCD/Hộ chiếu" />
                 </Form.Item>
               </Col>
               <Col xs={24} sm={24} md={12} lg={12} xl={12}>
@@ -152,6 +160,7 @@ const RegistrationResult = props => {
                       required: true,
                       message: 'Số điện thoại không được bỏ trống',
                     },
+                    { min: 10, message: 'Vui lòng nhập số điện thoại đúng định dạng' },
                   ]}>
                   <Input size="middle" placeholder="Số điện thoại không được bỏ trống" />
                 </Form.Item>
@@ -187,7 +196,7 @@ const RegistrationResult = props => {
           </Form>
         </Card>
         <div className={styles.result} style={{ display: visible }}>
-          <h3>Kết quả tra cứu (2)</h3>
+          <h3>Kết quả tra cứu ({dataSource.length})</h3>
           <Table
             dataSource={dataSource}
             columns={columns}
