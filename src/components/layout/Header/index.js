@@ -44,6 +44,10 @@ const AppHeader = () => {
       link: '/map',
       display: 'Bản đồ',
     },
+    {
+      link: '/support-request',
+      display: 'Yêu cầu hỗ trợ',
+    },
   ];
   const onClick = ({ key }) => {
     switch (key) {

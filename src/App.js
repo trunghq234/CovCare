@@ -15,6 +15,7 @@ import Complaint from 'pages/Searching/Complaint';
 import Appointment from 'components/Appointment';
 import RegisterAppointment from 'components/Appointment/Register';
 import SalesLocation from 'pages/SalesLocation';
+import SupportRequest from 'pages/SupportRequest';
 
 const { Header, Footer, Content } = Layout;
 
@@ -62,6 +63,10 @@ const routes = [
   {
     path: '/map',
     page: <SalesLocation />,
+  },
+  {
+    path: '/support-request',
+    page: <SupportRequest />,
   },
 ];
 function App() {
