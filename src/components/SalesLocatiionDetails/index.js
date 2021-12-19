@@ -1,10 +1,9 @@
-import { Divider, Drawer, Row, Col, Carousel } from 'antd';
-import Icon from '@ant-design/icons';
-import React, { useState } from 'react';
-import styles from './index.module.less';
-import phoneIcon from 'assets/svg/phone.svg';
-import locationIcon from 'assets/svg/location.svg';
+import { Carousel, Col, Divider, Drawer, Row } from 'antd';
 import clockIcon from 'assets/svg/clock.svg';
+import locationIcon from 'assets/svg/location.svg';
+import phoneIcon from 'assets/svg/phone.svg';
+import React from 'react';
+import styles from './index.module.less';
 
 const SalesLocationDetails = props => {
   const { location, visible, setVisible } = props;
