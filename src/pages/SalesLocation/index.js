@@ -188,7 +188,10 @@ const SalesLocation = () => {
     <MapboxGL
       {...viewport}
       mapStyle="mapbox://styles/mapbox/streets-v11"
-      mapboxApiAccessToken="pk.eyJ1IjoicXVhbmdwbiIsImEiOiJja3hhaGRhdHIwcjhrMm5udThzMW16ZWcyIn0.j5XMWM5DbBc8pG1olHsYMA"
+      mapboxApiAccessToken={
+        process.env.REACT_APP_MAP_BOX_TOKEN ||
+        'pk.eyJ1IjoicXVhbmdwbiIsImEiOiJja3hhaGRhdHIwcjhrMm5udThzMW16ZWcyIn0.j5XMWM5DbBc8pG1olHsYMA'
+      }
       onViewportChange={viewport => setViewport(viewport)}>
       {location.map(element => (
         <>
