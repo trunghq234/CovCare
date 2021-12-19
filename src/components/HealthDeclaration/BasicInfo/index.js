@@ -13,7 +13,7 @@ const BasicInfo = () => {
           label="Họ tên"
           name="name"
           rules={[{ required: true, message: 'Bạn chưa nhập họ tên.' }]}>
-          <Input style={{ width: '100%' }} />
+          <Input placeholder="Nhập họ tên" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
       <Col xs={24} md={12}>
@@ -21,7 +21,7 @@ const BasicInfo = () => {
           label="Số hộ chiếu / CMND / CCCD"
           name="idNumber"
           rules={[{ validator: numberValidator }]}>
-          <Input style={{ width: '100%' }} />
+          <Input placeholder="Nhập số hộ chiếu/CMND/CCCD" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
       <Col xs={24} md={8}>
