@@ -7,7 +7,7 @@ const { Option } = Select;
 
 const BasicInfo = () => {
   return (
-    <Row gutter={40}>
+    <Row gutter={20}>
       <Col xs={24} md={12}>
         <Form.Item
           label="Họ tên"

@@ -9,7 +9,7 @@ const ContactInVietnam = ({ form }) => {
     <Col span={24}>
       <Row className={styles['title-contact']}>Địa chỉ liên lạc tại Việt Nam</Row>
       <ProvincePickerWithWard form={form} />
-      <Row gutter={40}>
+      <Row gutter={20}>
         <Col xs={24} md={12}>
           <Form.Item
             label="Điện thoại"
