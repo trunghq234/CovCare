@@ -48,14 +48,14 @@ const AppHeader = () => {
       link: '/volunteer',
       display: 'Tình nguyện viên',
     },
-    {
-      link: '/health-declaration',
-      display: 'Khai báo y tế',
-    },
-    {
-      link: '/support-request',
-      display: 'Yêu cầu hỗ trợ',
-    },
+    // {
+    //   link: '/health-declaration',
+    //   display: 'Khai báo y tế',
+    // },
+    // {
+    //   link: '/support-request',
+    //   display: 'Yêu cầu hỗ trợ',
+    // },
   ];
   const onClick = ({ key }) => {
     switch (key) {
