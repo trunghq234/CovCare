@@ -2,7 +2,7 @@ import { Button, Layout } from 'antd';
 import AppFooter from 'components/layout/Footer';
 import AppHeader from 'components/layout/Header';
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { routes } from 'routes';
 import './App.less';
 import { SoundOutlined } from '@ant-design/icons';
@@ -23,6 +23,9 @@ function App() {
                 {route.page}
               </Route>
             ))}
+            <Route>
+              <Redirect to="/home" />
+            </Route>
           </Switch>
           <Button
             href="/feedback"
