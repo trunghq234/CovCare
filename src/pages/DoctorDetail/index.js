@@ -52,7 +52,7 @@ const DoctorDetailPage = () => {
     <div>
       <div className={styles.content}>
         <Row>
-          <Col xl={12} lg={12} md={24} sm={24} xs={24} className={styles.doctorInfo}>
+          <Col xl={12} lg={12} md={12} sm={24} xs={24} className={styles.doctorInfo}>
             <div>
               <p className={styles.doctorTittle}>{title}</p>
               <p className={styles.doctorName}>{name}</p>
@@ -68,7 +68,7 @@ const DoctorDetailPage = () => {
                 <Button
                   size="large"
                   type="primary"
-                  style={{ marginRight: '20px', fontSize: '1rem' }}>
+                  style={{ marginRight: '20px', marginBottom: '20px', fontSize: '1rem' }}>
                   Lorem ipsum dolor
                 </Button>
                 <Button size="large" style={{ fontSize: '1rem' }}>
@@ -77,10 +77,10 @@ const DoctorDetailPage = () => {
               </div>
             </div>
           </Col>
-          <Col xl={12} lg={12} md={24} sm={24} xs={24} className={styles.doctorImage}>
+          <Col xl={12} lg={12} md={12} sm={0} xs={0} className={styles.doctorImage}>
             <Image
               style={{ borderRadius: '30px' }}
-              width={450}
+              width={400}
               src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
             />
           </Col>
@@ -91,7 +91,7 @@ const DoctorDetailPage = () => {
         <p className={styles.title}>Lorem ipsum dolor sit amet</p>
 
         <div>
-          <Row gutter={[40, 8]}>
+          <Row gutter={[40, 8]} justify="space-around">
             {descriptions.map(item => (
               <Col xl={12} lg={12} md={24} sm={24}>
                 <div>

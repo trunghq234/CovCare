@@ -41,6 +41,9 @@
 }
 .content {
   background: rgb(240, 245, 249);
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
 
   .doctorInfo {
     display: flex;
@@ -71,5 +74,10 @@
     align-items: center;
     border-radius: 30px;
     padding: 1.5rem 1rem;
+  }
+}
+@media screen and (max-width: 766px) {
+  .doctorImage {
+    display: none !important;
   }
 }
