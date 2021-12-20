@@ -32,7 +32,7 @@ const AnotherQuestion = () => {
   return (
     <div className={style.container}>
       <ul>
-        <li className={style.item}>What you need to know</li>
+        <li className={style.item}>Nhưng gì bạn cần biết</li>
         {items.map((item, index) => {
           return (
             <li className={style.item} key={item.title}>
