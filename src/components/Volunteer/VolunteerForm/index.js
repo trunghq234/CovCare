@@ -49,12 +49,12 @@ export default function VolunteerForm() {
                 name="fullName"
                 label="Họ tên"
                 rules={[{ required: true, message: 'Vui lòng nhập họ tên!' }]}>
-                <Input />
+                <Input placeholder="Nhập họ tên" />
               </Form.Item>
             </Col>
             <Col xl={10} lg={12} md={12} sm={24} xs={24}>
               <Form.Item name="email" label="Email">
-                <Input type="email" />
+                <Input type="email" placeholder="Nhập email" />
               </Form.Item>
             </Col>
             <Col xl={4} lg={4} md={24} sm={24} xs={24}>
@@ -66,7 +66,7 @@ export default function VolunteerForm() {
                   className={styles.yearPicker}
                   picker="year"
                   size="small"
-                  placeholder=""
+                  placeholder="Chọn"
                 />
               </Form.Item>
             </Col>
@@ -80,7 +80,7 @@ export default function VolunteerForm() {
                     event.preventDefault();
                   }
                 }}>
-                <Input type="text" maxLength="10" />
+                <Input type="text" maxLength="10" placeholder="Nhập số điện thoại" />
               </Form.Item>
             </Col>
             <Col xl={10} lg={10} md={12} sm={12} xs={24}>
@@ -93,15 +93,16 @@ export default function VolunteerForm() {
                     event.preventDefault();
                   }
                 }}>
-                <Input />
+                <Input placeholder="Nhập CCCD/CMND" />
               </Form.Item>
             </Col>
 
             <Col xl={10} lg={6} md={12} sm={12} xs={24}>
               <Form.Item
                 label="Tôi đăng ký nhóm"
+                name="selectGroup"
                 rules={[{ required: true, message: 'Vui lòng chọn nhóm!' }]}>
-                <Select>
+                <Select placeholder="Chọn nhóm">
                   <Option value="1">TNV Y Tế</Option>
                   <Option value="2">Bác Sỹ Tư Vấn</Option>
                   <Option value="3">Trợ Lý Vận Hành</Option>
@@ -109,13 +110,13 @@ export default function VolunteerForm() {
               </Form.Item>
             </Col>
             <Col xl={10} lg={12} md={12} sm={12} xs={24}>
-              <Form.Item label="Chuyên khoa">
-                <Input />
+              <Form.Item label="Chuyên khoa" name="specialize">
+                <Input placeholder="Nhập chuyên khoa" />
               </Form.Item>
             </Col>
             <Col xl={4} lg={6} md={12} sm={12} xs={24}>
-              <Form.Item label="Kinh nghiệm">
-                <Select>
+              <Form.Item label="Kinh nghiệm" name="experience">
+                <Select placeholder="Chọn">
                   <Option value="1">0 - 1 năm</Option>
                   <Option value="2">1 - 2 năm</Option>
                   <Option value="3">2 - 3 năm</Option>
@@ -125,13 +126,13 @@ export default function VolunteerForm() {
               </Form.Item>
             </Col>
             <Col xl={10} lg={12} md={12} sm={12} xs={24}>
-              <Form.Item label="Nơi học tập, công tác">
-                <Input />
+              <Form.Item label="Nơi học tập, công tác" name="workLocation">
+                <Input placeholder="Nhập nơi học tập, công tác" />
               </Form.Item>
             </Col>
             <Col xl={10} lg={12} md={24} sm={24} xs={24}>
-              <Form.Item label="Ghi chú">
-                <Input.TextArea />
+              <Form.Item label="Ghi chú" name="note">
+                <Input.TextArea placeholder="Ghi chú tại đây" />
               </Form.Item>
             </Col>
             <Col span={24}>

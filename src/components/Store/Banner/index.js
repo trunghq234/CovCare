@@ -8,7 +8,7 @@ export default function Banner() {
         <Row gutter={[20, 0]}>
           <Col xs={24} md={14} lg={12} xl={8}>
             <h3 className="title">
-              Đăng ký tình cửa hàng
+              Đăng ký cửa hàng
               <br /> hỗ trợ
             </h3>
             <p>

@@ -1,16 +1,4 @@
-import {
-  Button,
-  Card,
-  Col,
-  Input,
-  Row,
-  TimePicker,
-  Typography,
-  Form,
-  Checkbox,
-  Modal,
-  Result,
-} from 'antd';
+import { Button, Card, Checkbox, Col, Form, Input, Modal, Result, Row, TimePicker } from 'antd';
 import React from 'react';
 import ProvincePicker from '../ProvincePicker';
 import styles from './index.module.less';
@@ -54,7 +42,7 @@ export default function StoreForm() {
                     message: 'Vui lòng nhập họ tên!',
                   },
                 ]}>
-                <Input />
+                <Input placeholder="Nhập họ tên" />
               </Form.Item>
             </Col>
             <Col xl={12} lg={12} md={12} sm={24} xs={24}>
@@ -62,7 +50,7 @@ export default function StoreForm() {
                 name="storeName"
                 label="Tên cửa hàng"
                 rules={[{ required: true, message: 'Vui lòng nhập tên cửa hàng!' }]}>
-                <Input />
+                <Input placeholder="Nhập tên cửa hàng" />
               </Form.Item>
             </Col>
             <Col xl={24} lg={24} md={24} sm={24} xs={24}>
@@ -78,8 +66,8 @@ export default function StoreForm() {
             </Col>
             <Col xl={18} lg={18} md={10} sm={24} xs={24}></Col>
             <Col xl={12} lg={12} md={12} sm={24} xs={24}>
-              <Form.Item label="Ghi chú">
-                <Input.TextArea />
+              <Form.Item label="Ghi chú" name="note">
+                <Input.TextArea placeholder="Chú thích tại đây" />
               </Form.Item>
             </Col>
             <Col span={24}>
