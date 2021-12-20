@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'antd';
 import { Search, Filter, DoctorList } from 'components/Doctor';
-import styles from './index.module.less';
 import Banner from 'components/Doctor/Banner';
 
 const doctors = [
@@ -86,7 +85,7 @@ const doctors = [
 
 const DoctorPage = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className="container">
       <Row gutter={[20, 20]}>
         <Col xl={24}>
           <Banner />
