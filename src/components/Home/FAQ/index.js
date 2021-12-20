@@ -1,5 +1,6 @@
-import { Col, Row, Tabs } from 'antd';
-import React, { useState } from 'react';
+import { Row, Tabs } from 'antd';
+import React, { useEffect, useState } from 'react';
+
 import styles from './index.module.less';
 import TabContent from './TabContent';
 const { TabPane } = Tabs;
@@ -7,41 +8,46 @@ const FAQ = () => {
   const faqs = [
     {
       title: 'covid-basics',
-      content: 'Coronavirus Disease 2019 Basics',
+      content: 'Kiến thức cơ bản về bệnh Coronavirus 2019',
     },
     {
       title: 'covid-spreads',
-      content: 'How It Spreads',
+      content: 'Cách nó lây lan',
     },
     {
       title: 'covid-protect',
-      content: 'How to Protect Yourself',
+      content: 'Cách bảo vệ bản thân',
     },
     {
       title: 'covid-symptoms',
-      content: 'Symptoms & Testing',
+      content: 'Triệu chứng & Kiểm tra',
     },
     {
       title: 'covid-outbreak',
-      content: 'Outbreak in Your Community',
+      content: 'Bùng phát trong cộng đồng của bạn',
     },
     {
       title: 'covid-myth',
-      content: 'Myth-Busters of coronavirus',
+      content: 'Những sự thật về coronavirus',
     },
   ];
-  const [position, setPosition] = useState(window.innerWidth >= 768 ? 'left' : 'top');
+  const [position, setPosition] = useState('left');
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setPosition('top');
+    }
+  }, []);
   return (
     <section className={styles['section-faq']} id="faq">
       <div className={styles.container}>
         <div className={styles['section-head']}>
-          <h5 className={styles.subtitle}>Frequently Asked Questions</h5>
-          <h2 className={styles.title}>Common Question & Answer</h2>
+          <h5 className={styles.subtitle}>Các câu hỏi thường gặp</h5>
+          <h2 className={styles.title}>Câu hỏi & câu trả lời phổ biến</h2>
         </div>
         <div className={styles['section-content']}>
           <Row className={styles.row}>
             <div className={styles['tab-content']}>
-              <Tabs tabPosition={position} className={styles.tabs}>
+              <Tabs tabPosition={position} className={styles.tabs} moreIcon={null}>
                 {faqs.map((faq, index) => {
                   return (
                     <TabPane tab={faq.content} key={faq.title}>

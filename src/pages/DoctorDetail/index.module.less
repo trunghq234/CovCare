@@ -1,0 +1,79 @@
+.wrapper {
+  margin-top: 60px !important;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+
+  .title {
+    font-size: 1.875rem;
+    font-weight: bold;
+  }
+  .description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .experience {
+    display: flex;
+  }
+  .year {
+    margin-right: 50px;
+    color: #188EFC;
+  }
+  .desExperience,
+  .year {
+    font-size: 1rem;
+  }
+
+  .review,
+  .footerCard {
+    font-size: 1rem;
+  }
+  .footerCard {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .desFooter {
+    margin-bottom: 0;
+  }
+}
+
+
+.doctorInfo {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+}
+.doctorTittle,
+.doctorName,
+.doctorRate,
+.doctorPosition,
+.doctorExperience {
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.doctorTittle {
+  font-weight: bold;
+  font-size: 1.5rem !important;
+}
+.doctorName {
+  font-weight: 550;
+}
+
+.doctorImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+@media screen and (max-width: 766px) {
+  .doctorImage {
+    display: none !important;
+  }
+}

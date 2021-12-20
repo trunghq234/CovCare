@@ -4,46 +4,38 @@ import { Link } from 'react-router-dom';
 import style from './index.module.less';
 const items = [
   {
-    title: 'How coronavirus is spread',
-    url: '/',
+    title: 'Coronavirus lây lan như thế nào',
+    url: '#spread',
   },
   {
-    title: 'Symptoms of coronavirus',
-    url: '/',
+    title: 'Các triệu chứng của coronavirus',
+    url: '#symptons',
   },
   {
-    title: 'Symptoms of coronavirus',
-    url: '/',
+    title: 'Làm thế nào để bảo vệ bản thân',
+    url: '#prevention',
   },
   {
-    title: 'How to protect yourself',
-    url: '/',
+    title: 'Điều trị coronavirus',
+    url: '#treatment',
   },
   {
-    title: 'Treatment for coronavirus',
-    url: '/',
-  },
-  {
-    title: 'Treatment for coronavirus',
-    url: '/',
-  },
-  {
-    title: 'Questions & Answers',
-    url: '/',
+    title: 'Hỏi & Đáp',
+    url: '#faq',
   },
 ];
 const AnotherQuestion = () => {
   return (
     <div className={style.container}>
       <ul>
-        <li className={style.item}>What you need to know</li>
+        <li className={style.item}>Những gì bạn cần biết</li>
         {items.map((item, index) => {
           return (
-            <li className={style.item} key={index}>
-              <Link to={item.url} className={style.link}>
+            <li className={style.item} key={item.title}>
+              <a href={item.url} className={style.link}>
                 {item.title}
                 <RightOutlined className={style.icon} />
-              </Link>
+              </a>
             </li>
           );
         })}
