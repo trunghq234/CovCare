@@ -3,6 +3,7 @@ import RegisterAppointment from 'components/Appointment/Register';
 import AboutUs from 'pages/AboutUs';
 import DoctorPage from 'pages/Doctor';
 import DoctorDetailPage from 'pages/DoctorDetail';
+import Feedback from 'pages/Feedback';
 import HealthDeclaration from 'pages/HealthDeclaration';
 import AppHome from 'pages/Home';
 import News from 'pages/News';
@@ -69,6 +70,10 @@ const routes = [
   {
     path: '/complaint',
     page: <Complaint />,
+  },
+  {
+    path: '/feedback',
+    page: <Feedback />,
   },
   {
     path: '/doctors',
