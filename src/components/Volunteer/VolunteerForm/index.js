@@ -45,15 +45,15 @@ export default function VolunteerForm() {
       <Card>
         <Form form={form} layout="vertical" onFinish={onFinish}>
           <Row gutter={[20, 10]} justify="center">
-            <Col xl={10} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={8} lg={8} md={8} sm={24} xs={24}>
               <Form.Item
                 name="fullName"
-                label="Họ tên"
+                label="Họ và tên"
                 rules={[{ required: true, message: 'Vui lòng nhập họ tên!' }]}>
                 <Input placeholder="Nhập họ tên" />
               </Form.Item>
             </Col>
-            <Col xl={10} lg={12} md={12} sm={24} xs={24}>
+            <Col xl={8} lg={8} md={8} sm={24} xs={24}>
               <Form.Item
                 name="email"
                 label="Email"
@@ -61,7 +61,7 @@ export default function VolunteerForm() {
                 <Input type="email" placeholder="Nhập email" />
               </Form.Item>
             </Col>
-            <Col xl={4} lg={4} md={24} sm={24} xs={24}>
+            <Col xl={8} lg={8} md={8} sm={24} xs={24}>
               <Form.Item
                 name="yearOfBirth"
                 label="Năm sinh"
@@ -74,7 +74,7 @@ export default function VolunteerForm() {
                 />
               </Form.Item>
             </Col>
-            <Col xl={10} lg={10} md={12} sm={12} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={12} xs={24}>
               <Form.Item
                 name="phoneNumber"
                 label="Số điện thoại"
@@ -87,7 +87,7 @@ export default function VolunteerForm() {
                 <Input type="text" maxLength="10" placeholder="Nhập số điện thoại" />
               </Form.Item>
             </Col>
-            <Col xl={10} lg={10} md={12} sm={12} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={12} xs={24}>
               <Form.Item
                 name="identification "
                 label="CCCD/CMND"
@@ -100,8 +100,7 @@ export default function VolunteerForm() {
                 <Input placeholder="Nhập CCCD/CMND" />
               </Form.Item>
             </Col>
-            <Col xl={4} lg={4} md={0} sm={0} xs={0} />
-            <Col xl={10} lg={6} md={12} sm={12} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={12} xs={24}>
               <Form.Item
                 label="Tôi đăng ký nhóm"
                 name="selectGroup"
@@ -113,7 +112,7 @@ export default function VolunteerForm() {
                 </Select>
               </Form.Item>
             </Col>
-            <Col xl={10} lg={12} md={12} sm={12} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={12} xs={24}>
               <Form.Item
                 label="Chuyên khoa"
                 name="specialize"
@@ -121,7 +120,16 @@ export default function VolunteerForm() {
                 <Input placeholder="Nhập chuyên khoa" />
               </Form.Item>
             </Col>
-            <Col xl={4} lg={6} md={12} sm={12} xs={24}>
+
+            <Col xl={12} lg={12} md={12} sm={12} xs={24}>
+              <Form.Item
+                label="Nơi học tập, công tác"
+                name="workLocation"
+                rules={[{ required: true, message: 'Vui lòng nhập nơi công tác!' }]}>
+                <Input placeholder="Nhập nơi học tập, công tác" />
+              </Form.Item>
+            </Col>
+            <Col xl={12} lg={12} md={12} sm={12} xs={24}>
               <Form.Item
                 label="Kinh nghiệm"
                 name="experience"
@@ -135,15 +143,7 @@ export default function VolunteerForm() {
                 </Select>
               </Form.Item>
             </Col>
-            <Col xl={10} lg={12} md={12} sm={12} xs={24}>
-              <Form.Item
-                label="Nơi học tập, công tác"
-                name="workLocation"
-                rules={[{ required: true, message: 'Vui lòng nhập nơi công tác!' }]}>
-                <Input placeholder="Nhập nơi học tập, công tác" />
-              </Form.Item>
-            </Col>
-            <Col xl={10} lg={12} md={24} sm={24} xs={24}>
+            <Col xl={24} lg={12} md={24} sm={24} xs={24}>
               <Form.Item label="Ghi chú" name="note">
                 <Input.TextArea placeholder="Ghi chú tại đây" />
               </Form.Item>
@@ -178,7 +178,7 @@ export default function VolunteerForm() {
             </Col>
             <Col xl={8} lg={8} md={8} sm={24} xs={24} span={24}>
               <Button size="large" block type="primary" htmlType="submit">
-                Gửi
+                Gửi đơn đăng ký
               </Button>
             </Col>
           </Row>

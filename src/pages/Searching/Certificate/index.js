@@ -22,8 +22,8 @@ const Certificate = props => {
       <div className="banner-sm" style={{ marginTop: '60px' }}>
         <Row gutter={[20, 10]}>
           <Col xs={24} md={14} lg={12} xl={8}>
-            <h1 className="title">Đăng ký giấy chứng nhận</h1>
-            <p>Cộng đồng xung quanh bạn sẽ giúp đỡ những khó khăn của bạn.</p>
+            <h1 className="title">Tra cứu giấy chứng nhận</h1>
+            <p>Giấy chứng sẽ giúp bạn có thể lưu thông và đi làm trở lại.</p>
           </Col>
         </Row>
       </div>
