@@ -5,6 +5,7 @@ import DoctorDetailPage from 'pages/DoctorDetail';
 import HealthDeclaration from 'pages/HealthDeclaration';
 import AppHome from 'pages/Home';
 import News from 'pages/News';
+import NotFound from 'pages/NotFound';
 import Register from 'pages/Register';
 import SalesLocation from 'pages/SalesLocation';
 import Certificate from 'pages/Searching/Certificate';
@@ -75,6 +76,10 @@ const routes = [
   {
     path: '/doctor-detail',
     page: <DoctorDetailPage />,
+  },
+  {
+    path: '*',
+    page: <NotFound />,
   },
 ];
 

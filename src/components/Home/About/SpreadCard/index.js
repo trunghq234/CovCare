@@ -9,7 +9,9 @@ const SpreadCard = props => {
         <img className={style.image} src={image} alt={title}></img>
       </div>
       <div className={style['box-content']}>
-        <h5>{title}</h5>
+        <h5>
+          <strong>{title}</strong>
+        </h5>
         <p>{content}</p>
       </div>
     </div>

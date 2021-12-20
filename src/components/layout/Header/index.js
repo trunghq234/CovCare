@@ -45,8 +45,8 @@ const AppHeader = () => {
         </Menu.Item>
       </SubMenu>
       <SubMenu key="health" title="Sức khỏe">
-        <Menu.Item key="appointment">
-          <NavLink to="/appointment">Đặt lịch khám</NavLink>
+        <Menu.Item key="appointment-register">
+          <NavLink to="/appointment/register">Đặt lịch khám</NavLink>
         </Menu.Item>
         <Menu.Item key="doctor">
           <NavLink to="/doctors">Bác sỹ</NavLink>
@@ -64,6 +64,9 @@ const AppHeader = () => {
         </Menu.Item>
         <Menu.Item key="result">
           <NavLink to="/result">Kết quả đăng ký tiêm</NavLink>
+        </Menu.Item>
+        <Menu.Item key="appointment">
+          <NavLink to="/appointment">Lịch khám</NavLink>
         </Menu.Item>
         <Menu.Item key="complaint">
           <NavLink to="/complaint">Phản ánh</NavLink>

@@ -1,11 +1,11 @@
 @import 'theme.less';
 
 .home {
-  padding: 2rem 1rem;
-
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 40px 15px 0px;
   .home__data {
-    padding: 15px 0;
-
+    padding-top: 40px;
     .heading {
       display: flex;
       align-items: center;
@@ -90,50 +90,4 @@
       }
     }
   }
-}
-
-@media screen and (min-width: 420px) {
-  .home {
-    max-width: 414px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .home {
-    max-width: 540px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .home {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-
-    &__header {
-      display: flex;
-      justify-content: center;
-    }
-
-    &__img {
-    }
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .home {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-
-    &__img {
-    }
-  }
-}
-
-@media screen and (min-width: 1200px) {
 }

@@ -73,7 +73,7 @@ const Prevention = () => {
   ];
 
   return (
-    <div id="prevention" className="container">
+    <section id="prevention" className="container">
       <Row gutter={[0, 80]}>
         <Col span={24}>
           <div className={styles.heading}>
@@ -101,7 +101,7 @@ const Prevention = () => {
         </Col>
         <Col span={24}>
           <h2 className={styles.title}>Làm theo các bước để rửa tay</h2>
-          <Row gutter={20}>
+          <Row gutter={[20, 20]}>
             {steps.map((step, index) => {
               return (
                 <Col key={index} xs={12} md={8} xl={4} style={{ textAlign: 'center' }}>
@@ -111,8 +111,9 @@ const Prevention = () => {
             })}
           </Row>
         </Col>
+        <Col span={24} />
       </Row>
-    </div>
+    </section>
   );
 };
 

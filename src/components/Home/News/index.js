@@ -50,6 +50,7 @@ const News = () => {
             })}
           </Row>
         </Col>
+        <Col span={24} />
       </Row>
     </div>
   );

@@ -31,19 +31,19 @@ const spreads = [
 
 const About = () => {
   return (
-    <div>
+    <section id="about">
       <div className="container">
         <Row gutter={[40, 20]} className={style['row-about']}>
           <Col xs={24} md={14} xl={16}>
             <h5 className={style.subtitle}>Thông tin về dịch bệnh</h5>
             <h2 className={style.title}>CORONAVIRUS (COVID-19)</h2>
-            <h3>
+            <p>
               <strong>
                 COVID-19 là một căn bệnh mới có thể ảnh hưởng đến phổi và đường hô hấp.
-              </strong>{' '}
+              </strong>
               Nó do một loại vi rút có tên là coronavirus gây ra. Nó được phát hiện vào tháng 12 năm
               2019 ở Vũ Hán, Hồ Bắc, Trung Quốc.
-            </h3>
+            </p>
             <p>
               Các dấu hiệu mắc bệnh phổ biến bao gồm các triệu chứng về đường hô hấp, sốt, ho, thở
               yếu và khó thở. Trong trường hợp nghiêm trọng hơn, mắc bệnh có thể gây viêm phổi, hội
@@ -83,11 +83,11 @@ const About = () => {
             })}
           </Row>
         </Col>
-        <Button className={style['btn-more-question']} type="primary" size="middle" shape="round">
+        <Button className={style['btn-more-question']} type="primary" size="large" shape="round">
           Bạn có câu hỏi gì về việc lan truyền của COVID-19?
         </Button>
       </Row>
-    </div>
+    </section>
   );
 };
 
