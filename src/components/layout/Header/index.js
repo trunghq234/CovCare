@@ -1,14 +1,12 @@
-import { DownOutlined, MenuOutlined } from '@ant-design/icons';
-import { Button, Drawer, Dropdown, Menu } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
+import { Button, Drawer, Menu } from 'antd';
 import logo from 'assets/images/logo.png';
-import React, { useState } from 'react';
-import { useHistory } from 'react-router';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './index.module.less';
 
+const { SubMenu } = Menu;
 const AppHeader = () => {
-  const history = useHistory();
-
   const [pathname, setPathname] = useState(window.location.pathname.substring(1) || 'home');
   const [visible, setVisible] = useState(false);
 
@@ -19,73 +17,62 @@ const AppHeader = () => {
     setVisible(false);
   };
 
-  const menuItems = [
-    {
-      link: '/',
-      display: 'Trang chủ',
-    },
-    {
-      link: '/news',
-      display: 'Tin tức',
-    },
-    {
-      link: '/support',
-      display: 'Hỗ trợ',
-    },
-    {
-      link: '/register',
-      display: 'Đăng ký',
-    },
-    {
-      link: '/doctors',
-      display: 'Bác sỹ',
-    },
-    {
-      link: '/store',
-      display: 'Đăng ký cửa hàng',
-    },
-    {
-      link: '/map',
-      display: 'Bản đồ',
-    },
-    {
-      link: '/volunteer',
-      display: 'Tình nguyện viên',
-    },
-    {
-      link: '/health-declaration',
-      display: 'Khai báo y tế',
-    },
-    {
-      link: '/support-request',
-      display: 'Yêu cầu hỗ trợ',
-    },
-  ];
-  const onClick = ({ key }) => {
-    switch (key) {
-      case '1':
-        history.push('./search');
-        break;
-      case '2':
-        history.push('./lookup-injection-registration');
-        break;
-      default:
-        history.push('./search-complaint');
-        break;
-    }
-  };
+  useEffect(() => {
+    const tmp = window.location.pathname.substring(1);
+    setPathname(tmp);
+  });
+
   const menu = (
-    <Menu onClick={onClick}>
-      <Menu.Item key="1">Tra cứu chứng nhận tiêm</Menu.Item>
-      <Menu.Item key="2">Tra cứu kết quả đăng ký</Menu.Item>
-      <Menu.Item key="3">Tra cứu phản ánh</Menu.Item>
-    </Menu>
+    <>
+      <Menu.Item key="home">
+        <NavLink to="/home">Trang chủ</NavLink>
+      </Menu.Item>
+      <Menu.Item key="news">
+        <NavLink to="/news">Tin tức</NavLink>
+      </Menu.Item>
+      <SubMenu key="community" title="Cộng đồng">
+        <Menu.Item key="request">
+          <NavLink to="/request">Yêu cầu hỗ trợ</NavLink>
+        </Menu.Item>
+        <Menu.Item key="map">
+          <NavLink to="/map">Bản đồ hỗ trợ</NavLink>
+        </Menu.Item>
+        <Menu.Item key="store">
+          <NavLink to="/store">Đăng ký cửa hàng</NavLink>
+        </Menu.Item>
+        <Menu.Item key="volunteer">
+          <NavLink to="/volunteer">Đăng ký TNV</NavLink>
+        </Menu.Item>
+      </SubMenu>
+      <SubMenu key="health" title="Sức khỏe">
+        <Menu.Item key="appointment">
+          <NavLink to="/appointment">Đặt lịch khám</NavLink>
+        </Menu.Item>
+        <Menu.Item key="register">
+          <NavLink to="/register">Đăng ký tiêm chủng</NavLink>
+        </Menu.Item>
+        <Menu.Item key="health-declaration">
+          <NavLink to="/health-declaration">Khai báo y tế</NavLink>
+        </Menu.Item>
+      </SubMenu>
+      <SubMenu key="search" title="Tra cứu">
+        <Menu.Item key="search">
+          <NavLink to="/search">Chứng nhận tiêm</NavLink>
+        </Menu.Item>
+        <Menu.Item key="result">
+          <NavLink to="/result">Kết quả</NavLink>
+        </Menu.Item>
+        <Menu.Item key="complaint">
+          <NavLink to="/complaint">Phản ánh</NavLink>
+        </Menu.Item>
+      </SubMenu>
+    </>
   );
   return (
     <div className="container">
       <div className={styles.header}>
         <div className={styles.logo}>
-          <NavLink to="/">
+          <NavLink to="/home">
             <img src={logo} alt="logo" />
             CovCare
           </NavLink>
@@ -98,25 +85,13 @@ const AppHeader = () => {
             <Menu
               onClick={e => {
                 setPathname(e.key);
-                // setVisible(false);
+                setVisible(false);
               }}
               selectedKeys={pathname}
               theme="light"
               mode="vertical"
               inlineCollapsed={false}>
-              {menuItems.map(item => (
-                <Menu.Item key={item.link}>
-                  <NavLink to={item.link}>{item.display}</NavLink>
-                </Menu.Item>
-              ))}
-              <Menu.Item key="search">
-                {/* <NavLink to="/search">Tra cứu</NavLink> */}
-                <Dropdown overlay={menu} trigger={['click']}>
-                  <p className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                    Tra cứu <DownOutlined />
-                  </p>
-                </Dropdown>
-              </Menu.Item>
+              {menu}
             </Menu>
           </Drawer>
         </div>
@@ -127,18 +102,7 @@ const AppHeader = () => {
             theme="light"
             mode="horizontal"
             disabledOverflow="true">
-            {menuItems.map(item => (
-              <Menu.Item key={item.link}>
-                <NavLink to={item.link}>{item.display}</NavLink>
-              </Menu.Item>
-            ))}
-            <Menu.Item key="search">
-              <Dropdown overlay={menu}>
-                <span className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                  Tra cứu <DownOutlined />
-                </span>
-              </Dropdown>
-            </Menu.Item>
+            {menu}
           </Menu>
         </div>
       </div>
