@@ -36,7 +36,7 @@ const RegisterForm = () => {
     },
   ];
   return (
-    <div className="container" style={{ marginTop: '-60px' }}>
+    <div className="container" style={{ marginTop: '-160px' }}>
       <Card className={styles.card}>
         <Steps className={styles.steps} current={current}>
           {steps.map((item, index) => (
@@ -44,7 +44,7 @@ const RegisterForm = () => {
           ))}
         </Steps>
       </Card>
-      <div>{steps[current].content}</div>
+      <div style={{ marginTop: '30px' }}>{steps[current].content}</div>
     </div>
   );
 };

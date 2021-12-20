@@ -158,13 +158,12 @@ const DomesticMove = () => {
         hiểu và đồng ý.
       </div>
       <Col
-        xs={{ span: 14, offset: 5 }}
-        sm={{ span: 8, offset: 8 }}
+        xs={24}
+        sm={{ span: 12, offset: 6 }}
         md={{ span: 8, offset: 8 }}
-        lg={{ span: 6, offset: 9 }}
-        xl={{ span: 4, offset: 10 }}>
+        lg={{ span: 6, offset: 9 }}>
         <Form.Item>
-          <Button type="primary" htmlType="submit" block className={styles['btn-submit']}>
+          <Button block size="large" type="primary" htmlType="submit">
             Gửi tờ khai
           </Button>
         </Form.Item>

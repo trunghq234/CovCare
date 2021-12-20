@@ -1,9 +1,10 @@
-import { Card, Col, Row } from 'antd';
+import { ArrowRightOutlined } from '@ant-design/icons';
+import { Card, Col, Row, Button } from 'antd';
 import ConfirmPhoneNumber from 'components/HealthDeclaration/ConfirmPhoneNumber';
 import DomesticGuests from 'components/HealthDeclaration/DomesticGuests';
 import DomesticMove from 'components/HealthDeclaration/DomesticMove';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './index.module.less';
 
 const HealthDeclaration = () => {
@@ -11,21 +12,26 @@ const HealthDeclaration = () => {
   const [isConfirm, setIsConfirm] = useState(false);
   return (
     <div className="container">
-      <Row className={styles['title-container']} justify="center">
-        <Col span={24} className={styles.title}>
-          Khai báo y tế
-        </Col>
-        <Col xs={24} sm={18} lg={12} xl={10} className={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh ultrices quam in eu lobortis
-          nullam consectetur. Purus sagittis orci eu faucibus.
-        </Col>
-        <Col span={24}>
-          <NavLink className={styles.link} to="/">
-            Tìm hiểu về COVID 19
-          </NavLink>
-        </Col>
-      </Row>
-      <Row gutter={[40, 20]}>
+      <div style={{ marginTop: '60px' }} className="banner">
+        <Row gutter={[20, 0]}>
+          <Col xs={24} md={14} lg={12} xl={12}>
+            <h3 className="title">Đăng ký tiêm chủng</h3>
+            <p>
+              Việc đăng ký thông tin hoàn toàn bảo mật và phục vụ cho chiến dịch tiêm chủng Vắc xin
+              COVID - 19.
+            </p>
+          </Col>
+          <Col xs={0} md={10} lg={12} xl={12} />
+          <Col xs={14} sm={6} md={4}>
+            <Link to="/home">
+              <Button style={{ color: '#2A81EA', paddingLeft: '0px' }} type="text" block ghost>
+                Tìm hiểu về COVID-19 <ArrowRightOutlined />
+              </Button>
+            </Link>
+          </Col>
+        </Row>
+      </div>
+      <Row style={{ marginTop: '-140px' }} gutter={[40, 20]}>
         <Col span={12}>
           <Card
             className={styles.card}

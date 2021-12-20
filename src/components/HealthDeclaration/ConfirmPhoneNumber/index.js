@@ -48,12 +48,12 @@ const ConfirmPhoneNumber = props => {
           </Form.Item>
         )}
         <Form.Item style={{ textAlign: 'center' }}>
-          <Button type="primary" htmlType="submit" className={styles['btn-confirm']}>
+          <Button block size="large" type="primary" htmlType="submit">
             {!sendOTP ? 'Nhận mã OTP' : 'Tiếp tục'}
           </Button>
         </Form.Item>
         {sendOTP && (
-          <Button type="text" className={styles.resend} onClick={resendOTP}>
+          <Button block size="large" type="default" className={styles.resend} onClick={resendOTP}>
             Gửi lại mã
           </Button>
         )}
