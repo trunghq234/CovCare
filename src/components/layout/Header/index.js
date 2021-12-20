@@ -66,6 +66,9 @@ const AppHeader = () => {
           <NavLink to="/complaint">Phản ánh</NavLink>
         </Menu.Item>
       </SubMenu>
+      <Menu.Item key="doctor">
+        <NavLink to="/doctors">Bác sỹ</NavLink>
+      </Menu.Item>
     </>
   );
   return (

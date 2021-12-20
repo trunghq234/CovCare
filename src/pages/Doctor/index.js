@@ -94,10 +94,10 @@ const DoctorPage = () => {
         <Col span={24}>
           <Search />
         </Col>
-        <Col xl={5} lg={7}>
+        <Col xs={24} lg={7} xl={5}>
           <Filter />
         </Col>
-        <Col xl={19} lg={17}>
+        <Col xs={24} lg={17} xl={19}>
           <DoctorList doctors={doctors} />
         </Col>
       </Row>
