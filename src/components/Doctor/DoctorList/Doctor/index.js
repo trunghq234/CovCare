@@ -19,16 +19,14 @@ export default function Doctor({ doctor }) {
           <p className={styles.doctorTitle}>{title}</p>
           <Rate defaultValue={rate} className={styles.doctorRate} />
           <p className={styles.doctorPosition}>
-            Position: <b>{position}</b>
+            Vị trí: <b style={{ fontWeight: '600' }}>{position}</b>
           </p>
           <p className={styles.doctorExperience}>
-            Experience: <b>{experience}</b> years
+            Kinh nghiệm: <b style={{ fontWeight: '600' }}>{experience}</b> năm
           </p>
         </Col>
         <Col lg={6} xl={6} md={8} sm={24} xs={24} className={styles.doctorTime}>
-          <p>
-            Lorem ipsum dolor sit amet: <b>13/11/2021</b>
-          </p>
+          <p>Ca làm việc</p>
           <Row gutter={[16, 16]}>
             <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />

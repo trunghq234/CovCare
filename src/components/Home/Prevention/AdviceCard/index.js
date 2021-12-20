@@ -6,43 +6,43 @@ import styles from './index.module.less';
 const AdviceCard = () => {
   const stepsToProtect = [
     {
-      title: 'Stay home if you’re sick',
-      content: '– Stay home if you are sick, except to get medical care.',
+      title: 'Ở trong nhà nếu bạn bị ốm',
+      content: '– Hãy ở nhà nếu bạn bị ốm, trừ khi được chăm sóc y tế ở trạm y tế.',
     },
     {
-      title: 'Cover your mouth and nose',
+      title: 'Che miệng và mũi của bạn',
       content:
-        '– with a tissue when you cough or sneeze (throw used tissues in the trash) or use the inside of your elbow.',
+        '– Bằng khăn giấy khi bạn ho hoặc hắt hơi (vứt khăn giấy đã qua sử dụng vào thùng rác) hoặc sử dụng mặt trong của khuỷu tay.',
     },
     {
-      title: 'Wear a facemask if you are sick',
+      title: 'Đeo khẩu trang nếu bạn bị ốm',
       content:
-        '– You should wear a facemask when you are around other people (e.g., sharing a room or vehicle) and before you enter a healthcare provider’s',
+        '– Bạn nên đeo khẩu trang khi ở gần những người khác (ví dụ: ở chung phòng hoặc xe cộ) và trước khi bạn vào nhà cung cấp dịch vụ chăm sóc sức khỏe',
     },
     {
-      title: 'Clean AND disinfect frequently touched surfaces daily',
+      title: 'Làm sạch và khử trùng các bề mặt thường xuyên chạm vào hàng ngày',
       content:
-        '– This includes phones, tables, light switches, doorknobs, countertops, handles, desks, toilets, faucets, and sinks.',
+        '– Điều này bao gồm điện thoại, bảng, công tắc đèn, tay nắm cửa, mặt bàn, tay cầm, bàn làm việc, nhà vệ sinh, vòi nước và bồn rửa.',
     },
     {
-      title: 'Clean the dirty surfaces',
-      content: '– Use detergent or soap and water prior to disinfection.',
+      title: 'Làm sạch bề mặt bẩn',
+      content: '– Sử dụng chất tẩy rửa hoặc xà phòng và nước trước khi khử trùng.',
     },
     {
-      title: 'Stay informed about the local COVID-19 situation',
+      title: 'Cập nhật thông tin về tình hình COVID-19 tại địa phương',
       content:
-        '– Get up-to-date information about local COVID-19 activity from public health officials.',
+        '– Nhận thông tin cập nhật về hoạt động COVID-19 tại địa phương từ các quan chức y tế công cộng.',
     },
     {
-      title: 'Dedicated, lined trash can',
+      title: 'Thùng rác chuyên dụng có túi lót',
       content:
-        '– If possible, dedicate a lined trash can for the ill person. Use gloves when removing garbage bags, and handling & disposing of trash.',
+        '– Nếu có thể, hãy dành một thùng rác có lót bạt cho người bệnh. Sử dụng găng tay khi loại bỏ túi rác, xử lý và vứt bỏ thùng rác.',
     },
   ];
 
   return (
     <Card style={{ padding: '10px' }}>
-      <h4 className={styles.title}>Take steps to protect others</h4>
+      <h4 className={styles.title}>Thực hiện các bước để bảo vệ bản thân và người khác</h4>
       <Row gutter={[40]}>
         <Col xs={24} xl={16}>
           <ul>

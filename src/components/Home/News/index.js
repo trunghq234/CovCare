@@ -8,21 +8,21 @@ import news_c from 'assets/images/news-c.jpg';
 import NewsCard from './NewsCard';
 const newsList = [
   {
-    title: 'Caring for someone at home',
+    title: 'Chăm sóc ở nhà',
     content:
-      'Most people who get sick with COVID-19 will have only mild illness and should recover at home. Care at home can help stop the spread of COVID-19',
+      'Hầu hết những người bị bệnh với COVID-19 sẽ chỉ bị bệnh nhẹ và sẽ tự phục hồi tại nhà. Chăm sóc tại nhà có thể giúp ngăn chặn sự lây lan của COVID-19',
     image: news_a,
   },
   {
-    title: '15 ways to keep safe and healthy',
+    title: '15 cách để giữ an toàn và khỏe mạnh',
     content:
-      'Most people who get sick with COVID-19 will have only mild illness and should recover at home. Care at home can help stop the spread of COVID-19',
+      'Hầu hết những người bị bệnh với COVID-19 sẽ chỉ bị bệnh nhẹ và sẽ tự phục hồi tại nhà. Chăm sóc tại nhà có thể giúp ngăn chặn sự lây lan của COVID-19',
     image: news_b,
   },
   {
-    title: 'If You Think You Are Sick',
+    title: 'Nếu bạn nghĩ rằng bạn bị ốm',
     content:
-      'If you are sick with COVID-19 or think you might have it, follow the steps below to help protect other people in your home and community',
+      'Nếu bạn bị bệnh với COVID-19 hoặc nghĩ rằng bạn có thể mắc bệnh này, hãy làm theo các bước dưới đây để giúp bảo vệ những người khác trong gia đình và cộng đồng của bạn',
     image: news_c,
   },
 ];
@@ -33,8 +33,8 @@ const News = () => {
       <Row gutter={[0, 80]}>
         <Col span={24}>
           <div className={style.heading}>
-            <h5>RECENT FROM BLOG</h5>
-            <h2>LATEST UPDATE</h2>
+            <h5>BLOG GẦN ĐÂY</h5>
+            <h2>CẬP NHẬT MỚI NHẤT</h2>
           </div>
           <Row gutter={20}>
             {newsList.map((news, index) => {
