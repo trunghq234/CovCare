@@ -101,17 +101,14 @@ const Complaint = props => {
     },
   ];
   return (
-    <div>
-      <div className={styles.breadcrumb}>
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <a href="./">Trang chủ</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a href="./search">Tra cứu Phản ánh tiêm chủng vắc xin COVID-19</a>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-        <h2>Tra cứu Phản ánh tiêm chủng vắc xin COVID-19</h2>
+    <div className="container">
+      <div className="banner-sm" style={{ marginTop: '60px' }}>
+        <Row gutter={[20, 10]}>
+          <Col xs={24} md={14} lg={12} xl={8}>
+            <h1 className="title">Tra cứu phản ánh</h1>
+            <p>Thông tin phản ánh của bạn sẽ được tiếp nhận và xem xét.</p>
+          </Col>
+        </Row>
       </div>
       <div className={styles.contain}>
         <Card className={styles.card}>
