@@ -31,12 +31,12 @@ const News = () => {
   return (
     <div className="container">
       <div className="banner" style={{ marginTop: '60px' }}>
-        <Row gutter={[20, 0]}>
+        <Row gutter={[20, 10]}>
           <Col xs={24} md={14} lg={12} xl={8}>
             <h1 className="title">Tin tức</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh ultrices quam in eu
-              lobortis nullam consectetur. Purus sagittis orci eu faucibus.
+              Cập nhật liên tục về tình hình bệnh viêm phổi do virus Corona (COVID-19) gây ra để mọi
+              người được biết.
             </p>
           </Col>
           <Col xs={0} md={10} lg={12} xl={16} />
@@ -45,9 +45,14 @@ const News = () => {
               Đăng ký tin tức
             </Button>
           </Col>
-          <Col xs={0} sm={6} md={4}>
+          <Col xs={12} sm={6} md={4}>
             <NavLink to="/home">
-              <Button size="large" style={{ color: '#2A81EA' }} type="text" block ghost>
+              <Button
+                size="large"
+                style={{ color: '#2A81EA', paddingLeft: '0px' }}
+                type="text"
+                block
+                ghost>
                 Tìm hiểu về COVID-19
                 <ArrowRightOutlined />
               </Button>

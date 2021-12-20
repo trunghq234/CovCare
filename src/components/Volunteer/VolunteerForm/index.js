@@ -12,6 +12,7 @@ import {
   Select,
 } from 'antd';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './index.module.less';
 
 const { Option } = Select;
@@ -20,7 +21,7 @@ export default function VolunteerForm() {
   const [form] = Form.useForm();
   const option = [
     {
-      label: 'Tôi đồng ý với những điều khoản phòng dịch 5K!',
+      label: 'Tôi đồng ý với những điều khoản trên!',
       value: 'rule',
     },
   ];
@@ -43,7 +44,7 @@ export default function VolunteerForm() {
     <div>
       <Card>
         <Form form={form} layout="vertical" onFinish={onFinish}>
-          <Row gutter={[48, 0]}>
+          <Row gutter={[20, 10]} justify="center">
             <Col xl={10} lg={12} md={12} sm={24} xs={24}>
               <Form.Item
                 name="fullName"
@@ -53,7 +54,10 @@ export default function VolunteerForm() {
               </Form.Item>
             </Col>
             <Col xl={10} lg={12} md={12} sm={24} xs={24}>
-              <Form.Item name="email" label="Email">
+              <Form.Item
+                name="email"
+                label="Email"
+                rules={[{ required: true, message: 'Vui lòng nhập email!' }]}>
                 <Input type="email" placeholder="Nhập email" />
               </Form.Item>
             </Col>
@@ -96,7 +100,7 @@ export default function VolunteerForm() {
                 <Input placeholder="Nhập CCCD/CMND" />
               </Form.Item>
             </Col>
-
+            <Col xl={4} lg={4} md={0} sm={0} xs={0} />
             <Col xl={10} lg={6} md={12} sm={12} xs={24}>
               <Form.Item
                 label="Tôi đăng ký nhóm"
@@ -110,12 +114,18 @@ export default function VolunteerForm() {
               </Form.Item>
             </Col>
             <Col xl={10} lg={12} md={12} sm={12} xs={24}>
-              <Form.Item label="Chuyên khoa" name="specialize">
+              <Form.Item
+                label="Chuyên khoa"
+                name="specialize"
+                rules={[{ required: true, message: 'Vui lòng nhập chuyên khoa!' }]}>
                 <Input placeholder="Nhập chuyên khoa" />
               </Form.Item>
             </Col>
             <Col xl={4} lg={6} md={12} sm={12} xs={24}>
-              <Form.Item label="Kinh nghiệm" name="experience">
+              <Form.Item
+                label="Kinh nghiệm"
+                name="experience"
+                rules={[{ required: true, message: 'Vui lòng nhập kinh nghiệm!' }]}>
                 <Select placeholder="Chọn">
                   <Option value="1">0 - 1 năm</Option>
                   <Option value="2">1 - 2 năm</Option>
@@ -126,7 +136,10 @@ export default function VolunteerForm() {
               </Form.Item>
             </Col>
             <Col xl={10} lg={12} md={12} sm={12} xs={24}>
-              <Form.Item label="Nơi học tập, công tác" name="workLocation">
+              <Form.Item
+                label="Nơi học tập, công tác"
+                name="workLocation"
+                rules={[{ required: true, message: 'Vui lòng nhập nơi công tác!' }]}>
                 <Input placeholder="Nhập nơi học tập, công tác" />
               </Form.Item>
             </Col>
@@ -135,20 +148,20 @@ export default function VolunteerForm() {
                 <Input.TextArea placeholder="Ghi chú tại đây" />
               </Form.Item>
             </Col>
+            <Col xl={4} lg={4} md={0} sm={0} xs={0} />
             <Col span={24}>
               <Row gutter={[0, 16]} className={styles.wrapper}>
                 <Col span={24} className={styles.content}>
                   Không sử dụng thông tin đã được tiếp cận và xử lý phục vụ cho các mục đích khác
-                  ngoài nội dung công việc được giao tại mạng lưới “Thầy thuốc Đồng hành”;
+                  ngoài nội dung công việc được giao tại mạng lưới;
                 </Col>
                 <Col span={24} className={styles.content}>
                   Không sao chép, cung cấp một phần hay toàn bộ thông tin đã được tiếp cận và xử lý
-                  cho bất kỳ bên thứ ba nào khi chưa có sự chấp thuận của mạng lưới “Thầy thuốc đồng
-                  hành”;
+                  cho bất kỳ bên thứ ba nào khi chưa có sự chấp thuận của mạng lưới;
                 </Col>
                 <Col span={24} className={styles.content}>
                   Bàn giao toàn bộ thông tin và không giữ lại bất cứ bản sao nào khi kết thúc thời
-                  gian làm việc tại mạng lưới “Thầy thuốc đồng hành”.
+                  gian làm việc tại mạng lưới.
                 </Col>
                 <Col span={24} className={styles.content}>
                   Tôi xin cam đoan thực hiện đúng những nội dung trên và chịu trách nhiệm trước pháp
@@ -159,31 +172,28 @@ export default function VolunteerForm() {
             <Col span={24}>
               <Form.Item
                 name="checkbox"
-                rules={[
-                  { required: true, message: 'Vui lòng chấp nhận những điều khoản về phòng dịch!' },
-                ]}>
+                rules={[{ required: true, message: 'Vui lòng chấp nhận những điều khoản!' }]}>
                 <Checkbox.Group options={option} />
               </Form.Item>
             </Col>
-
-            <Col xl={24} xs={24}>
-              <Button className={styles.button} type="primary" htmlType="submit">
+            <Col xl={8} lg={8} md={8} sm={24} xs={24} span={24}>
+              <Button size="large" block type="primary" htmlType="submit">
                 Gửi
               </Button>
             </Col>
           </Row>
         </Form>
       </Card>
-      <Modal
-        title="Thông báo"
-        visible={isModalVisible}
-        onOk={handleOk}
-        footer={[
-          <Button key="submit" type="primary" onClick={handleOk} style={{ width: '50px' }}>
-            Ok
-          </Button>,
-        ]}>
-        <Result status="success" title="Đăng ký tham gia tình nguyện thành công" />
+      <Modal title="Thông báo" onCancel={handleOk} visible={isModalVisible} footer={null}>
+        <Result
+          status="success"
+          title="Đăng ký tham gia tình nguyện thành công"
+          extra={[
+            <Button size="large" type="primary" key="home">
+              <Link to="/home">Trang chủ</Link>
+            </Button>,
+          ]}
+        />
       </Modal>
     </div>
   );
