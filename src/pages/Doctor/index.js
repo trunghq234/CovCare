@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'antd';
 import { Search, Filter, DoctorList } from 'components/Doctor';
-import styles from './index.module.less';
 import Banner from 'components/Doctor/Banner';
 
 const doctors = [
