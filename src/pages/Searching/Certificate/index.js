@@ -18,17 +18,14 @@ const Certificate = props => {
   const [visible, setVisible] = useState('none');
 
   return (
-    <div>
-      <div className={styles.breadcrumb}>
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <a href="./">Trang chủ</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a href="./search">Tra cứu chứng nhận tiêm</a>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-        <h2>Tra cứu chứng nhận tiêm</h2>
+    <div className="container">
+      <div className="banner-sm" style={{ marginTop: '60px' }}>
+        <Row gutter={[20, 10]}>
+          <Col xs={24} md={14} lg={12} xl={8}>
+            <h1 className="title">Tra cứu giấy chứng nhận</h1>
+            <p>Giấy chứng sẽ giúp bạn có thể lưu thông và đi làm trở lại.</p>
+          </Col>
+        </Row>
       </div>
 
       <div className={styles.contain}>

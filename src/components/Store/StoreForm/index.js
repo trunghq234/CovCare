@@ -48,18 +48,32 @@ export default function StoreForm() {
                 <Input placeholder="Nhập tên cửa hàng" />
               </Form.Item>
             </Col>
-            <Col span={24}>
-              <ProvincePicker city={city} form={form} />
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
+              <Form.Item
+                name="phoneNumber"
+                label="Số điện thoại"
+                rules={[{ required: true, message: 'Vui lòng nhập số điện thoại!' }]}
+                onKeyPress={event => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}>
+                <Input type="text" maxLength="10" placeholder="Nhập số điện thoại" />
+              </Form.Item>
             </Col>
-            <Col xl={8} lg={8} md={8} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item
                 name="timePicker"
-                label="Thời gian"
+                label="Thời gian mở cửa"
                 rules={[{ required: true, message: 'Vui lòng nhập chọn thời gian bán hàng!' }]}>
                 <TimePicker.RangePicker style={{ height: '35px' }} size="small" format="HH:mm" />
               </Form.Item>
             </Col>
-            <Col xl={16} lg={16} md={16} sm={24} xs={24}>
+            <Col span={24}>
+              <ProvincePicker city={city} form={form} />
+            </Col>
+
+            <Col span={24}>
               <Form.Item label="Ghi chú" name="note">
                 <Input.TextArea placeholder="Chú thích tại đây" />
               </Form.Item>
@@ -81,7 +95,7 @@ export default function StoreForm() {
             <Col xl={8} lg={8} md={8} sm={24} xs={24} span={24}>
               <Form.Item>
                 <Button size="large" block type="primary" htmlType="submit">
-                  Gửi yêu cầu
+                  Gửi yêu cầu mở cửa hàng
                 </Button>
               </Form.Item>
             </Col>
