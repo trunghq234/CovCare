@@ -1,14 +1,14 @@
-import { Card, Col, Image, Rate, Row } from 'antd';
+import { Card, Col, Button, Rate, Row, Tooltip } from 'antd';
 import React from 'react';
 import Time from './Time';
 import styles from './index.module.less';
 import { useHistory } from 'react-router-dom';
-
+import { ArrowRightOutlined } from '@ant-design/icons';
 export default function Doctor({ doctor }) {
   const { name, title, rate, position, experience } = doctor;
   const history = useHistory();
   return (
-    <Card onClick={() => history.push('/doctor-detail')} className={styles.container}>
+    <Card className={styles.container}>
       <Row className={styles.wrapper}>
         <Col xl={6} lg={8} md={8} sm={24} xs={24}>
           <img
@@ -29,6 +29,16 @@ export default function Doctor({ doctor }) {
           </p>
         </Col>
         <Col xl={6} lg={6} md={8} sm={24} xs={24} className={styles.doctorTime}>
+          <Row justify="end">
+            <Tooltip title="Xem thông tin chi tiết bác sỹ">
+              <Button
+                href="/doctor-detail"
+                type="primary"
+                shape="circle"
+                icon={<ArrowRightOutlined />}
+              />
+            </Tooltip>
+          </Row>
           <p>Ca làm việc</p>
           <Row gutter={[16, 16]}>
             <Col lg={6} xl={6} md={6} sm={6} xs={6}>
