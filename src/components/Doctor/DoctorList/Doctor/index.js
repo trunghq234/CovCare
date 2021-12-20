@@ -4,6 +4,7 @@ import Time from './Time';
 import styles from './index.module.less';
 import { useHistory } from 'react-router-dom';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 export default function Doctor({ doctor }) {
   const { name, title, rate, position, experience } = doctor;
   const history = useHistory();
@@ -31,12 +32,9 @@ export default function Doctor({ doctor }) {
         <Col xl={6} lg={6} md={8} sm={24} xs={24} className={styles.doctorTime}>
           <Row justify="end">
             <Tooltip title="Xem thông tin chi tiết bác sỹ">
-              <Button
-                href="/doctor-detail"
-                type="primary"
-                shape="circle"
-                icon={<ArrowRightOutlined />}
-              />
+              <Link to="/doctor/detail">
+                <Button type="primary" shape="circle" icon={<ArrowRightOutlined />} />
+              </Link>
             </Tooltip>
           </Row>
           <p>Ca làm việc</p>

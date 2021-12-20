@@ -1,4 +1,3 @@
-import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button, Card, Col, Form, Input, Modal, Result, Row } from 'antd';
 import ProvincePickerWithWard from 'components/HealthDeclaration/ProvincePickerWithWard';
 import Category from 'components/SupportRequest/Category';

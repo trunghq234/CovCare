@@ -1,5 +1,6 @@
 import Appointment from 'components/Appointment';
 import RegisterAppointment from 'components/Appointment/Register';
+import AboutUs from 'pages/AboutUs';
 import DoctorPage from 'pages/Doctor';
 import DoctorDetailPage from 'pages/DoctorDetail';
 import HealthDeclaration from 'pages/HealthDeclaration';
@@ -74,8 +75,12 @@ const routes = [
     page: <DoctorPage />,
   },
   {
-    path: '/doctor-detail',
+    path: '/doctor/detail',
     page: <DoctorDetailPage />,
+  },
+  {
+    path: '/aboutus',
+    page: <AboutUs />,
   },
   {
     path: '*',
