@@ -16,6 +16,7 @@ import RegistrationResult from 'pages/Searching/RegistrationResult';
 import Complaint from 'pages/Searching/Complaint';
 import Appointment from 'components/Appointment';
 import RegisterAppointment from 'components/Appointment/Register';
+import SalesLocation from 'pages/SalesLocation';
 import SupportRequest from 'pages/SupportRequest';
 
 const { Header, Footer, Content } = Layout;
@@ -70,6 +71,10 @@ const routes = [
     page: <RegisterAppointment />,
   },
   {
+    path: '/map',
+    page: <SalesLocation />,
+  },
+  {
     path: '/support-request',
     page: <SupportRequest />,
   },
@@ -84,7 +89,7 @@ function App() {
         <Content className="app__content">
           <Switch>
             {routes.map(route => (
-              <Route exact path={route.path}>
+              <Route key={route.path} exact path={route.path}>
                 {route.page}
               </Route>
             ))}

@@ -985,7 +985,7 @@ const TabContent = ({ id }) => {
         className={styles['site-collapse-custom-collapse']}>
         {tabcontents[parseInt(id)].map((content, index) => {
           return (
-            <Panel header={content.question} key={index} className={styles[' ']}>
+            <Panel header={content.question} key={content.question} className={styles[' ']}>
               {content.answer}
             </Panel>
           );

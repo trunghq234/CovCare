@@ -48,7 +48,7 @@ const Search = () => {
         <Col span={24} style={{ marginTop: '20px' }}>
           <Row gutter={[24, 24]}>
             {listButton.map(button => (
-              <Col span={2}>
+              <Col key={button.title} span={2}>
                 <Button>{button.title}</Button>
               </Col>
             ))}

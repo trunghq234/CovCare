@@ -77,7 +77,7 @@ const DomesticMove = () => {
             label="Mã hiệu chuyến bay"
             name="flightCode"
             rules={[{ required: true, message: 'Bạn chưa nhận mã hiệu chuyến bay' }]}>
-            <Input />
+            <Input placeholder="Nhập mã hiệu chuyến bay" />
           </Form.Item>
         </Col>
         <Col xs={24} md={12}>
@@ -120,7 +120,7 @@ const DomesticMove = () => {
               { required: true, message: 'Bạn chưa nhập số phương tiện' },
               { validator: numberValidator },
             ]}>
-            <Input />
+            <Input placeholder="Nhập số phương tiện" />
           </Form.Item>
         </Col>
         <Col xs={24} md={12}>
