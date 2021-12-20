@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.module.less';
 import { Button, Col, Row } from 'antd';
+import { ArrowRightOutlined } from '@ant-design/icons';
 
 const Hero = () => {
   return (
@@ -15,14 +16,9 @@ const Hero = () => {
             </p>
           </Col>
           <Col xs={0} md={10} lg={12} xl={16} />
-          <Col xs={10} sm={6} md={4} xl={3}>
-            <Button type="primary" block>
-              Đăng ký
-            </Button>
-          </Col>
           <Col xs={14} sm={6} md={4}>
-            <Button style={{ color: '#2A81EA' }} type="text" block ghost>
-              Tìm hiểu về COVID-19
+            <Button style={{ color: '#2A81EA', paddingLeft: '0px' }} type="text" block ghost>
+              Tìm hiểu về COVID-19 <ArrowRightOutlined />
             </Button>
           </Col>
         </Row>

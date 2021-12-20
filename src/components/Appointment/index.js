@@ -1,9 +1,8 @@
 import { SearchOutlined, SyncOutlined, WhatsAppOutlined } from '@ant-design/icons';
-import { Badge, Breadcrumb, Button, Calendar, Card, Col, Form, Input, Row, Select } from 'antd';
-import viVN from 'antd/lib/locale/vi_VN';
+import { Badge, Breadcrumb, Button, Calendar, Card, Col, Form, Input, Row } from 'antd';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './index.module.less';
-import React, { useEffect, useState } from 'react';
 
 const Appointment = props => {
   const [form] = Form.useForm();
@@ -91,21 +90,23 @@ const Appointment = props => {
   };
   return (
     <div>
-      <div className={styles.breadcrumb} s>
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <a href="./">Trang chủ</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a href="./appointment">Lịch khám chữa bệnh</a>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-        <h2>Lịch khám chữa bệnh</h2>
+      <div className={styles.banner}>
+        <div style={{ marginTop: '60px' }} className="container">
+          <Row gutter={[20, 0]}>
+            <Col xs={24} md={14} lg={12} xl={12}>
+              <h3 className="title">Lịch khám chữa bệnh</h3>
+              <p>
+                Tra cứu lịch khám chữa bệnh trong mùa dịch. Hoạt động được tổ chức bởi mạng lưới bác
+                sĩ và tình nguyện viên trong những vùng có nguy cơ cao mắc Covid-19 tại cộng đồng.
+              </p>
+            </Col>
+          </Row>
+        </div>
       </div>
-      <div className={styles.container}>
+      <div style={{ marginTop: '-40px' }} className="container">
         <Card className={styles.card}>
           <Form layout="vertical" form={form} onFinish={handleSubmit}>
-            <Row gutter={[20, 20]}>
+            <Row gutter={[20, 0]} justify="center">
               <Col sm={24} xs={24} md={12}>
                 <Form.Item
                   label="CMND/CCCD/HC"
@@ -138,24 +139,30 @@ const Appointment = props => {
                   <Input placeholder="Số điện thoại" />
                 </Form.Item>
               </Col>
+              <Col sm={12} xs={12} md={6} lg={4}>
+                <Button
+                  className={styles.btn}
+                  onClick={handleReset}
+                  size="large"
+                  type="primary"
+                  block
+                  ghost
+                  icon={<SyncOutlined />}>
+                  Nhập lại
+                </Button>
+              </Col>
+              <Col sm={12} xs={12} md={6} lg={4}>
+                <Button
+                  className={styles.btn}
+                  size="large"
+                  block
+                  type="primary"
+                  htmlType="submit"
+                  icon={<SearchOutlined />}>
+                  Tra cứu
+                </Button>
+              </Col>
             </Row>
-            <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-              <Button
-                className={styles.btn}
-                onClick={handleReset}
-                type="primary"
-                ghost
-                icon={<SyncOutlined />}>
-                Nhập lại
-              </Button>
-              <Button
-                className={styles.btn}
-                type="primary"
-                htmlType="submit"
-                icon={<SearchOutlined />}>
-                Tra cứu
-              </Button>
-            </div>
             <div style={{ textAlign: 'center', margin: '1rem 0' }}>
               <Link to={'/appointment/register'}>
                 <Button className={styles.btn} type="link" ghost icon={<WhatsAppOutlined />}>
@@ -165,7 +172,7 @@ const Appointment = props => {
             </div>
           </Form>
         </Card>
-        <Card style={{ display: visible, marginTop: '16px' }}>
+        <Card style={{ display: visible, marginTop: '20px' }}>
           <Calendar dateFullCellRender={dateCellRender} monthCellRender={monthCellRender} />
         </Card>
       </div>
