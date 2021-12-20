@@ -31,7 +31,7 @@ const Certificate = props => {
       <div className={styles.contain}>
         <Card className={styles.card}>
           <Form layout="vertical" form={form} onFinish={handleSubmit}>
-            <Row gutter={20}>
+            <Row gutter={[20, 10]} justify="center">
               <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Họ và tên"
@@ -100,14 +100,7 @@ const Certificate = props => {
                   <Input type="text" placeholder="Số thẻ BHYT" />
                 </Form.Item>
               </Col>
-            </Row>
-            <Row style={{ width: '100%' }}>
               <Col span={24}>
-                {/* <Alert
-                  message="Error Text"
-                  description="Error Description Error Description Error Description Error Description"
-                  type="error"
-                /> */}
                 <div className={styles.notice}>
                   <span style={{ fontWeight: '600' }}>Ghi chú: </span>
                   <span>
@@ -120,24 +113,30 @@ const Certificate = props => {
                   </a>
                 </div>
               </Col>
+              <Col sm={12} xs={12} md={6} lg={6}>
+                <Button
+                  className={styles.btn}
+                  onClick={handleReset}
+                  block
+                  size="large"
+                  type="primary"
+                  ghost
+                  icon={<SyncOutlined />}>
+                  Nhập lại
+                </Button>
+              </Col>
+              <Col sm={12} xs={12} md={6} lg={6}>
+                <Button
+                  className={styles.btn}
+                  block
+                  size="large"
+                  type="primary"
+                  htmlType="submit"
+                  icon={<SearchOutlined />}>
+                  Tra cứu
+                </Button>
+              </Col>
             </Row>
-            <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-              <Button
-                className={styles.btn}
-                onClick={handleReset}
-                type="primary"
-                ghost
-                icon={<SyncOutlined />}>
-                Nhập lại
-              </Button>
-              <Button
-                className={styles.btn}
-                type="primary"
-                htmlType="submit"
-                icon={<SearchOutlined />}>
-                Tra cứu
-              </Button>
-            </div>
           </Form>
         </Card>
         <Result visible={visible}></Result>

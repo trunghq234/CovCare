@@ -1,4 +1,4 @@
-import { Card, Checkbox, Col, DatePicker, Row, Button } from 'antd';
+import { Card, Checkbox, Col, Row, Button } from 'antd';
 import React from 'react';
 import styles from './index.module.less';
 
@@ -45,7 +45,7 @@ const Filter = () => {
         </div>
       </div>
       <div className={styles.filterBox}>
-        <Button className={styles.filterButton}>Lọc</Button>
+        <Button block>Lọc</Button>
       </div>
     </Card>
   );

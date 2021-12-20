@@ -114,6 +114,7 @@ const Complaint = props => {
         <Card className={styles.card}>
           <Form layout="vertical" form={form} onFinish={handleSubmit}>
             <Row gutter={20} justify="center">
+              <Col xs={0} md={4} />
               <Col xs={24} md={16}>
                 <Form.Item
                   label="Số điện thoại"
@@ -133,24 +134,31 @@ const Complaint = props => {
                   <Input size="middle" placeholder="Số điện thoại" />
                 </Form.Item>
               </Col>
+              <Col xs={0} md={4} />
+              <Col xs={12} sm={12} md={6} lg={6}>
+                <Button
+                  className={styles.btn}
+                  onClick={handleReset}
+                  block
+                  size="large"
+                  type="primary"
+                  ghost
+                  icon={<SyncOutlined />}>
+                  Nhập lại
+                </Button>
+              </Col>
+              <Col xs={12} sm={12} md={6} lg={6}>
+                <Button
+                  className={styles.btn}
+                  block
+                  size="large"
+                  type="primary"
+                  htmlType="submit"
+                  icon={<SearchOutlined />}>
+                  Tra cứu
+                </Button>
+              </Col>
             </Row>
-            <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-              <Button
-                className={styles.btn}
-                onClick={handleReset}
-                type="primary"
-                ghost
-                icon={<SyncOutlined />}>
-                Nhập lại
-              </Button>
-              <Button
-                className={styles.btn}
-                type="primary"
-                htmlType="submit"
-                icon={<SearchOutlined />}>
-                Tra cứu
-              </Button>
-            </div>
           </Form>
         </Card>
         <div className={styles.result} style={{ display: visible }}>
