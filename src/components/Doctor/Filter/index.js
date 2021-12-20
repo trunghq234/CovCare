@@ -6,61 +6,47 @@ const Filter = () => {
   return (
     <Card className={styles.wrapper}>
       <div className={styles.filterBox}>
-        <p className={styles.filterTitle}>Lorem ipsum dolor sit amet</p>
+        <p className={styles.filterTitle}>Khoa</p>
         <div>
           <Row>
             <Col span={24}>
-              <Checkbox className={styles.filterCheckbox}>Lorem ipsum (30)</Checkbox>
+              <Checkbox className={styles.filterCheckbox}>Khoa nội</Checkbox>
             </Col>
             <Col span={24}>
-              <Checkbox className={styles.filterCheckbox}>Lorem ipsum (30)</Checkbox>
+              <Checkbox className={styles.filterCheckbox}>Khoa ngoại</Checkbox>
+            </Col>
+            <Col span={24}>
+              <Checkbox className={styles.filterCheckbox}>Khoa phụ sản</Checkbox>
+            </Col>
+            <Col span={24}>
+              <Checkbox className={styles.filterCheckbox}>Khoa nhi</Checkbox>
+            </Col>
+            <Col span={24}>
+              <Checkbox className={styles.filterCheckbox}>Khoa dược</Checkbox>
             </Col>
           </Row>
         </div>
       </div>
 
       <div className={styles.filterBox}>
-        <p className={styles.filterTitle}>Lorem ipsum dolor sit amet</p>
-        <DatePicker size="medium" />
-      </div>
-
-      <div className={styles.filterBox}>
-        <p className={styles.filterTitle}>Lorem ipsum dolor sit amet</p>
+        <p className={styles.filterTitle}>Chức vụ</p>
         <div>
           <Row>
             <Col span={24}>
-              <Checkbox className={styles.filterCheckbox}>Lorem ipsum (25)</Checkbox>
+              <Checkbox className={styles.filterCheckbox}>Giám đốc</Checkbox>
             </Col>
             <Col span={24}>
-              <Checkbox className={styles.filterCheckbox}>Lorem ipsum (25)</Checkbox>
+              <Checkbox className={styles.filterCheckbox}>Trưởng khoa</Checkbox>
             </Col>
             <Col span={24}>
-              <Checkbox className={styles.filterCheckbox}>Lorem ipsum (25)</Checkbox>
+              <Checkbox className={styles.filterCheckbox}>Nhân viên</Checkbox>
             </Col>
           </Row>
         </div>
       </div>
 
       <div className={styles.filterBox}>
-        <p className={styles.filterTitle}>Lorem ipsum dolor sit amet</p>
-        <div>
-          <Row>
-            <Col span={24}>
-              <Checkbox className={styles.filterCheckbox}>Lorem ipsum (25)</Checkbox>
-            </Col>
-            <Col span={24}>
-              <Checkbox className={styles.filterCheckbox}>Lorem ipsum (25)</Checkbox>
-            </Col>
-            <Col span={24}>
-              <Checkbox className={styles.filterCheckbox}>Lorem ipsum (25)</Checkbox>
-            </Col>
-          </Row>
-        </div>
-      </div>
-
-      <div className={styles.filterBox}>
-        <Button className={styles.filterButton}>Lorem ipsum Button</Button>
-        <p style={{ color: 'rgb(103, 193, 255)' }}>Lorem ipsum dolor sit amet</p>
+        <Button className={styles.filterButton}>Lọc</Button>
       </div>
     </Card>
   );
