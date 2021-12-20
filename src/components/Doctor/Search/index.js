@@ -4,31 +4,34 @@ import styles from './index.module.less';
 
 const listButton = [
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa nội',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa ngoại',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa phụ sản',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa nhi',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa truyền nhiễm',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa cấp cứu',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa hồi sức tích cực',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa ung bướu',
   },
   {
-    title: 'Lorem ipsum',
+    title: 'Khoa dược',
+  },
+  {
+    title: 'Khoa dinh dưỡng',
   },
 ];
 
@@ -42,17 +45,15 @@ const Search = () => {
         </Col>
         <Col span={2}>
           <Button className={styles.searchButton} type="primary" size="large">
-            Search
+            Tìm kiếm
           </Button>
         </Col>
         <Col span={24} style={{ marginTop: '20px' }}>
-          <Row gutter={[24, 24]}>
-            {listButton.map(button => (
-              <Col key={button.title} span={2}>
-                <Button>{button.title}</Button>
-              </Col>
-            ))}
-          </Row>
+          {listButton.map(button => (
+            <Button key={button.title} style={{ marginRight: '20px', padding: '0 10px' }}>
+              {button.title}
+            </Button>
+          ))}
         </Col>
       </Row>
     </div>
