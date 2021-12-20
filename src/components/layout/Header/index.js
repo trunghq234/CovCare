@@ -37,12 +37,24 @@ const AppHeader = () => {
       display: 'Đăng ký',
     },
     {
-      link: '/health-declaration',
-      display: 'Khai báo y tế',
+      link: '/doctors',
+      display: 'Bác sỹ',
+    },
+    {
+      link: '/store',
+      display: 'Đăng ký cửa hàng',
     },
     {
       link: '/map',
       display: 'Bản đồ',
+    },
+    {
+      link: '/volunteer',
+      display: 'Tình nguyện viên',
+    },
+    {
+      link: '/health-declaration',
+      display: 'Khai báo y tế',
     },
     {
       link: '/support-request',

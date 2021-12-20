@@ -100,11 +100,7 @@ const PersonalInfo = ({ next }) => {
           </Col>
           <Col xs={24} sm={24} lg={16} xl={12}>
             <Form.Item name="priority" label="Đối tượng ưu tiên" rules={[{ required: true }]}>
-              <TypingSelect
-                placeholder="Đối tượng ưu tiên"
-                defaultValue="Viet Nam"
-                list={prority}
-              />
+              <TypingSelect placeholder="Đối tượng ưu tiên" list={prority} />
             </Form.Item>
           </Col>
           <Col span={24}>

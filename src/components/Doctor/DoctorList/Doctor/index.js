@@ -8,13 +8,13 @@ export default function Doctor({ doctor }) {
   return (
     <Card>
       <Row className={styles.wrapper}>
-        <Col span={6}>
+        <Col lg={6} xl={6} md={8} sm={24} xs={24}>
           <Image
             width={200}
             src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
           />
         </Col>
-        <Col span={12} className={styles.doctorContent}>
+        <Col lg={12} xl={12} md={8} sm={24} xs={24} className={styles.doctorContent}>
           <p className={styles.doctorName}>{name}</p>
           <p className={styles.doctorTitle}>{title}</p>
           <Rate defaultValue={rate} className={styles.doctorRate} />
@@ -25,33 +25,33 @@ export default function Doctor({ doctor }) {
             Experience: <b>{experience}</b> years
           </p>
         </Col>
-        <Col span={6} className={styles.doctorTime}>
+        <Col lg={6} xl={6} md={8} sm={24} xs={24} className={styles.doctorTime}>
           <p>
             Lorem ipsum dolor sit amet: <b>13/11/2021</b>
           </p>
           <Row gutter={[16, 16]}>
-            <Col span={6}>
+            <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />
             </Col>
-            <Col span={6}>
+            <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />
             </Col>
-            <Col span={6}>
+            <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />
             </Col>
-            <Col span={6}>
+            <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />
             </Col>
-            <Col span={6}>
+            <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />
             </Col>
-            <Col span={6}>
+            <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />
             </Col>
-            <Col span={6}>
+            <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />
             </Col>
-            <Col span={6}>
+            <Col lg={6} xl={6} md={6} sm={6} xs={6}>
               <Time />
             </Col>
           </Row>

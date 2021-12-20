@@ -8,7 +8,7 @@ const DoctorList = ({ doctors }) => {
     <div className={styles.wrapper}>
       <Row gutter={[0, 24]}>
         {doctors.map((doctor, idx) => (
-          <Col span={24} key={idx}>
+          <Col xl={24} lg={24} key={idx}>
             <Doctor doctor={doctor} />
           </Col>
         ))}
