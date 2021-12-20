@@ -21,53 +21,53 @@ const Prevention = () => {
   const advices = [
     {
       img: advice_a,
-      title: 'Wash your hands frequently',
+      title: 'Rửa tay thường xuyên',
       content:
-        'Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water for at least 20 seconds.',
+        'Thường xuyên rửa tay sạch sẽ bằng dung dịch xoa tay có cồn hoặc rửa tay bằng xà phòng và nước trong ít nhất 20 giây.',
     },
     {
       img: advice_b,
-      title: 'Maintain social distancing',
+      title: 'Duy trì sự giãn cách xã hội',
       content:
-        'Maintain at least 2 metre distance between yourself & anyone who is coughing or sneezing. If you are too close, get chance to infected.',
+        'Duy trì khoảng cách ít nhất 2 mét giữa bạn và bất kỳ ai đang ho hoặc hắt hơi. Nếu bạn ở quá gần, sẽ có cơ hội bị nhiễm bệnh.',
     },
     {
       img: advice_c,
-      title: 'Avoid touching face',
+      title: 'Tránh chạm vào mặt',
       content:
-        'Hands touch many surfaces and can pick up viruses. So, hands can transfer the virus to your eyes, nose or mouth and can make you sick.',
+        'Tay chạm vào nhiều bề mặt và có thể nhiễm vi rút. Vì vậy, tay có thể truyền vi-rút sang mắt, mũi hoặc miệng của bạn và có thể khiến bạn bị bệnh.',
     },
     {
       img: advice_d,
-      title: 'Practice respiratory hygiene',
+      title: 'Thực hành vệ sinh đường hô hấp',
       content:
-        'Maintain good respiratory hygiene as covering your mouth & nose with your bent elbow or tissue when cough or sneeze.',
+        'Giữ vệ sinh hô hấp tốt bằng cách che miệng và mũi bằng khuỷu tay cong hoặc khăn giấy khi ho hoặc hắt hơi.',
     },
   ];
 
   const steps = [
     {
-      content: 'Soap on hand',
+      content: 'Rửa tay bằng xà phòng',
       image: hand_a,
     },
     {
-      content: 'Palm to palm',
+      content: 'Xoa đều',
       image: hand_b,
     },
     {
-      content: 'Between fingers',
+      content: 'Giữa các ngón tay',
       image: hand_c,
     },
     {
-      content: 'Back to hands',
+      content: 'Quay về bàn tay',
       image: hand_d,
     },
     {
-      content: 'Clean with water',
+      content: 'Rửa sạch với nước',
       image: hand_e,
     },
     {
-      content: 'Focus on wrist',
+      content: 'Lau khô',
       image: hand_f,
     },
   ];
@@ -77,13 +77,13 @@ const Prevention = () => {
       <Row gutter={[0, 80]}>
         <Col span={24}>
           <div className={styles.heading}>
-            <h5 className={styles.subtitle}>HOW TO PROTECT YOURSELF?</h5>
-            <h2 className="title">PREVENTION & ADVICE</h2>
+            <h5 className={styles.subtitle}>LÀM THẾ NÀO ĐỂ BẢO VỆ BẢN THÂN?</h5>
+            <h2 className="title">PHÒNG NGỪA & LỜI KHUYÊN</h2>
             <p>
-              There is currently no vaccine to prevent coronavirus disease 2019 (COVID-19). The best
-              way to prevent illness is to avoid being exposed to this virus. Stay aware of the
-              latest information on the COVID-19 outbreak, available on the WHO website and through
-              your national and local public health authority.
+              hiện không có vắc xin phòng ngừa bệnh do coronavirus 2019 (COVID-19). Cách tốt nhất để
+              phòng bệnh là tránh tiếp xúc với loại vi rút này. Nhận biết thông tin mới nhất về đợt
+              bùng phát COVID-19, có trên trang web của WHO và thông qua cơ quan y tế công cộng quốc
+              gia và địa phương của bạn.
             </p>
           </div>
           <Row gutter={[20, 40]}>
@@ -100,7 +100,7 @@ const Prevention = () => {
           <AdviceCard />
         </Col>
         <Col span={24}>
-          <h2 className={styles.title}>Follow steps to wash hands</h2>
+          <h2 className={styles.title}>Làm theo các bước để rửa tay</h2>
           <Row gutter={20}>
             {steps.map((step, index) => {
               return (

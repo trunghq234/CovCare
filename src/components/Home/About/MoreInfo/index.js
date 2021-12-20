@@ -4,31 +4,27 @@ import { Link } from 'react-router-dom';
 import style from './index.module.less';
 const items = [
   {
-    title: 'How coronavirus is spread',
+    title: 'Coronavirus lây lan như thế nào',
     url: '/',
   },
   {
-    title: 'Symptoms of coronavirus',
+    title: 'Các triệu chứng của coronavirus',
     url: '/',
   },
   {
-    title: 'Symptoms of coronavirus',
+    title: 'Làm thế nào để bảo vệ bản thân',
     url: '/',
   },
   {
-    title: 'How to protect yourself',
+    title: 'Điều trị coronavirus',
     url: '/',
   },
   {
-    title: 'Treatment for coronavirus',
+    title: 'Điều trị coronavirus',
     url: '/',
   },
   {
-    title: 'Treatment for coronavirus',
-    url: '/',
-  },
-  {
-    title: 'Questions & Answers',
+    title: 'Hỏi & Đáp',
     url: '/',
   },
 ];
