@@ -1,5 +1,5 @@
 import { SearchOutlined, SyncOutlined } from '@ant-design/icons';
-import { Breadcrumb, Button, Card, Col, Form, Input, Row, Table, Tag } from 'antd';
+import { Button, Card, Col, Form, Input, Row, Table, Tag } from 'antd';
 import React, { useState } from 'react';
 import styles from './index.module.less';
 
@@ -101,70 +101,80 @@ const Complaint = props => {
     },
   ];
   return (
-    <div>
-      <div className={styles.breadcrumb}>
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <a href="./">Trang chủ</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a href="./search">Tra cứu Phản ánh tiêm chủng vắc xin COVID-19</a>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-        <h2>Tra cứu Phản ánh tiêm chủng vắc xin COVID-19</h2>
+    <div className="container">
+      <div className="banner-sm" style={{ marginTop: '60px' }}>
+        <Row gutter={[20, 10]}>
+          <Col xs={24} md={14} lg={12} xl={8}>
+            <h1 className="title">Tra cứu phản ánh</h1>
+            <p>Thông tin phản ánh của bạn sẽ được tiếp nhận và xem xét.</p>
+          </Col>
+        </Row>
       </div>
-      <div className={styles.contain}>
-        <Card className={styles.card}>
-          <Form layout="vertical" form={form} onFinish={handleSubmit}>
-            <Row gutter={20} justify="center">
-              <Col xs={24} md={16}>
-                <Form.Item
-                  label="Số điện thoại"
-                  name="phoneNumber"
-                  onKeyPress={event => {
-                    if (!/[0-9]/.test(event.key)) {
-                      event.preventDefault();
-                    }
-                  }}
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Số điện thoại không được bỏ trống',
-                    },
-                    { min: 10, message: 'Vui lòng nhập số điện thoại đúng định dạng' },
-                  ]}>
-                  <Input size="middle" placeholder="Số điện thoại" />
-                </Form.Item>
-              </Col>
-            </Row>
-            <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-              <Button
-                className={styles.btn}
-                onClick={handleReset}
-                type="primary"
-                ghost
-                icon={<SyncOutlined />}>
-                Nhập lại
-              </Button>
-              <Button
-                className={styles.btn}
-                type="primary"
-                htmlType="submit"
-                icon={<SearchOutlined />}>
-                Tra cứu
-              </Button>
-            </div>
-          </Form>
-        </Card>
-        <div className={styles.result} style={{ display: visible }}>
-          <h3>Kết quả tra cứu ({dataSource.length})</h3>
-          <Table
-            dataSource={dataSource}
-            columns={columns}
-            pagination={false}
-            scroll={{ x: '1300' }}></Table>
-        </div>
-      </div>
+      <Row className={styles.contain} gutter={[20, 20]}>
+        <Col span={24}>
+          <Card className={styles.card}>
+            <Form layout="vertical" form={form} onFinish={handleSubmit}>
+              <Row gutter={20} justify="center">
+                <Col xs={0} md={4} />
+                <Col xs={24} md={16}>
+                  <Form.Item
+                    label="Số điện thoại"
+                    name="phoneNumber"
+                    onKeyPress={event => {
+                      if (!/[0-9]/.test(event.key)) {
+                        event.preventDefault();
+                      }
+                    }}
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Số điện thoại không được bỏ trống',
+                      },
+                      { min: 10, message: 'Vui lòng nhập số điện thoại đúng định dạng' },
+                    ]}>
+                    <Input size="middle" placeholder="Số điện thoại" />
+                  </Form.Item>
+                </Col>
+                <Col xs={0} md={4} />
+                <Col xs={12} sm={12} md={6} lg={6}>
+                  <Button
+                    className={styles.btn}
+                    onClick={handleReset}
+                    block
+                    size="large"
+                    type="primary"
+                    ghost
+                    icon={<SyncOutlined />}>
+                    Nhập lại
+                  </Button>
+                </Col>
+                <Col xs={12} sm={12} md={6} lg={6}>
+                  <Button
+                    className={styles.btn}
+                    block
+                    size="large"
+                    type="primary"
+                    htmlType="submit"
+                    icon={<SearchOutlined />}>
+                    Tra cứu
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
+          </Card>
+        </Col>
+        <Col span={24}>
+          <Card style={{ display: visible }}>
+            <h3>Kết quả tra cứu ({dataSource.length})</h3>
+            <Table
+              bordered
+              dataSource={dataSource}
+              columns={columns}
+              pagination={false}
+              scroll={{ x: '1300' }}></Table>
+          </Card>
+        </Col>
+      </Row>
     </div>
   );
 };

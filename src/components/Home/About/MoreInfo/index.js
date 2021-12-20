@@ -5,41 +5,37 @@ import style from './index.module.less';
 const items = [
   {
     title: 'Coronavirus lây lan như thế nào',
-    url: '/',
+    url: '#spread',
   },
   {
     title: 'Các triệu chứng của coronavirus',
-    url: '/',
+    url: '#symptons',
   },
   {
     title: 'Làm thế nào để bảo vệ bản thân',
-    url: '/',
+    url: '#prevention',
   },
   {
     title: 'Điều trị coronavirus',
-    url: '/',
-  },
-  {
-    title: 'Điều trị coronavirus',
-    url: '/',
+    url: '#treatment',
   },
   {
     title: 'Hỏi & Đáp',
-    url: '/',
+    url: '#faq',
   },
 ];
 const AnotherQuestion = () => {
   return (
     <div className={style.container}>
       <ul>
-        <li className={style.item}>Nhưng gì bạn cần biết</li>
+        <li className={style.item}>Những gì bạn cần biết</li>
         {items.map((item, index) => {
           return (
             <li className={style.item} key={item.title}>
-              <Link to={item.url} className={style.link}>
+              <a href={item.url} className={style.link}>
                 {item.title}
                 <RightOutlined className={style.icon} />
-              </Link>
+              </a>
             </li>
           );
         })}

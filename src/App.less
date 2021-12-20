@@ -1,6 +1,9 @@
 @import '~antd/dist/antd.less';
 @import 'theme.less';
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   overflow-x: hidden;
 }
@@ -53,26 +56,35 @@ ul {
 .ant-layout-content {
   min-height: 80vh;
   padding-top: 60px;
+  background-color: #f7f9fe !important;
 }
 
 .ant-layout-footer {
   margin-top: 40px;
+  background-color: #50658E;
+  color: #fff;
 }
 
 .ant-picker-calendar-date {
   border: 2px solid #f0f0f0;
 }
 
-.ant-btn {
-  padding: 0rem 1rem;
-  border-radius: 4px;
+.ant-collapse, .ant-collapse-item {
+  background-color: #F7FAFE;
+  border-color: #e7e8ff !important;
+  border-radius: 16px;
 }
+
+.ant-collapse-content  {
+  border-color: #e7e8ff !important;
+}
+
 .ant-picker {
   padding: 3px 11px;
   width: 100%;
 }
 .ant-card {
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: @box-shadow-base;
 }
 
@@ -88,25 +100,43 @@ ul {
   padding: 4px 11px;
 }
 
-.ant-btn {
-  padding: 1px 4px;
-}
+// .ant-btn {
+//   padding: 1px 4px;
+// }
 
 .ant-checkbox {
   margin-right: 20px;
 }
 
-.ant-card-head {
-  color: #50658e;
-  font-weight: 500;
-  font-size: 1.5rem;
-}
+// .ant-card-head {
+//   color: #50658e;
+//   font-weight: 500;
+//   font-size: 1.5rem;
+// }
 .mobileHidden {
   display: flex;
   width: fit-content;
 }
 .mobileVisible {
   display: none;
+}
+
+.banner {
+  background-image: url('assets/images/shape-a.png');
+  height: 360px;
+}
+
+.banner-sm {
+  background-image: url('assets/images/shape-a.png');
+  height: 280px;
+  object-fit: cover;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: text-top;
+  margin-left: 4px;
 }
 
 @media only screen and (max-width: 768px) {

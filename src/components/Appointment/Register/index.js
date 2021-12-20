@@ -1,21 +1,21 @@
 import {
+  Breadcrumb,
   Button,
   Card,
   Col,
   DatePicker,
   Form,
   Input,
-  notification,
+  Modal,
+  Result,
   Row,
   Select,
   TimePicker,
-  Breadcrumb,
-  Modal,
-  Result,
 } from 'antd';
 import doctor from 'assets/images/doctor.png';
 import LocationVN from 'assets/others/LocationVN.json';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './index.module.less';
 
 const { Option } = Select;
@@ -80,26 +80,23 @@ const RegisterAppointment = props => {
     // history.push('/appointment');
   };
   return (
-    <div>
-      <div className={styles.breadcrumb} s>
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <a href="/">Trang chủ</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a href="./">Lịch khám</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a href="register">Đặt lịch khám</a>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-        <h2>Đặt lịch khám</h2>
+    <div className="container">
+      <div className={styles.banner} style={{ marginTop: '60px' }}>
+        <Row gutter={[20, 0]}>
+          <Col xs={24} md={14} lg={12} xl={12}>
+            <h3 className="title">Đăng ký khám chữa bệnh</h3>
+            <p>
+              Hoạt động khám chữa bệnh trong mùa dịch được tổ chức bởi mạng lưới bác sĩ và tình
+              nguyện viên trong những vùng có nguy cơ cao mắc Covid-19 tại cộng đồng.
+            </p>
+          </Col>
+        </Row>
       </div>
       <div>
-        <Card className={styles.container}>
+        <Card className={styles.container} style={{ marginTop: '-60px' }}>
           <Row gutter={[20, 20]}>
-            <Col md={10}>
-              <img src={doctor} alt="" style={{ maxHeight: 600 }}></img>
+            <Col md={10} style={{ textAlign: 'center' }}>
+              <img src={doctor} alt="" style={{ maxHeight: 540 }}></img>
             </Col>
             <Col md={14}>
               <div className={styles[`right-content`]}>
@@ -231,8 +228,7 @@ const RegisterAppointment = props => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col sm={24} md={16}></Col>
-                    <Col sm={24} xs={24} md={8}>
+                    <Col sm={24} xs={24} md={16}>
                       <Button
                         type="primary"
                         htmlType="submit"
@@ -247,22 +243,14 @@ const RegisterAppointment = props => {
           </Row>
         </Card>
       </div>
-      <Modal
-        title="Thông báo"
-        visible={isModalVisible}
-        onOk={handleOk}
-        footer={[
-          <Button key="submit" type="primary" onClick={handleOk}>
-            Ok
-          </Button>,
-        ]}>
+      <Modal title="Thông báo" visible={isModalVisible} onOk={handleOk} footer={null}>
         <Result
           status="success"
           title="Đặt lịch khám thành công"
           subTitle="Bạn đã đặt lịch khám thành công. Vui lòng kiểm tra ngày hẹn và đến đúng giờ!"
           extra={[
-            <Button type="primary" key="console" href="./">
-              Xem lịch đặt
+            <Button size="large" type="primary" key="console">
+              <Link to="/appointment">Xem lịch đặt</Link>
             </Button>,
           ]}
         />

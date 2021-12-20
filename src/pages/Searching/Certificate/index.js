@@ -1,5 +1,5 @@
 import { SearchOutlined, SyncOutlined } from '@ant-design/icons';
-import { Breadcrumb, Button, Card, Col, DatePicker, Form, Input, Row, Select } from 'antd';
+import { Button, Card, Col, DatePicker, Form, Input, Row, Select } from 'antd';
 import Result from 'components/Result';
 import React, { useState } from 'react';
 import styles from './index.module.less';
@@ -18,24 +18,21 @@ const Certificate = props => {
   const [visible, setVisible] = useState('none');
 
   return (
-    <div>
-      <div className={styles.breadcrumb}>
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <a href="./">Trang chủ</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a href="./search">Tra cứu chứng nhận tiêm</a>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-        <h2>Tra cứu chứng nhận tiêm</h2>
+    <div className="container">
+      <div className="banner-sm" style={{ marginTop: '60px' }}>
+        <Row gutter={[20, 10]}>
+          <Col xs={24} md={14} lg={12} xl={8}>
+            <h1 className="title">Tra cứu giấy chứng nhận</h1>
+            <p>Giấy chứng sẽ giúp bạn có thể lưu thông và đi làm trở lại.</p>
+          </Col>
+        </Row>
       </div>
 
       <div className={styles.contain}>
         <Card className={styles.card}>
           <Form layout="vertical" form={form} onFinish={handleSubmit}>
-            <Row gutter={20}>
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+            <Row gutter={[20, 10]} justify="center">
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Họ và tên"
                   name="displayName"
@@ -43,7 +40,7 @@ const Certificate = props => {
                   <Input size="middle" placeholder="Họ và tên" />
                 </Form.Item>
               </Col>
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Ngày sinh"
                   name="dob"
@@ -55,7 +52,7 @@ const Certificate = props => {
                   />
                 </Form.Item>
               </Col>
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Giới tính"
                   name="gender"
@@ -68,7 +65,7 @@ const Certificate = props => {
                 </Form.Item>
               </Col>
 
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Số điện thoại"
                   name="phoneNumber"
@@ -85,7 +82,7 @@ const Certificate = props => {
                 </Form.Item>
               </Col>
 
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Số CMND/CCCD/HC"
                   name="idNumber"
@@ -98,19 +95,12 @@ const Certificate = props => {
                 </Form.Item>
               </Col>
 
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item label="Số thẻ BHYT" name="bhyt">
                   <Input type="text" placeholder="Số thẻ BHYT" />
                 </Form.Item>
               </Col>
-            </Row>
-            <Row style={{ width: '100%' }}>
               <Col span={24}>
-                {/* <Alert
-                  message="Error Text"
-                  description="Error Description Error Description Error Description Error Description"
-                  type="error"
-                /> */}
                 <div className={styles.notice}>
                   <span style={{ fontWeight: '600' }}>Ghi chú: </span>
                   <span>
@@ -123,24 +113,30 @@ const Certificate = props => {
                   </a>
                 </div>
               </Col>
+              <Col sm={12} xs={12} md={6} lg={6}>
+                <Button
+                  className={styles.btn}
+                  onClick={handleReset}
+                  block
+                  size="large"
+                  type="primary"
+                  ghost
+                  icon={<SyncOutlined />}>
+                  Nhập lại
+                </Button>
+              </Col>
+              <Col sm={12} xs={12} md={6} lg={6}>
+                <Button
+                  className={styles.btn}
+                  block
+                  size="large"
+                  type="primary"
+                  htmlType="submit"
+                  icon={<SearchOutlined />}>
+                  Tra cứu
+                </Button>
+              </Col>
             </Row>
-            <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-              <Button
-                className={styles.btn}
-                onClick={handleReset}
-                type="primary"
-                ghost
-                icon={<SyncOutlined />}>
-                Nhập lại
-              </Button>
-              <Button
-                className={styles.btn}
-                type="primary"
-                htmlType="submit"
-                icon={<SearchOutlined />}>
-                Tra cứu
-              </Button>
-            </div>
           </Form>
         </Card>
         <Result visible={visible}></Result>

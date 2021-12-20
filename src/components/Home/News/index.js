@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd';
 import React from 'react';
-import style from './index.module.less';
+import styles from './index.module.less';
 
 import news_a from 'assets/images/news-a.jpg';
 import news_b from 'assets/images/news-b.jpg';
@@ -32,9 +32,9 @@ const News = () => {
     <div className="container" style={{ marginTop: '100px' }}>
       <Row gutter={[0, 80]}>
         <Col span={24}>
-          <div className={style.heading}>
-            <h5>BLOG GẦN ĐÂY</h5>
-            <h2>CẬP NHẬT MỚI NHẤT</h2>
+          <div className={styles.heading}>
+            <h5 className={styles.subtitle}>BLOG GẦN ĐÂY</h5>
+            <h2 className={styles.title}>CẬP NHẬT MỚI NHẤT</h2>
           </div>
           <Row gutter={20}>
             {newsList.map((news, index) => {
@@ -50,6 +50,7 @@ const News = () => {
             })}
           </Row>
         </Col>
+        <Col span={24} />
       </Row>
     </div>
   );

@@ -65,13 +65,13 @@ const ProvincePicker = props => {
       </Col>
       <Col sm={8} md={8} xl={8} xs={24}>
         <Form.Item
-          label="Thành phố"
+          label="Tỉnh/Thành phố"
           name="city"
-          rules={[{ required: true, message: 'Vui lòng chọn thành phố!' }]}>
+          rules={[{ required: true, message: 'Vui lòng chọn tỉnh/thành phố!' }]}>
           <Select
             showSearch
             value={selectedCity}
-            placeholder="Chọn"
+            placeholder="Chọn Tỉnh/Thành phố"
             onChange={val => {
               props.form.setFieldsValue({ ...props.form.getFieldsValue(), district: '' });
               setSelectedCity(val);
@@ -87,7 +87,7 @@ const ProvincePicker = props => {
           rules={[{ required: true, message: 'Vui lòng chọn quận/huyện!' }]}>
           <Select
             showSearch
-            placeholder="Chọn"
+            placeholder="Chọn Quận/Huyện"
             value={selectedDistrict}
             onChange={val => {
               setSelectedDistrict(val);

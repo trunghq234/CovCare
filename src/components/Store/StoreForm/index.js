@@ -28,20 +28,15 @@ export default function StoreForm() {
   };
 
   return (
-    <div>
+    <div id="form" style={{ marginTop: '-120px' }}>
       <Card>
         <Form form={form} layout="vertical" onFinish={onFinish}>
-          <Row gutter={[48, 0]}>
+          <Row gutter={[20, 0]} justify="center">
             <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item
                 name="fullName"
                 label="Họ tên"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Vui lòng nhập họ tên!',
-                  },
-                ]}>
+                rules={[{ required: true, message: 'Vui lòng nhập họ tên!' }]}>
                 <Input placeholder="Nhập họ tên" />
               </Form.Item>
             </Col>
@@ -53,19 +48,37 @@ export default function StoreForm() {
                 <Input placeholder="Nhập tên cửa hàng" />
               </Form.Item>
             </Col>
-            <Col xl={24} lg={24} md={24} sm={24} xs={24}>
-              <ProvincePicker city={city} form={form} />
-            </Col>
-            <Col xl={6} lg={6} md={14} sm={24} xs={24}>
+            <Col xl={12} lg={12} md={12} sm={24} xs={24}>
               <Form.Item
-                name="timePicker"
-                label="Thời gian"
-                rules={[{ required: true, message: 'Vui lòng nhập chọn thời gian bán hàng!' }]}>
-                <TimePicker.RangePicker style={{ height: '35px' }} size="small" format="HH:mm" />
+                name="phoneNumber"
+                label="Số điện thoại"
+                rules={[{ required: true, message: 'Vui lòng nhập số điện thoại!' }]}
+                onKeyPress={event => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}>
+                <Input type="text" maxLength="10" placeholder="Nhập số điện thoại" />
               </Form.Item>
             </Col>
-            <Col xl={18} lg={18} md={10} sm={24} xs={24}></Col>
             <Col xl={12} lg={12} md={12} sm={24} xs={24}>
+              <Form.Item
+                name="timePicker"
+                label="Thời gian mở cửa"
+                rules={[{ required: true, message: 'Vui lòng nhập chọn thời gian bán hàng!' }]}>
+                <TimePicker.RangePicker
+                  style={{ height: '35px' }}
+                  size="small"
+                  format="HH:mm"
+                  placeholder={['Giờ mở cửa', 'Giờ đóng cửa']}
+                />
+              </Form.Item>
+            </Col>
+            <Col span={24}>
+              <ProvincePicker city={city} form={form} />
+            </Col>
+
+            <Col span={24}>
               <Form.Item label="Ghi chú" name="note">
                 <Input.TextArea placeholder="Chú thích tại đây" />
               </Form.Item>
@@ -84,11 +97,10 @@ export default function StoreForm() {
                 </Form.Item>
               </div>
             </Col>
-
-            <Col span={24}>
+            <Col xl={8} lg={8} md={8} sm={24} xs={24} span={24}>
               <Form.Item>
-                <Button className={styles.button} type="primary" htmlType="submit">
-                  Gửi
+                <Button size="large" block type="primary" htmlType="submit">
+                  Gửi yêu cầu mở cửa hàng
                 </Button>
               </Form.Item>
             </Col>

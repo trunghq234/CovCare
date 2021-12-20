@@ -47,7 +47,7 @@ const FAQ = () => {
         <div className={styles['section-content']}>
           <Row className={styles.row}>
             <div className={styles['tab-content']}>
-              <Tabs tabPosition={position} className={styles.tabs}>
+              <Tabs tabPosition={position} className={styles.tabs} moreIcon={null}>
                 {faqs.map((faq, index) => {
                   return (
                     <TabPane tab={faq.content} key={faq.title}>

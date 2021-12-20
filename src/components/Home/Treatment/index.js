@@ -22,7 +22,7 @@ const Treatment = () => {
       <div className={styles.shape}>
         <div className={styles.container}>
           <div className="section-content">
-            <Row gutter={[0, 80]} className={styles['row']}>
+            <Row gutter={[60, 80]} className={styles['row']}>
               <Col xs={24} sm={24} md={14} className={styles['col-left']}>
                 <div className={styles['text-block']}>
                   <h5 className={styles.subtitle}>CẨN THẬN & Ở NHÀ AN TOÀN</h5>
