@@ -73,12 +73,12 @@ const Prevention = () => {
   ];
 
   return (
-    <div id="#prevention" className="container">
+    <div id="prevention" className="container">
       <Row gutter={[0, 80]}>
         <Col span={24}>
           <div className={styles.heading}>
             <h5 className={styles.subtitle}>LÀM THẾ NÀO ĐỂ BẢO VỆ BẢN THÂN?</h5>
-            <h2 className="title">PHÒNG NGỪA & LỜI KHUYÊN</h2>
+            <h2 className={styles.title}>PHÒNG NGỪA & LỜI KHUYÊN</h2>
             <p>
               hiện không có vắc xin phòng ngừa bệnh do coronavirus 2019 (COVID-19). Cách tốt nhất để
               phòng bệnh là tránh tiếp xúc với loại vi rút này. Nhận biết thông tin mới nhất về đợt
