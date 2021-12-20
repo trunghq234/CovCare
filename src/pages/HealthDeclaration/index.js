@@ -15,10 +15,10 @@ const HealthDeclaration = () => {
       <div style={{ marginTop: '60px' }} className="banner">
         <Row gutter={[20, 0]}>
           <Col xs={24} md={14} lg={12} xl={12}>
-            <h3 className="title">Đăng ký tiêm chủng</h3>
+            <h3 className="title">Khai báo y tế</h3>
             <p>
-              Việc đăng ký thông tin hoàn toàn bảo mật và phục vụ cho chiến dịch tiêm chủng Vắc xin
-              COVID - 19.
+              Việc khai báo thông tin hoàn toàn bảo mật và phục vụ cho chiến dịch phòng chống dịch
+              bệnh COVID - 19.
             </p>
           </Col>
           <Col xs={0} md={10} lg={12} xl={12} />
