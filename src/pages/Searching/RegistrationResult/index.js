@@ -111,17 +111,14 @@ const RegistrationResult = props => {
     },
   ];
   return (
-    <div>
-      <div className={styles.breadcrumb} s>
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <a href="./">Trang chủ</a>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <a href="./search">Tra cứu đăng ký tiêm</a>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-        <h2>Tra cứu đăng ký tiêm</h2>
+    <div className="container">
+      <div className="banner-sm" style={{ marginTop: '60px' }}>
+        <Row gutter={[20, 10]}>
+          <Col xs={24} md={14} lg={12} xl={10}>
+            <h1 className="title">Tra cứu kết quả đăng ký tiêm</h1>
+            <p>Đăng ký của bạn sẽ được ghi nhận và thông báo tới bạn sớm nhất có thể.</p>
+          </Col>
+        </Row>
       </div>
 
       <div className={styles.contain}>
