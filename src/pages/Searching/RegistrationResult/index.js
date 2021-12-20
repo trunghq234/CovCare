@@ -1,5 +1,5 @@
 import { EditOutlined, InfoCircleFilled, SearchOutlined, SyncOutlined } from '@ant-design/icons';
-import { Breadcrumb, Button, Card, Col, Form, Input, Row, Table, Tag, Tooltip } from 'antd';
+import { Button, Card, Col, Form, Input, Row, Table, Tag, Tooltip } from 'antd';
 import React, { useState } from 'react';
 import styles from './index.module.less';
 
@@ -124,7 +124,7 @@ const RegistrationResult = props => {
       <div className={styles.contain}>
         <Card className={styles.card}>
           <Form layout="vertical" form={form} onFinish={handleSubmit}>
-            <Row gutter={20}>
+            <Row gutter={[20, 10]} justify="center">
               <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                 <Form.Item
                   onKeyPress={event => {
@@ -162,34 +162,38 @@ const RegistrationResult = props => {
                   <Input size="middle" placeholder="Số điện thoại không được bỏ trống" />
                 </Form.Item>
               </Col>
-            </Row>
-            <Row style={{ width: '100%' }}>
               <Col span={24}>
                 <div className={styles.notice}>
                   <span>
                     Lưu ý: Nếu bạn dưới 18 tuổi, vui lòng nhập số điện thoại của người giám hộ để
-                    tra cứu{' '}
+                    tra cứu
                   </span>
                 </div>
               </Col>
+              <Col sm={12} xs={12} md={6} lg={6}>
+                <Button
+                  className={styles.btn}
+                  onClick={handleReset}
+                  block
+                  size="large"
+                  type="primary"
+                  ghost
+                  icon={<SyncOutlined />}>
+                  Nhập lại
+                </Button>
+              </Col>
+              <Col sm={12} xs={12} md={6} lg={6}>
+                <Button
+                  className={styles.btn}
+                  block
+                  size="large"
+                  type="primary"
+                  htmlType="submit"
+                  icon={<SearchOutlined />}>
+                  Tra cứu
+                </Button>
+              </Col>
             </Row>
-            <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-              <Button
-                className={styles.btn}
-                onClick={handleReset}
-                type="primary"
-                ghost
-                icon={<SyncOutlined />}>
-                Nhập lại
-              </Button>
-              <Button
-                className={styles.btn}
-                type="primary"
-                htmlType="submit"
-                icon={<SearchOutlined />}>
-                Tra cứu
-              </Button>
-            </div>
           </Form>
         </Card>
         <div className={styles.result} style={{ display: visible }}>

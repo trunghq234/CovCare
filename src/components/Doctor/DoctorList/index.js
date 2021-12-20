@@ -6,9 +6,9 @@ import styles from './index.module.less';
 const DoctorList = ({ doctors }) => {
   return (
     <div className={styles.wrapper}>
-      <Row gutter={[0, 24]}>
+      <Row gutter={[0, 20]}>
         {doctors.map((doctor, idx) => (
-          <Col xl={24} lg={24} key={idx}>
+          <Col span={24} key={idx}>
             <Doctor doctor={doctor} />
           </Col>
         ))}

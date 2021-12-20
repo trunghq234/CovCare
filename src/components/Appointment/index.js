@@ -139,7 +139,7 @@ const Appointment = props => {
                   <Input placeholder="Số điện thoại" />
                 </Form.Item>
               </Col>
-              <Col sm={12} xs={12} md={6} lg={4}>
+              <Col sm={12} xs={12} md={6} lg={6}>
                 <Button
                   className={styles.btn}
                   onClick={handleReset}
@@ -151,7 +151,7 @@ const Appointment = props => {
                   Nhập lại
                 </Button>
               </Col>
-              <Col sm={12} xs={12} md={6} lg={4}>
+              <Col sm={12} xs={12} md={6} lg={6}>
                 <Button
                   className={styles.btn}
                   size="large"
