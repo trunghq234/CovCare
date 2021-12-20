@@ -66,7 +66,12 @@ export default function StoreForm() {
                 name="timePicker"
                 label="Thời gian mở cửa"
                 rules={[{ required: true, message: 'Vui lòng nhập chọn thời gian bán hàng!' }]}>
-                <TimePicker.RangePicker style={{ height: '35px' }} size="small" format="HH:mm" />
+                <TimePicker.RangePicker
+                  style={{ height: '35px' }}
+                  size="small"
+                  format="HH:mm"
+                  placeholder={['Giờ mở cửa', 'Giờ đóng cửa']}
+                />
               </Form.Item>
             </Col>
             <Col span={24}>

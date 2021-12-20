@@ -70,7 +70,7 @@ export default function VolunteerForm() {
                   className={styles.yearPicker}
                   picker="year"
                   size="small"
-                  placeholder="Chọn"
+                  placeholder="Chọn năm sinh"
                 />
               </Form.Item>
             </Col>
@@ -106,7 +106,7 @@ export default function VolunteerForm() {
                 name="selectGroup"
                 rules={[{ required: true, message: 'Vui lòng chọn nhóm!' }]}>
                 <Select placeholder="Chọn nhóm">
-                  <Option value="1">TNV Y Tế</Option>
+                  <Option value="1">Tình nguyện viên Y Tế</Option>
                   <Option value="2">Bác Sỹ Tư Vấn</Option>
                   <Option value="3">Trợ Lý Vận Hành</Option>
                 </Select>
@@ -133,8 +133,8 @@ export default function VolunteerForm() {
               <Form.Item
                 label="Kinh nghiệm"
                 name="experience"
-                rules={[{ required: true, message: 'Vui lòng nhập kinh nghiệm!' }]}>
-                <Select placeholder="Chọn">
+                rules={[{ required: true, message: 'Vui lòng chọn kinh nghiệm!' }]}>
+                <Select placeholder="Chọn số năm kinh nghiệm">
                   <Option value="1">0 - 1 năm</Option>
                   <Option value="2">1 - 2 năm</Option>
                   <Option value="3">2 - 3 năm</Option>

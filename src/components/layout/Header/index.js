@@ -41,7 +41,7 @@ const AppHeader = () => {
           <NavLink to="/store">Đăng ký cửa hàng</NavLink>
         </Menu.Item>
         <Menu.Item key="volunteer">
-          <NavLink to="/volunteer">Đăng ký TNV</NavLink>
+          <NavLink to="/volunteer">Đăng ký tình nguyện viên</NavLink>
         </Menu.Item>
       </SubMenu>
       <SubMenu key="health" title="Sức khỏe">
@@ -60,7 +60,7 @@ const AppHeader = () => {
           <NavLink to="/search">Chứng nhận tiêm</NavLink>
         </Menu.Item>
         <Menu.Item key="result">
-          <NavLink to="/result">Kết quả</NavLink>
+          <NavLink to="/result">Kết quả đăng ký tiêm</NavLink>
         </Menu.Item>
         <Menu.Item key="complaint">
           <NavLink to="/complaint">Phản ánh</NavLink>

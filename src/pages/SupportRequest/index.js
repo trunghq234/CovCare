@@ -46,10 +46,10 @@ const SupportRequest = () => {
                     event.preventDefault();
                   }
                 }}
-                label="Phone number"
+                label="Số điện thoại"
                 name="phoneNumber"
                 rules={[{ required: true, message: 'Bạn chưa nhập số điện thoại' }]}>
-                <Input type="text" placeholder="Phone number" minLength={10} maxLength={10} />
+                <Input type="text" placeholder="Số điện thoại" minLength={10} maxLength={10} />
               </Form.Item>
             </Col>
           </Row>

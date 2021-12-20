@@ -58,7 +58,7 @@ const ProvincePickerWithWard = ({ city, form }) => {
           <Select
             showSearch
             value={selectedCity}
-            placeholder="Chọn"
+            placeholder="Chọn Tỉnh/Thành phố"
             onSelect={val => {
               setSelectedCity(val);
               form.setFieldsValue({ ...form.getFieldsValue(), district: '', ward: '' });
@@ -75,7 +75,7 @@ const ProvincePickerWithWard = ({ city, form }) => {
           <Select
             showSearch
             value={selectedDistrict}
-            placeholder="Chọn"
+            placeholder="Chọn Huyện/Quận"
             onSelect={val => {
               setSelectedDistrict(val);
               form.setFieldsValue({ ...form.getFieldsValue(), ward: '' });
@@ -92,7 +92,7 @@ const ProvincePickerWithWard = ({ city, form }) => {
           <Select
             showSearch
             value={selectedWard}
-            placeholder="Chọn"
+            placeholder="Chọn Phường/Xã"
             onSelect={val => {
               setSelectedWard(val);
             }}>

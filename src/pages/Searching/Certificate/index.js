@@ -32,7 +32,7 @@ const Certificate = props => {
         <Card className={styles.card}>
           <Form layout="vertical" form={form} onFinish={handleSubmit}>
             <Row gutter={20}>
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Họ và tên"
                   name="displayName"
@@ -40,7 +40,7 @@ const Certificate = props => {
                   <Input size="middle" placeholder="Họ và tên" />
                 </Form.Item>
               </Col>
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Ngày sinh"
                   name="dob"
@@ -52,7 +52,7 @@ const Certificate = props => {
                   />
                 </Form.Item>
               </Col>
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Giới tính"
                   name="gender"
@@ -65,7 +65,7 @@ const Certificate = props => {
                 </Form.Item>
               </Col>
 
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Số điện thoại"
                   name="phoneNumber"
@@ -82,7 +82,7 @@ const Certificate = props => {
                 </Form.Item>
               </Col>
 
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item
                   label="Số CMND/CCCD/HC"
                   name="idNumber"
@@ -95,7 +95,7 @@ const Certificate = props => {
                 </Form.Item>
               </Col>
 
-              <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+              <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                 <Form.Item label="Số thẻ BHYT" name="bhyt">
                   <Input type="text" placeholder="Số thẻ BHYT" />
                 </Form.Item>

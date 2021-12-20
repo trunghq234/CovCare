@@ -40,7 +40,7 @@ const BasicInfo = () => {
           label="Giới tính"
           name="gender"
           rules={[{ required: true, message: 'Bạn chưa chọn giới tính.' }]}>
-          <Select placeholder="Chọn">
+          <Select placeholder="Giới tính">
             <Option value="male">Nam</Option>
             <Option value="female">Nữ</Option>
             <Option value="others">Khác</Option>

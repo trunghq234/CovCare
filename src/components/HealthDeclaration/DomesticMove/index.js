@@ -85,7 +85,7 @@ const DomesticMove = () => {
             label="Nơi đi"
             name="departure"
             rules={[{ required: true, message: 'Bạn chưa chọn nơi đi' }]}>
-            <Select placeholder="Chọn">{cityOptions}</Select>
+            <Select placeholder="Nơi xuất phát">{cityOptions}</Select>
           </Form.Item>
         </Col>
         <Col xs={24} md={12}>
@@ -101,7 +101,7 @@ const DomesticMove = () => {
             label="Nơi đến"
             name="destination"
             rules={[{ required: true, message: 'Bạn chưa chọn nơi đến' }]}>
-            <Select placeholder="Chọn">{cityOptions}</Select>
+            <Select placeholder="Nơi đến">{cityOptions}</Select>
           </Form.Item>
         </Col>
         <Col xs={24} md={12}>
